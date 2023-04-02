@@ -33,7 +33,7 @@ nav:
     - Admin Roles: ./academia/admin.md
     - Affiliations: ./academia/affiliations.md
     - Academic CV: ./academia/cv.md
-  - Publications: publications.md
+  - Publications: publication.md
   - Research :
     - Research Interest : ./research/research_interest.md
     - Program Analysis Projects : ./research/program-analysis.md
