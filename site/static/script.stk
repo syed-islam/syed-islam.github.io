@@ -1,0 +1,351 @@
+;;This is the current version of the script being used with the current version of the tool. This is the first scrip which gives all the 
+;; data for the tool to run the initial version.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Objective:
+;;1. for each node compute the slice (as currently done)
+;;2. Use the slice size as hash value
+;;3. Create a mapping node -> hash
+;;4. Count for each hash the number of nodes with that hash (create a  
+;;mapping hash -> size)
+;;5. Build a set of nodes that contain all nodes with a hash that has a  
+;;size larger than a preset minimum.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:     (ex:calculate-max-cluster-size-of-each-loc file-all-vtx file-hash-each-vtx file-cluster-size-of-each-vtx file-vtx-of-particular-;;		cluster-size cluster-size file-all-clusters file-all-clusters-greater-than-min-size min-cluster-size)
+;; Args:     	file-all-vtx: file name outputting list of all vtx	
+;;		file-hash-each-vtx: file name outputting list of hash values (slice size) corresponding to each vtx
+;;	 	file-cluster-size-of-each-vtx: file name for outputting the number of nodes that have particualar hash value corresponding to the hash-;;		list
+;;		file-vtx-of-particular-cluster-size: file for outputting the vsets that have a particular hash value defined by arg	cluster-size: ;;		integer number 
+;;		file-all-clusters: file for outputting vset for each hash value (slice size)	
+;;		file-all-clusters-greater-than-min-size:	file for outputting vset for hash value (slice size) > min-cluster-size: intger
+;; Returns:     N/A
+;; Action:	Maps the nodes of a project to the hashvalue (size of slice). Has the above outputs in files.	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define (test-run)
+	(define file-all-vtx "updated_All_vtxs.txt")
+	(define file-hash-each-vtx "updated_hash-each-vtx.txt")
+	(define file-cluster-size-of-each-vtx "updated_cluster-size-of-each-vtx.txt")
+	(define file-max-cluster-size-of-loc "updated_max-cluster-size-of-loc.txt")
+	(define start (system-date))
+	(define vset-sourcefile (pdg-vertex-set-create))
+	(ex:sdg-source-vertex-byprj vset-sourcefile)
+	(define list-hash-val (list))
+	(define list-cluster-size (list))
+	(define list-all-vtx (pdg-vertex-set-sort vset-sourcefile ""))
+	(define list-combo-vtx-clustersize (list))
+	(define list-max-cluster-size-of-loc (list))
+	(define list-combo-vtx-hash (list))
+	(ex:print-list-contents list-all-vtx file-all-vtx)		
+	(for-each
+		(lambda (vtx)
+			(let* 	(
+				(vs (pdg-vertex-set-create))
+				(bck-slice (pdg-vertex-set-create))
+				(fwd-slice (pdg-vertex-set-create))
+				(bck-slice-size 0)
+				(fwd-slice-size 0)
+				(bck-slice-id 0)
+				(fwd-slice-id 0)
+				(list-temp (list))
+				(hash 0)
+				)
+				(pdg-vertex-set-put! vs vtx)
+				(set! bck-slice (s-slice vs 'data-control))
+				(set! fwd-slice (s-forward-slice vs 'data-control))
+				(set! bck-slice-size (pdg-vertex-set-cardinality (pdg-vertex-set-intersect vset-sourcefile bck-slice))) 
+				(set! fwd-slice-size  (pdg-vertex-set-cardinality (pdg-vertex-set-intersect vset-sourcefile fwd-slice)))
+				(set! bck-slice (pdg-vertex-set-intersect vset-sourcefile bck-slice))
+				(set! list-temp (list))
+				(set! list-temp (pdg-vertex-set->list bck-slice))
+				(set! hash 0)
+				(for-each
+					(lambda (vertex)
+						(set! hash (bitwise-xor hash ( + (pdg-vertex-id vertex )(+ (car(car (int-pair-set->list (pdg-vertex-charpos vertex))))  (cdr(car (int-pair-set->list (pdg-vertex-charpos vertex)))) ))))
+					)
+				list-temp)
+				(set! bck-slice-id hash)
+				(set! fwd-slice (pdg-vertex-set-intersect vset-sourcefile fwd-slice))
+				(set! list-temp (list))
+				(set! list-temp (pdg-vertex-set->list fwd-slice))
+				(set! hash 0)
+				(for-each
+					(lambda (vertex)
+						(set! hash (bitwise-xor hash ( + (pdg-vertex-id vertex )(+ (car(car (int-pair-set->list (pdg-vertex-charpos vertex))))  (cdr(car (int-pair-set->list (pdg-vertex-charpos vertex)))) ))))
+					)
+				list-temp)
+				(set! fwd-slice-id hash)
+				(set! list-hash-val (cons (list bck-slice-size bck-slice-id fwd-slice-size fwd-slice-id) list-hash-val))
+			)
+		)
+	list-all-vtx)
+	(set! list-hash-val (ex:return_reverse-list list-hash-val))
+	(ex:print-list-contents list-hash-val file-hash-each-vtx)		
+	(set! list-cluster-size (ex:calculate_cluster_size list-hash-val))
+	(ex:print-list-contents list-cluster-size file-cluster-size-of-each-vtx)
+	(set! list-combo-vtx-clustersize (ex:create-combined-list-vtx-clustersize list-all-vtx list-cluster-size))
+	(set! list-combo-vtx-hash (ex:create-combined-list-vtx-clustersize list-all-vtx list-hash-val))
+	(set! list-max-cluster-size-of-loc (ex:calculate-max-cluster-size-for-each-loc list-combo-vtx-clustersize list-combo-vtx-hash ))
+	(ex:print-list-contents list-max-cluster-size-of-loc file-max-cluster-size-of-loc)
+	(define end (system-date))
+	(ex:print-list-contents (list start end) "updated_run-time.txt")
+)
+
+
+
+
+
+(define (ex:calculate-max-cluster-size-for-each-loc list-combo-vtx-clustersize list-combo-vtx-hash)
+	(define list-debug (list))
+	(define list-max-cluster-size-of-loc (list))
+	(let	(
+		(list-files-of-prj (prj:contribute-nonlib-source-files ss:main-project))
+		(pdg-vset-vtx-of-loc (pdg-vertex-set-create))
+		(list-vset-of-loc (list))
+		(list-file-names (list))
+		(out-file-name (open-output-file "updated_max-hash-for-each-loc.txt"))
+		)
+		(for-each
+			(lambda (file)
+				(let*	(
+					(line-number 1)
+					(infilename  (file:name file))
+              				(in-port (open-input-file infilename))
+	              			(prj ss:main-project) 
+	              			(oneline-of-code (read-line in-port))
+	              			(max-cluster-size-of-loc 0)
+	              			(cluster-size-of-vtx 0)
+	              			(thash "")
+              				)
+					(set! list-file-names (cons (file:fname-relative-to-cwd (file:name file) #t) list-file-names))
+					(set! list-max-cluster-size-of-loc (cons (file:fname-relative-to-cwd (file:name file) #t) list-max-cluster-size-of-loc))
+					(write (file:fname-relative-to-cwd (file:name file) #t) out-file-name) 
+             				(newline out-file-name )
+              				(set! list-debug (cons (file:fname-relative-to-cwd (file:name file) #t) list-debug))
+					(while (not (eof-object? oneline-of-code))
+						(set! list-debug (cons line-number list-debug))
+						(set! list-debug (cons oneline-of-code list-debug))
+						(pdg-vertex-set-union! pdg-vset-vtx-of-loc (file:vertices-in-line file line-number))
+						(set! list-debug (cons (pdg-vertex-set-cardinality pdg-vset-vtx-of-loc) list-debug))
+						(set! list-vset-of-loc (pdg-vertex-set-sort pdg-vset-vtx-of-loc ""))
+		              			(set! max-cluster-size-of-loc 0)	
+		              			(set! thash "")					
+						(for-each
+							(lambda (vtx)
+								(set! list-debug (cons vtx list-debug))
+								(set! list-debug (cons (ex:calculate-cluster-size vtx list-combo-vtx-clustersize) 
+																	list-debug))
+								(set! list-debug (cons (cdr (ex:get-hash-of-vtx vtx list-combo-vtx-hash)) 
+																	list-debug))
+								(set! cluster-size-of-vtx (ex:calculate-cluster-size vtx list-combo-vtx-clustersize))
+								(if (> cluster-size-of-vtx max-cluster-size-of-loc ) (set! max-cluster-size-of-loc 
+														cluster-size-of-vtx))
+								(if (= cluster-size-of-vtx max-cluster-size-of-loc) (set! thash 
+									(cdr (ex:get-hash-of-vtx vtx list-combo-vtx-hash))) (set! thash thash))
+							)
+						list-vset-of-loc)
+						(write thash out-file-name)
+						(newline out-file-name )
+						(set! list-max-cluster-size-of-loc (cons max-cluster-size-of-loc list-max-cluster-size-of-loc))
+						(set! list-debug (cons max-cluster-size-of-loc list-debug))
+						(set! oneline-of-code (read-line in-port))
+               					(set! line-number (+ 1 line-number))
+               					(set! pdg-vset-vtx-of-loc (pdg-vertex-set-create))
+					)
+              			)
+			)
+		list-files-of-prj)
+		(ex:print-list-contents (ex:return_reverse-list list-debug) "updated_debug.txt")
+		(ex:print-list-contents (ex:return_reverse-list list-file-names) "updated_files-of-project.txt")
+		(close-output-port out-file-name)
+	)
+(ex:return_reverse-list list-max-cluster-size-of-loc))
+
+
+(define (ex:get-hash-of-vtx vtx list-combo-vtx-hash)
+	(define hash (list))
+	(define temp (car list-combo-vtx-hash))
+	(for-each
+		(lambda (item)
+			(if (equal? item vtx) (set! hash (cons hash temp)))
+			(set! temp item)
+		)
+	list-combo-vtx-hash)
+hash)
+
+
+
+
+;;;;;;;;
+(define (ex:calculate-cluster-size vtx list-combo-vtx-clustersize)
+	(define cluster-size 0)
+	(define temp (car list-combo-vtx-clustersize))
+	(for-each
+		(lambda (item)
+			(if (equal? item vtx) (set! cluster-size temp))
+			(set! temp item)
+		)
+	list-combo-vtx-clustersize)
+cluster-size)
+
+
+;;;;;;;;;; Returns combined list of vtx & cluster size
+
+(define (ex:create-combined-list-vtx-clustersize list-all-vtx list-cluster-size)
+	(define out-list (list))
+	(let	(
+		(copy-list-all-vtx list-all-vtx)
+		(copy-list-cluster-size list-cluster-size)
+		)
+		(for-each
+			(lambda(vtx)
+				(set! out-list (cons vtx (cons (car copy-list-cluster-size) out-list)))
+				(set! copy-list-cluster-size (cdr copy-list-cluster-size))
+			)
+		copy-list-all-vtx)
+	)
+(ex:return_reverse-list out-list))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:     (ex:unique-items-of-list mylist))
+;; Args:     mylist: list containing arbitrary objects
+;; Returns:  mylist: list containing only unique arbitrary objects
+;; Action:   creates a list of unique objects from a given list and returns the list of unique objects
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   
+(define (ex:unique-items-of-list mylist)
+	(let 	(
+	     	(flag 0)
+	     	(temp (list))
+		)
+		(for-each
+			(lambda (i)
+				(set! flag 0)
+				(for-each
+					(lambda (j)
+						(if (equal? i j) (set! flag 1) (set! flag flag))
+					)
+				temp)
+			(if (= flag 0) (set! temp (cons i temp)) (set! temp temp))
+			)
+		mylist)
+		(set! mylist (ex:return_reverse-list temp))
+	)	
+mylist)
+
+
+   
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:     (ex:print-list-contents out-list file-name)
+;; Args: 	out-list: List with arbitrary objects 
+;;		file-name: name of the file where the list is printed out
+;; Returns:     None
+;; Action:
+;; Prints the contents of a list called out-list to a file called file-name   
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   
+(define (ex:print-list-contents out-list file-name)
+	(let 	(
+		(out-file-name (open-output-file file-name))
+		)
+		(for-each
+			(lambda (k)
+				(write k out-file-name)
+				(newline out-file-name)
+			)
+		out-list)
+	(close-output-port out-file-name)
+	)
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:    (ex:calculate_cluster_size list-hash-val)    
+;; Args:     list-hash-val: List of interger numbers
+;; Returns:  list-cluster-size: list of integer numbers containing the number of occurances of each integer in the input list list-hash-val.   
+;; Action:
+;; Return a list which corresponds to the number of occurances of each item of a list provided to the function as list-hash-val    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      
+(define (ex:calculate_cluster_size list-hash-val)    
+	(define list-cluster-size (list))
+	(let	(
+		(list-hash-val-copy list-hash-val)
+	  	(count 0)
+	  	(temp 0)
+		(list-temp (list))
+	  	)
+	 	(for-each 
+			(lambda (i)
+				(set! count 0)
+	       			(for-each
+					(lambda (j)
+						(if (equal? i j)(set! count (+ count 1)) (set! count count))
+					)
+				list-hash-val-copy)
+				(if (< (car i) (car(cdr(cdr i)))) (set! temp (car i)) (set! temp (car(cdr(cdr i))))) 
+				(if (> count temp) (cons i list-temp) (set! count count))
+				(if (> count temp) (set! count temp) (set! count count))
+				(set! list-cluster-size (cons count list-cluster-size))
+			)
+		list-hash-val)
+		(set! list-temp (ex:return_reverse-list list-temp))
+		(set! list-temp (ex:unique-items-of-list list-temp))
+		(ex:print-list-contents list-temp "updated_collisions.txt")		
+		(set! list-cluster-size (ex:return_reverse-list list-cluster-size))
+	)                   
+list-cluster-size)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:     (ex:return_reverse-list mylist)
+;; Args:     mylist: List of arbitrary objects
+;; Returns:  mylist: List of arbitrary objects
+;; Action:   Return the reverse of a list (mylist) provided as arg to this method.
+;; Example: args(1 2 3 4) output: (4 3 2 1)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define (ex:return_reverse-list mylist)
+	(let 	(
+		(rev_mylist (list))
+		)
+		(for-each
+			(lambda (k)
+				(set! rev_mylist (cons k rev_mylist))
+			)
+		mylist)
+		(set! mylist rev_mylist)
+		)
+mylist)
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Name:     (ex:sdg-source-vertex-byprj vset)
+;; Args:     vset      : vertex-set of sdg
+;;           prjname   : project name
+;; Returns:  all vertices of prjname which corresponding the source code
+;; Action:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define (ex:sdg-source-vertex-byprj vset)
+(let ((file-list (prj:contribute-nonlib-source-files ss:main-project)))
+   (for-each
+    (lambda (files)
+      (define line-number 1)
+      (let*  ((infilename  (file:name files))
+              (in-port (open-input-file infilename))
+              (prj ss:main-project) ;; there is only one project
+              )
+        (define oneline-of-code (read-line in-port))
+        (while (not (eof-object? oneline-of-code))
+               (pdg-vertex-set-union! vset (file:vertices-in-line files line-number))
+               (set! oneline-of-code (read-line in-port))
+               (set! line-number (+ 1 line-number))
+               )
+        (close-input-port in-port)
+        )
+      )
+    file-list)))

@@ -1,0 +1,47 @@
+site_name: Syed's Home
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.tabs.link
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+
+plugins:
+  - glightbox
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - About me: index.md
+  - Academia: 
+    - Teaching: ./academia/teaching.md
+    - Supervision : ./academia/supervision.md
+    - PhD Examination: ./academia/phd_examination.md
+    - Admin Roles: ./academia/admin.md
+    - Affiliations: ./academia/affiliations.md
+    - Academic CV: ./academia/cv.md
+  - Publications: Publications.md
+  - Research :
+    - Research Interest : ./research/research_interest.md
+    - Program Analysis Projects : ./research/program-analysis.md
+    - Cloud Security Projects : ./research/cloud-security.md
+    - SBSE Projects: ./research/fastfix.md
+    - Visualization Projects: ./research/visualization.md
+    - Project Ideas for Students : ./research/project_ideas.md
+  - Awards : 
+    - Awards & Achievements : awards.md
+    - UEL Awards Event : event-videos-photo.md
+

@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../program-analysis/" rel="prev"/>
+<link href="../fastfix/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
+<title>Cloud Security Projects - Syed's Home</title>
+<link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#automated-security-transparency">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Syed's Home" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Syed's Home">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Syed's Home
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Cloud Security Projects
+            
+          </span>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      About me
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../academia/teaching/">
+        Academia
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Publications/">
+      Publications
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../research_interest/">
+        Research
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../awards/">
+        Awards
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Syed's Home" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Syed's Home">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Syed's Home
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        About me
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Academia
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Academia
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/teaching/">
+        Teaching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/supervision/">
+        Supervision
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/phd_examination/">
+        PhD Examination
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/admin/">
+        Admin Roles
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/affiliations/">
+        Affiliations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../academia/cv/">
+        Academic CV
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Publications/">
+        Publications
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Research
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Research
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../research_interest/">
+        Research Interest
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../program-analysis/">
+        Program Analysis Projects
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Cloud Security Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Cloud Security Projects
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+    Overview
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#att-download">
+    ATT Download
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-requirements">
+    System Requirements
+  </a>
+<nav aria-label="System Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-requirements">
+    Java Requirements
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utility-requirements">
+    Utility Requirements
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting-and-help">
+    Troubleshooting and Help
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fastfix/">
+        SBSE Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../visualization/">
+        Visualization Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../project_ideas/">
+        Project Ideas for Students
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Awards
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Awards
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../awards/">
+        Awards &amp; Achievements
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../event-videos-photo/">
+        UEL Awards Event
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+    Overview
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#att-download">
+    ATT Download
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-requirements">
+    System Requirements
+  </a>
+<nav aria-label="System Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-requirements">
+    Java Requirements
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utility-requirements">
+    Utility Requirements
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting-and-help">
+    Troubleshooting and Help
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="automated-security-transparency">Automated Security Transparency</h1>
+<h2 id="overview">Overview</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../images/att.png"><img align="right" alt="Image title" src="../../images/att.png" width="300,"/></a>
+Automated Security Transparency Tool (ATT) is our automated security transparency tool. ATT is written in Java which makes it highly portable and platform independent. Figure on the right shows the system architecture of ATT. The main tasks performed by various components of the tool are to read ACR specification and generate a security matrix, enable logging of the resource interactions, monitors resource interactions, identify violations against the security matrix and send notifications in the event of violations.</p>
+<p>The current version of ATT is able to parse ACR statements written in ASRL . ATT provides options for importing plain text files containing ASRL and provides significant feedback on syntax errors in order to aid resolve any specification errors. Once a specification file is successfully parsed, ATT generates an in-memory security matrix corresponding to the file. This security matrix is vital to the monitoring operation.</p>
+<p>Following creation of the security matrix, the tool interfaces with the user interaction logging component and starts the logging process. As an initial implementation, we used LoggedFS as our logging system. LoggedFS is a FUSE based filesystem which can log every operation to the underlying file system in real-time and as it happens. Once the logging process is enabled, any request for interaction to monitored resources generates a detailed logged entry which is consumed directly by ATT enabling real-time usage monitoring. The monitoring is done against security matrix and any violation of defined ACRs or attempted breach is identified.</p>
+<h2 id="att-download">ATT Download</h2>
+<table>
+<thead>
+<tr>
+<th>Download Link</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="">ATT</a></td>
+<td>ATT Distribution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-requirements">System Requirements</h2>
+<h3 id="java-requirements">Java Requirements</h3>
+<p>Java_1_8 is required to run ATT.</p>
+<p>Fortunately, its quiet easy to get it running on Linux even without root. Just do the following:</p>
+<ol>
+<li>Download the JDK as a tarball from Oracle</li>
+<li>Unzip it somewhere in your HOME (for instance, HOME/jdk).</li>
+<li>Set JAVA_HOME to the path of the root JDK install</li>
+</ol>
+<p>For example,
+ 1. <code>export JAVA_HOME=/cs/research/crest/home0/sislam/opt/jre1.8.0_65</code>
+ 2. <code>export PATH="$JAVA_HOME/bin:$PATH"</code></p>
+<p>The current version of ATT is also limited to Linux Distributions as it requires supporting tools which are detailed below.</p>
+<h3 id="utility-requirements">Utility Requirements</h3>
+<p>You need to have the following tools installed on your machine:
+ 1. FUSE
+ 2. LoggedFS</p>
+<p>Most Linux Distribution will come with FUSE. On Ubuntu you can use the following commands to install FUSE:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<span class="w">  </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>librlog-dev<span class="w"> </span>libfuse-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>libpcre3-dev
+</code></pre></div></td></tr></table></div>
+<p>If Loggedfs is included in your distribution you can just install with your package manager. Otherwise follow instructions at <a href="https://rflament.github.io/loggedfs/">LoggedFS website</a> to install from source.</p>
+<h2 id="troubleshooting-and-help">Troubleshooting and Help</h2>
+<p>If you are having trouble running the tool or need any help with installation please contact <a href="../../">me</a>.</p>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
