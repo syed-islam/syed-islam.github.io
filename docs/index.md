@@ -1,7 +1,7 @@
 # Welcome to Syed's Home
 
 ## Life at present
-![Image title](./images/Family.jpeg){ width=350, align=right }
+![Image title](./images/Family.jpeg){ width=200, align=right }
 I am currently an Executive Director (Principal Cybersecurity Architect) working in Cyber Security and Technology Controls for JP Morgan Chase. I am also a member of the Industrial Advisory Board for Queen Mary University. 
 
 My wife and I have two beautiful boys - Arzaan and Afaan who take up nearly all our time outside of work. 
