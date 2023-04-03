@@ -6,13 +6,13 @@ theme:
     - content.tabs.link
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - content.code.copy
 
 plugins:
   - glightbox
+  - search
+  
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -44,4 +44,7 @@ nav:
   - Awards : 
     - Awards & Achievements : awards.md
     - UEL Awards Event : event-videos-photo.md
-
+  - Study Notes :
+    - AWS Developer Associate :
+       - Introduction : ./notes/aws-dva/introduction.md
+  
