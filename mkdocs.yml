@@ -42,12 +42,14 @@ nav:
     - Visualization Projects: ./research/visualization.md
     - Project Ideas for Students : ./research/project_ideas.md
   - Awards : 
-    - Awards & Achievements : awards.md
-    - UEL Awards Event : event-videos-photo.md
+    - Awards & Achievements : ./awards/awards.md
+    - UEL Awards Event : ./awards/event-videos-photo.md
+    - Badges : ./awards/badges.md
   - Study Notes :
     - AWS Practitioner :
        - Introduction : ./notes/aws-practitioner/introduction.md
        - Domains : ./notes/aws-practitioner/domains.md
+       - Computing : ./notes/aws-practitioner/compute.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        

@@ -2,7 +2,7 @@
 
  * Nominated for **every** [UEL Student Union Awards 2017-18](https://www.uelunion.org/slta/2017-2018/) category applicable to teaching staff - "The Imaginative Thinker Award for creative teaching", "The Word of Wisdom award for academic advising", "The Personal Maestro award for most valuable supervision", "The Guiding Star award for most effective feedback" and "The Extra Mile award for inspirational teaching". 
  * A student's [Thank You message](https://youtu.be/eKqwHG-ykHk?t=1m54s).
- * In Sep '17, our paper on Tree-Oriented vs. Line-Oriented Observation-Based Slicing at the International Working Conference on Source Code Analysis and Manipulation was given the best paper award. [Photo](images/IMG_2483.jpeg)
+ * In Sep '17, our paper on Tree-Oriented vs. Line-Oriented Observation-Based Slicing at the International Working Conference on Source Code Analysis and Manipulation was given the best paper award. [Photo](../images/IMG_2483.jpeg)
  * In Sep '17, our team ([Dr Usman Naeem](http://drusmannaeem.com) and I) won the UEL Teaching and Learning Awards for Curriculum Innovation worth £1,000 for our re-structuring and innovation of the curriculum for Undergraduate Projects. [[Event Videos and Photos](event-videos-photo.md)]
  * In Apr '16, I received £2,500 funding under the UEL Internship Program.
  * In Mar '16, I received Microsoft Azure Grant ($20,000) for research into improving the techniques for energy measurement of cloud software.
