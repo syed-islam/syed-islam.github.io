@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../domains/" rel="prev"/>
+<link href="../../aws-dva/introduction/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
+<title>Computing - Syed's Home</title>
+<link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#compute">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Syed's Home" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Syed's Home">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Syed's Home
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Computing
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+      About me
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../academia/teaching/">
+        Academia
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../publication/">
+      Publications
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../research/research_interest/">
+        Research
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../awards/awards/">
+        Awards
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
+        Study Notes
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Syed's Home" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Syed's Home">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Syed's Home
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        About me
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Academia
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Academia
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/teaching/">
+        Teaching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/supervision/">
+        Supervision
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/phd_examination/">
+        PhD Examination
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/admin/">
+        Admin Roles
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/affiliations/">
+        Affiliations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../academia/cv/">
+        Academic CV
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../publication/">
+        Publications
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Research
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Research
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/research_interest/">
+        Research Interest
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/program-analysis/">
+        Program Analysis Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/cloud-security/">
+        Cloud Security Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/fastfix/">
+        SBSE Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/visualization/">
+        Visualization Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../research/project_ideas/">
+        Project Ideas for Students
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Awards
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Awards
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../awards/awards/">
+        Awards &amp; Achievements
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../awards/event-videos-photo/">
+        UEL Awards Event
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../awards/badges/">
+        Badges
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Study Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Study Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          AWS Practitioner
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+          AWS Practitioner
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../domains/">
+        Domains
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Computing
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Computing
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ec2-elastic-cloud-compute">
+    EC2 -  Elastic Cloud Compute
+  </a>
+<nav aria-label="EC2 -  Elastic Cloud Compute" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-machine-images-ami">
+    Amazon Machine Images - AMI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instant-types">
+    Instant types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-purchasing-options">
+    Instance purchasing options
+  </a>
+<nav aria-label="Instance purchasing options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand-instances">
+    on-demand instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reserved-instances">
+    reserved instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scheduled-instances">
+    scheduled instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spot-instances">
+    spot instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand-capacity-reservations">
+    on-demand capacity reservations.
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tenancy">
+    Tenancy
+  </a>
+<nav aria-label="Tenancy" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shared-tenancy">
+    shared tenancy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dedicated-instances">
+    dedicated instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dedicated-hosts">
+    dedicated hosts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-data">
+    user data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-options">
+    storage options
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    security
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status-checks">
+    Status Checks
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ecs-elastic-container-service">
+    ECS - Elastic Container Service
+  </a>
+<nav aria-label="ECS - Elastic Container Service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-options">
+    Launch Options
+  </a>
+<nav aria-label="Launch Options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-fargate">
+    AWS Fargate
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ecr">
+    ECR
+  </a>
+<nav aria-label="ECR" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registry">
+    Registry
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-token">
+    Authorization Token
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repository">
+    Repository
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repository-policy">
+    Repository Policy
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eks-elastic-container-service-for-kubernetes">
+    EKS - Elastic Container Service for Kubernetes
+  </a>
+<nav aria-label="EKS - Elastic Container Service for Kubernetes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#working-with-eks">
+    Working with EKS
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elastic-beanstalk">
+    Elastic BeanStalk
+  </a>
+<nav aria-label="Elastic BeanStalk" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components">
+    Components
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lambda">
+    Lambda
+  </a>
+<nav aria-label="Lambda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-does-it-work">
+    How does it work
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components_1">
+    Components
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">
+    FAQ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outstanding-questions">
+    Outstanding Questions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          AWS Developer Associate
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          AWS Developer Associate
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-dva/introduction/">
+        Introduction
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ec2-elastic-cloud-compute">
+    EC2 -  Elastic Cloud Compute
+  </a>
+<nav aria-label="EC2 -  Elastic Cloud Compute" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-machine-images-ami">
+    Amazon Machine Images - AMI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instant-types">
+    Instant types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-purchasing-options">
+    Instance purchasing options
+  </a>
+<nav aria-label="Instance purchasing options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand-instances">
+    on-demand instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reserved-instances">
+    reserved instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scheduled-instances">
+    scheduled instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spot-instances">
+    spot instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand-capacity-reservations">
+    on-demand capacity reservations.
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tenancy">
+    Tenancy
+  </a>
+<nav aria-label="Tenancy" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shared-tenancy">
+    shared tenancy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dedicated-instances">
+    dedicated instances
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dedicated-hosts">
+    dedicated hosts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-data">
+    user data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-options">
+    storage options
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    security
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status-checks">
+    Status Checks
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ecs-elastic-container-service">
+    ECS - Elastic Container Service
+  </a>
+<nav aria-label="ECS - Elastic Container Service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launch-options">
+    Launch Options
+  </a>
+<nav aria-label="Launch Options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-fargate">
+    AWS Fargate
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ecr">
+    ECR
+  </a>
+<nav aria-label="ECR" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registry">
+    Registry
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authorization-token">
+    Authorization Token
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repository">
+    Repository
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repository-policy">
+    Repository Policy
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eks-elastic-container-service-for-kubernetes">
+    EKS - Elastic Container Service for Kubernetes
+  </a>
+<nav aria-label="EKS - Elastic Container Service for Kubernetes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#working-with-eks">
+    Working with EKS
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elastic-beanstalk">
+    Elastic BeanStalk
+  </a>
+<nav aria-label="Elastic BeanStalk" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components">
+    Components
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lambda">
+    Lambda
+  </a>
+<nav aria-label="Lambda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-does-it-work">
+    How does it work
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components_1">
+    Components
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">
+    FAQ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outstanding-questions">
+    Outstanding Questions
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="compute">Compute</h1>
+<h2 id="ec2-elastic-cloud-compute">EC2 -  Elastic Cloud Compute</h2>
+<h3 id="amazon-machine-images-ami">Amazon Machine Images - AMI</h3>
+<ul>
+<li>Large selection, own AMI, market place AMI</li>
+</ul>
+<h3 id="instant-types">Instant types</h3>
+<ul>
+<li>An instance type simply defines the size of the instance based on a number of different parameters, these being ECUs. This defines:<ul>
+<li>vCPUs this is the number of virtual CPUs on the instance. </li>
+<li>Physical processor, this is the process speed used on the instance. </li>
+<li>Clock speed, it's clock speed in gigahertz. </li>
+<li>Memory, the amount of memory associated. </li>
+<li>Instance storage this is the capacity of the local instance store volumes available. </li>
+<li>EBS optimized available, this defines if the instance supports EBS optimized storage or not. </li>
+<li>Network performance, this shows the performance level of rate of data transfer. </li>
+<li>IPV6 support, this simply indicates if the instance type supports IPV6. </li>
+<li>Process architecture this shows the architected type of the processor. </li>
+<li>AES-NI, this stands for advanced encryption standard new instructions and it shows if the instance supports it for enhanced data protection. </li>
+<li>AVX this indicates if the instance supports AVX which is advanced vector extensions, which are primary used for applications focused on audio and video, scientific calculations and 3D modeling analysis. </li>
+<li>And finally Turbo which shows if the instance supports intel turbo boost and AMD turbo core technologies. </li>
+</ul>
+</li>
+<li>Instance Family<ul>
+<li>Micro instances - These are ideal for very low throughput use cases such as low traffic websites. </li>
+<li>General-purpose - balanced mix of CPU memory and storage making them ideal for small to medium databases, tests and development servers and back-end servers. </li>
+<li>Compute optimized - focus on compute. They have the highest performing processes for high-performance front end servers, web servers, high-performance science and engineering applications and video encoding and batch processing. </li>
+<li>GPU - GPU stands for graphics processing unit, optimized for graphic intensive applications. </li>
+<li>FPGA - field programmable gate arrays. To create application specific hardware accelerations when used with applications that use massively parallel processing power such as genomics and financial computing. </li>
+<li>Memory optimized -  primarily used for large-scale enterprise class in-memory applications, such as performing real time processing of unstructured data, Microsoft SharePoint. </li>
+<li>Storage optimized - optimized for enhanced storage. SSD backed instant storage for low latency and very high I/O, input/output performance, including very high IOPS which is input/output operations per second. And these are great for analytic workloads and no SQL databases. Data file systems and log processing applications. </li>
+</ul>
+</li>
+</ul>
+<h3 id="instance-purchasing-options">Instance purchasing options</h3>
+<h4 id="on-demand-instances">on-demand instances</h4>
+<ul>
+<li>unpredictable</li>
+<li>testing and dev.</li>
+</ul>
+<h4 id="reserved-instances">reserved instances</h4>
+<ul>
+<li>75% discount</li>
+<li>1- 3 years</li>
+<li>upfront payment, partial upfront, no up-front.</li>
+<li>long-term committed, steady workloads</li>
+</ul>
+<h4 id="scheduled-instances">scheduled instances</h4>
+<ul>
+<li>fixed recurring schedule</li>
+<li>better rates than on-demand. charged even not used. </li>
+<li>scheduled but not continuously running workloads</li>
+</ul>
+<h4 id="spot-instances">spot instances</h4>
+<ul>
+<li>bid higher than the current spot price</li>
+<li>2 minute warning if bid is not met</li>
+<li>low cost</li>
+<li>suddenly removed - batch jobs and background jobs. </li>
+</ul>
+<h4 id="on-demand-capacity-reservations">on-demand capacity reservations.</h4>
+<ul>
+<li>reserve capacity based on different attributes</li>
+<li>this can be used with reserved instances plan to save money</li>
+</ul>
+<h3 id="tenancy">Tenancy</h3>
+<h4 id="shared-tenancy">shared tenancy</h4>
+<ul>
+<li>multiple customers on same host</li>
+<li>AWS manages security</li>
+</ul>
+<h4 id="dedicated-instances">dedicated instances</h4>
+<ul>
+<li>hardware only be used by one aws account</li>
+<li>additional charge </li>
+<li>for security and compliance reasons. </li>
+</ul>
+<h4 id="dedicated-hosts">dedicated hosts</h4>
+<ul>
+<li>additional visibility into hardware</li>
+<li>placement of instances can be controlled</li>
+<li>socket and core visibility for licensing (per vm license)</li>
+<li>compliance, security and regulation requirements</li>
+</ul>
+<h3 id="user-data">user data</h3>
+<ul>
+<li>runs onl once during first boot</li>
+<li>pull software updates and install during first boot</li>
+</ul>
+<h3 id="storage-options">storage options</h3>
+<ul>
+<li>instance backed storage - all data is lost when stopped or terminated. Reboot retains data. Not detachable. </li>
+<li>EBS storage - attached by network, persistent, EBS is auto replicated by AWS for resiliency, encryption and backup, size and performance can vary, Detachable and re-attachable. </li>
+<li>delete on termination. This is set to True by default for root volume. </li>
+<li></li>
+</ul>
+<h3 id="security">security</h3>
+<ul>
+<li>Security Group - instance level firewall. Inbound and Outbound control. <ul>
+<li>Default</li>
+<li>All inbound traffic from same SG.</li>
+<li>All outbound traffic to any destination.</li>
+</ul>
+</li>
+<li>Key pair - Public and private key pair. Private key is your and public one remains with AWS. Used to decrypt password on windows or ssh for linux. Same key pair can be used across multiple instances. </li>
+<li>OS and its patches are your responsibility. </li>
+</ul>
+<h3 id="status-checks">Status Checks</h3>
+<ul>
+<li>System Status Check - Likely H/W issue, stop and start so that it launches somewhere else. Do not reboot as likely to remain on same server. </li>
+<li>Instance Status Check - EC2 instance itself, network issue, corrupted file system etc. Require user intervention. </li>
+</ul>
+<h2 id="ecs-elastic-container-service">ECS - Elastic Container Service</h2>
+<ul>
+<li>No management software needed</li>
+<li>No monitoring software needed</li>
+<li>Clusters are region specific can't scale across regions. </li>
+<li>Clusters act as a resource pool and dynamically scalable</li>
+<li>Multiple instance type is possible</li>
+<li>Docker Demon and ECS agent on nodes of a cluster allowing ECS commands to be translated to Docker Commands. </li>
+</ul>
+<h3 id="launch-options">Launch Options</h3>
+<ul>
+<li>AWS Fargate</li>
+<li>CPU and Memory required</li>
+<li>Networking</li>
+<li>IAM policies</li>
+<li>Package application into containers</li>
+<li>EC2</li>
+<li>instance and instance patching</li>
+<li>more granularity</li>
+<li>security and compliance controls</li>
+</ul>
+<h4 id="aws-fargate">AWS Fargate</h4>
+<p>Cluster management across EC2 instances. 
+AWS Fargate is an engine used to enable ECS to run containers without having to manage and provision instances and clusters for containers. </p>
+<p><strong>Docker</strong> is piece of software that allows you to automate the installation and distribution of applications inside Linux Containers. </p>
+<p>So what are containers? A <strong>Container</strong> holds everything that an application requires to enable it to run from within it's isolated container package. This may include system libraries, code, system tools, run time, etcetera. </p>
+<h2 id="ecr">ECR</h2>
+<ul>
+<li>Fully managed by AWS for docker imgaes</li>
+</ul>
+<h3 id="registry">Registry</h3>
+<ul>
+<li>Host and store docker images</li>
+<li>Your account w/r to images in registry</li>
+<li>IAM policies can control access to registry</li>
+<li>docker client needs to authorize to the default registry</li>
+</ul>
+<h3 id="authorization-token">Authorization Token</h3>
+<ul>
+<li>AWS CLI get login for authorization. Outputs a docker login command</li>
+<li>Docker command to be used in docker client for login</li>
+<li>Token lasts for 12 hours. </li>
+<li><code>ecr:getAuthorizationToken</code> API call for an AWS user.</li>
+</ul>
+<h3 id="repository">Repository</h3>
+<ul>
+<li>Grouping of images into repository for storage</li>
+<li>IAM and registry policies. IAM policies exist for RegistryFullAccess, RegistryPowerUser, RegistryReadOnly. </li>
+</ul>
+<h3 id="repository-policy">Repository Policy</h3>
+<ul>
+<li>Resource based policies and requires a principal</li>
+<li>Created within ERC itself and within the repositories. </li>
+</ul>
+<h2 id="eks-elastic-container-service-for-kubernetes">EKS - Elastic Container Service for Kubernetes</h2>
+<ul>
+<li>open source container orchestration tool. </li>
+<li>Can run Docker and Rocket containers</li>
+<li>AWS takes care of management infrastructure knowns as control plane. Ths is done across multi-AZ for resilience. </li>
+<li>User needs to maintain the work nodes. </li>
+<li>Control Plane does scheduling, tracking stake of all containers. It is made of:</li>
+<li>Number of APIs</li>
+<li>Kubelet Process</li>
+<li>Kubernetes Master</li>
+<li>Nodes - Worker machine. On-Demand EC2 instance and includes software to run containers via specific AMI which ensures Docker and Kublet in installed. Provisioned worker nodes connect to an EKS endpoint. </li>
+</ul>
+<h3 id="working-with-eks">Working with EKS</h3>
+<ol>
+<li>EKS Service Role - <code>AmazonEKSServicePolicy</code> and <code>AmazonEKSClusterPolicy</code>. Can be assigned to multiple clusters. </li>
+<li>EKS Cluster VPC - use Cloud Formation to run a specific template</li>
+<li>Install kubectl - kubernetes command line</li>
+<li>Install AWS-IAM-Authenticator - needed to authenticate to EKS Cluster</li>
+<li>Create EKS Cluster - use VPC details from step 2.</li>
+<li>Configure kubectl for EKS - <code>update-kubeconfig</code> on AWS CLI create a <code>kubeconfig</code> file for EKS cluster </li>
+<li>Provision and configure worker nodes - can be done via cloud formation using a template. </li>
+<li>Configure the worker node to join the EKS Cluster. </li>
+</ol>
+<h3 id="elastic-beanstalk">Elastic BeanStalk</h3>
+<p>AWS Elastic Beanstalk is an AWS managed service that allows you to upload the code of your web application, along with the environment configurations, which will then allow Elastic Beanstalk to automatically provision and deploy the appropriate and necessary resources required within AWS to make the web application operational. </p>
+<p>These resources can include other AWS services and features, such as EC2, Auto Scaling, application health-monitoring, and Elastic Load Balancing, in addition to capacity provisioning. </p>
+<p>Elastic Beanstalk is able to operate with a variety of different platforms and programming languages, making it a very flexible service for your DevOps teams. There is no cost associated with Elastic Beanstalk, however, any resources that are created on your application's behalf, such as EC2 instances, you will be charged for as per the standard pricing policies at the time of deployment. </p>
+<h4 id="components">Components</h4>
+<ul>
+<li>An <strong>application version</strong> is a very specific reference to a section of deployable code. The application version will point typically to S3, simple storage service to where the deployable code may reside. </li>
+<li>An <strong>environment</strong> refers to an application version that has been deployed on AWS resources.</li>
+<li>An <strong>environment configuration</strong> is a collection of parameters and settings that dictate how an environment will have its resources provisioned by Elastic Beanstalk and how these resources will behave.</li>
+<li>The <strong>environment tier</strong>. This component reflects on how Elastic Beanstalk provisions resources based on what the application is designed to do. You can deploy your application across one of two different environment tiers, either the <strong><em>web server tier</em></strong> or the <strong><em>worker tier</em></strong>. The web server environment is typically used for standard web applications that operate and serve requests over HTTP port 80. This tier will typically use service and features such as Route 53, Elastic Load Balancing, Auto Scaling, EC2, and Security Groups. The worker environment is slightly different and are used by applications that will have a back-end processing task that will interact with AWS SQS, the Simple Queue Service. This tier typically uses the following AWS resources in this environment, an SQS Queue, an IAM Service Role, Auto Scaling, and EC2. </li>
+<li>The <strong>configuration template</strong>. This is the template that provides the baseline for creating a new, unique environment configuration. </li>
+<li>The <strong>platform</strong> is a culmination of components in which you can build your application upon using Elastic Beanstalk</li>
+<li><strong>Applications</strong>. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.</li>
+</ul>
+<h2 id="lambda">Lambda</h2>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>serverless</li>
+<li></li>
+</ul>
+<h3 id="how-does-it-work">How does it work</h3>
+<ol>
+<li>Write code and upload to Lambda. Code can contain other libraries.</li>
+<li>Trigger the lambda to run the code. </li>
+<li>Computer power is ascertained and lambda code executes</li>
+<li>sub ms billing by aws. </li>
+</ol>
+<h3 id="components_1">Components</h3>
+<ul>
+<li><strong>Lambda application</strong>. Lambda function. The Lambda function is compiled of your own code that you want Lambda to invoke as per defined triggers. </li>
+<li><strong>Event source</strong>. Event sources are AWS services that can be used to trigger your Lambda functions, or put another way, they produce the events that your Lambda function essentially responds to by invoking it. </li>
+<li><strong>The Trigger</strong> is essentially an operation from an event source that causes the function to invoke. So essentially triggering that function. For example, an Amazon S3 put request could be used as a trigger. </li>
+<li><strong>Downstream Resources</strong>. These are the resources that are required during the execution of your Lambda function. For example, your function might call upon accessing a specific SNS topic, or a particular SQS queue. So they are not used as the source of the trigger, but instead they are the resources to be used to execute the code within the function upon invocation.</li>
+<li><strong>Log streams</strong>. In an effort to help you identify issues and troubleshoot issues with your Lambda function, you can add logging statements to help you identify if your code is operating as expected into a log stream. </li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h2 id="outstanding-questions">Outstanding Questions</h2>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

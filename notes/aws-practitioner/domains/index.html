@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../introduction/" rel="prev"/>
-<link href="../../aws-dva/introduction/" rel="next"/>
+<link href="../compute/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Domains - Syed's Home</title>
@@ -120,7 +120,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../awards/">
+<a class="md-tabs__link" href="../../../awards/awards/">
         Awards
       </a>
 </li>
@@ -258,13 +258,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../awards/">
+<a class="md-nav__link" href="../../../awards/awards/">
         Awards &amp; Achievements
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../event-videos-photo/">
+<a class="md-nav__link" href="../../../awards/event-videos-photo/">
         UEL Awards Event
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../awards/badges/">
+        Badges
       </a>
 </li>
 </ul>
@@ -330,6 +335,35 @@
     Use cases for Cloud Computing:
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-global-infrastructure">
+    AWS Global Infrastructure
+  </a>
+<nav aria-label="AWS Global Infrastructure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#availability-zone">
+    Availability Zone
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#region">
+    Region
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edge-location">
+    Edge Location
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regional-edge-cache">
+    Regional Edge Cache
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -342,8 +376,7 @@
 <a class="md-nav__link" href="#network-infrastructure">
     Network Infrastructure
   </a>
-<nav aria-label="Network Infrastructure" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#questions">
     Questions
@@ -352,8 +385,10 @@
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../compute/">
+        Computing
+      </a>
 </li>
 </ul>
 </nav>
@@ -411,6 +446,35 @@
     Use cases for Cloud Computing:
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-global-infrastructure">
+    AWS Global Infrastructure
+  </a>
+<nav aria-label="AWS Global Infrastructure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#availability-zone">
+    Availability Zone
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#region">
+    Region
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edge-location">
+    Edge Location
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regional-edge-cache">
+    Regional Edge Cache
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -423,15 +487,11 @@
 <a class="md-nav__link" href="#network-infrastructure">
     Network Infrastructure
   </a>
-<nav aria-label="Network Infrastructure" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#questions">
     Questions
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -442,10 +502,10 @@
 <article class="md-content__inner md-typeset">
 <h1 id="domains-covered-in-the-exam">Domains covered in the Exam</h1>
 <ol>
-<li>Cloud Concepts</li>
 <li>Security and Compliance</li>
 <li>Technology - CORE AWS services</li>
 <li>Billing and Pricing</li>
+<li>Cloud Concepts</li>
 </ol>
 <h2 id="cloud-concepts">Cloud Concepts</h2>
 <p><code>Cloud Computing</code>
@@ -479,6 +539,26 @@
 <li>Proof of Concepts. </li>
 <li>Big Data and Data Manipulation</li>
 </ul>
+<h3 id="aws-global-infrastructure">AWS Global Infrastructure</h3>
+<h4 id="availability-zone">Availability Zone</h4>
+<p>At least one more AZ close to an AZ with high-speed, low-latency connectivity for data replication. In reality multiple-AZs are linked together. AZs will be in the same geographic area but will have independent power and networking to ensure that failure in one doesn't impact another. </p>
+<p>Multi-AZ deployment is best practice and maintains high availability of infrastructure in architecture design. </p>
+<p>AZ names us-east-1<strong>a</strong> may not designate the same AZ across accounts. This is done by AWS for better load balancing. </p>
+<p>61 AZs at present with another 12 planned. </p>
+<h4 id="region">Region</h4>
+<p>Region is made up of a group of AZs within a certain geographical region. Every region is independent of one another will have at least <em>three</em> AZs. Regional deployments help with:
+1. latency
+2. regulation, laws and compliance 
+3. high availability and resiliency</p>
+<p>Most services are region specific and not all services are available in every region. </p>
+<p><strong>IAM</strong> and <strong>CloudFront</strong> are not tied to a specific region. </p>
+<p><strong>AWS GovCloud</strong> acts as an isolated region only available to the government and government-regulated industries that must meet <em>strict</em> guidelines. </p>
+<p>20 Regions at present with another 4 planned. </p>
+<h4 id="edge-location">Edge Location</h4>
+<p>Places in major cities and highly populated areas and far outnumber the number of AZs. They are not used for traditional infrastructure. 
+They are used by <strong>Amazon CloudFront</strong> and <strong>Lambda@Edge</strong> for cache data and to reduce latency for end-user access by using edge location at CDN. </p>
+<h4 id="regional-edge-cache">Regional Edge Cache</h4>
+<p>Type of Edge Location. These sit between Cloud Front Origin servers and Edge Locations and have larger cache-width.</p>
 <h2 id="faq">FAQ</h2>
 <ol>
 <li>Dedicated Instance vs Dedicated Host. </li>
@@ -486,9 +566,13 @@
 <h2 id="network-infrastructure">Network Infrastructure</h2>
 <ol>
 <li>VPC - Virtual Private Cloud (Virtual Networks)</li>
-<li></li>
 </ol>
-<h3 id="questions">Questions</h3>
+<h2 id="questions">Questions</h2>
+<h1 id="monitoring">Monitoring</h1>
+<h2 id="cloudwatch">CloudWatch</h2>
+<ul>
+<li>metrics for cluster size scaling up and down for ECS</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
