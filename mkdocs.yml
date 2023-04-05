@@ -12,7 +12,7 @@ theme:
 plugins:
   - glightbox
   - search
-  
+
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -45,6 +45,11 @@ nav:
     - Awards & Achievements : awards.md
     - UEL Awards Event : event-videos-photo.md
   - Study Notes :
+    - AWS Practitioner :
+       - Introduction : ./notes/aws-practitioner/introduction.md
+       - Domains : ./notes/aws-practitioner/domains.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
+       
+    
   
