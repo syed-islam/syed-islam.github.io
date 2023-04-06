@@ -204,6 +204,215 @@ So what are containers? A **Container** holds everything that an application req
   *  **Log streams**. In an effort to help you identify issues and troubleshoot issues with your Lambda function, you can add logging statements to help you identify if your code is operating as expected into a log stream. 
 
 
+## AWS Batch
+Batch computing is primarily used in specialist use cases which require a vast amount of compute power across a cluster of compute resources to complete batch processing executing a series of jobs or tasks. 
+
+### Components
+ 1. **Jobs** - A job is classed as a unit of work that is to be run by AWS Batch. For example, this can be a Linux executable file, an application within an ECS cluster or a shell script. 
+ 2. **Job definitions** - These define specific parameters for the jobs themselves. They dictate how the job will run and with what configuration. Some examples of these may be how many vCPUs to use for the container, which data volume should be used, which IAM role should be used, allowing access for AWS Batch to communicate with other AWS services, and mount points. Can also define instance types and bid for *spot instances.*
+ 3. **Job queues** - Jobs that are scheduled are placed into a job queue until they run. It's also possible to have multiple queues with different priorities if needed.
+ 4. **Job scheduling** -  The Job Scheduler takes control of when a job should be run and from which Compute Environment.
+ 5. **Compute Environments** - These are the environments containing the compute resources to carry out the job. The environment can be defined as managed or unmanaged. Managed environments automates this using ECS. Unmanaged requires manual creation of ECS clusters. 
+
+## Amazon Lightsail
+Its a virtual private server (VPS) much like EC2. Simple, quick, easy to use and low cost point. 
+Host small website and blogs etc. 
+Multiple lightsail can be used and possible to connect to other infrastructure. 
+Lightsail sits outside the management console and configuration is a single page which is a simple version of EC2. 
+Pricing is per usage basis and is very simple to pick based on the requirements. 
+
+## ELB - Elastic Load Balancer
+Targets could be a fleet of 
+ * EC2 instances, 
+ * Lambda functions, 
+ * a range of IP addresses, 
+ * or even Containers.
+
+Managed by AWS and is elastic. 
+
+### ELB Nodes
+An ELB node will need to be placed to any Availability Zones for which you want to route traffic to. Without the Availability Zone associated, the ELB will not be able to route traffic to any targets within that Availability Zone even if they are defined within the target group. This is because the nodes are used by the ELB to distribute traffic to your target groups. 
+
+### Cross-Zone load balancing
+ * Not set - distributes to nodes
+ * Set - distributes to targets evenly. 
+ * Default - ALB on,  NLB off
+
+### ALB
+ * HTTP/HTTPs protocol.
+ * Request level
+ * Advanced Routing
+ * TLS Termination
+ * Route to particular ports / targeted 
+ * Visibility features for application architecture.
+ * cross-zone is always on. 
+
+####  Configuration
+
+##### Target Group Configuration
+
+Define a Target Group, consisting of:
+
+ * Type
+     * Instance
+     * IP
+     * Lambda
+ * Protocol, Port and VPC
+ * Health check
+     * Protocol
+     * Path
+     * Healthy/unhealthy thresholds
+     * Interval
+     * Success codes
+ * Register Targets in the group
+
+##### Load Balancer Configuration
+
+ * Public / Private
+ * Listeners
+   * Rules can be added under listeners
+   * Multiple Rules can exist.
+ * Select AZs for node deployment
+ * Security Group for the Load Balancer
+ * Configure Routing to Target Group
+
+
+
+### NLB
+ * connection level
+ * ultra-high performance - millions of requests per second. 
+ * TCP/UDP protocol. Layer 4.
+ * Listeners - TCP/TLS/UDP.
+ * cross-zone can be turned on or off, default off. 
+
+If your application requires a *Static IP* then NLB is the only option. 
+
+Once a connection is established, the connection remains open for the duration of the request. 
+
+####  Configuration
+ *  Public / Private
+ * Listeners
+   * Rules can be added under listeners
+   * Multiple Rules can exist.
+ * Select AZs for node deployment
+ * Security Group for the Load Balancer
+ * Configure Routing to Target Group
+
+### Classic Load Balancer
+ * Classic environment
+ * Operates at both request and connection level. 
+
+!!! note
+    For target we select EC2 instances directly and not target groups.
+
+### Components
+ * **Listener** - The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions.
+ * **Target Groups** - A target group is simply a group of resources that you want your ELB to route requests to, for example a fleet of EC2 instances. 
+ * **Rules** - Rules are associated to each listener that you have configured within your ELB, and they help to define how an incoming request gets routed to which target group. 
+
+### Health Check
+Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.
+
+### Internal or Internet-facing ELBs.
+ * **Internet-facing ELBs** - public DNS name, public IP address, internal IP address 
+ * **Internal** - Internal IP address. 
+
+Communication to Target Group is only done via Internal IP. 
+
+### Comparison
+[AWS Comparison Table](https://aws.amazon.com/elasticloadbalancing/features/#compare)
+
+## Server Certificate (SSL/TLS)
+HTTPS on ALB requires additional configuration.
+The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. 
+
+Certificate Selection:
+ 1. Choose certificate from ACM
+ 2. Upload to ACM
+ 3. Choose from IAM
+ 4. Upload to IAM
+
+
+## EC2 Auto Scaling Group
+
+**AWS Auto Scaling** can handle scaling for Amazon ECS, DynamoDB and Amazon Aurora. 
+
+### Why
+ * Automation
+ * Customer Satisfaction
+ * Cost Reduction
+
+### Components
+
+#### 1. Launch Template Configuration
+Two Options: Launch Template / Launch Configuration
+Include:
+ * AMI
+ * Instance Type
+ * Spot instance or not
+ * Public IP Address
+ * user data
+ * storage volume and configuration
+ * Security Groups
+
+##### Launch Template
+Newer version of Launch Configuration
+
+Create a Template:
+ * Template or Version
+ * Source Template
+ * AMI
+ * Instance Type
+ * Key/Pair
+ * VPC/Classic
+ * Security Groups
+ * Storage
+ * Tags
+ * Instance specific configurations (loads of them)
+ * user data
+
+##### Launch Configuration
+
+Create a Configuration:
+ * AMI
+ * Instance Type
+ * Spot or not
+ * IAM role
+ * Limited instance specific options
+ * user data
+ * Storage
+ * Security Groups
+
+
+##### Difference
+ * Single page for Launch Template
+ * Advanced options in Launch Template
+
+
+#### 2. Auto Scaling Group
+
+##### Group
+ * Launch Template / Configuration choose. 
+ * Adhere to Launch Template for fleet or combine purchase options
+ * Group Size
+ * Network --> VPC and Subnets
+ * Association to Load Balancer
+ * Instance Protection (from scale in)
+ * service-linked role
+ * Keep to size or use policy to scale
+
+##### Policy
+ * Minimum and Maximum Size
+ * Policy Type
+   * Simple
+     * Increase via Alarm which has metric of CPU Utilization add single instance
+     * Decrease via Alarm which has metric for CPU utilization remove single instance
+     * Cooldown - default 300s
+     * Health Check Grace - default 300s
+
+!!! note
+    Associate ASG directly to the Classic Load Balancer or to a Target Group from its configuration. ALB / NLB can then forward traffic to the target group and would automatically pickup all the EC2 instances in the ASG for load balancing. 
+
 ## FAQ
 
 
