@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../domains/" rel="prev"/>
-<link href="../../aws-dva/introduction/" rel="next"/>
+<link href="../storage/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Computing - Syed's Home</title>
@@ -336,8 +336,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#instant-types">
-    Instant types
+<a class="md-nav__link" href="#instance-types">
+    Instance types
   </a>
 </li>
 <li class="md-nav__item">
@@ -407,6 +407,20 @@
 <a class="md-nav__link" href="#storage-options">
     storage options
   </a>
+<nav aria-label="storage options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-store">
+    Instance Store
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs-storage">
+    EBS Storage
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#security">
@@ -714,6 +728,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../storage/">
+        Storage
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -766,8 +785,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#instant-types">
-    Instant types
+<a class="md-nav__link" href="#instance-types">
+    Instance types
   </a>
 </li>
 <li class="md-nav__item">
@@ -837,6 +856,20 @@
 <a class="md-nav__link" href="#storage-options">
     storage options
   </a>
+<nav aria-label="storage options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-store">
+    Instance Store
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs-storage">
+    EBS Storage
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#security">
@@ -1154,7 +1187,7 @@
 <ul>
 <li>Large selection, own AMI, market place AMI</li>
 </ul>
-<h3 id="instant-types">Instant types</h3>
+<h3 id="instance-types">Instance types</h3>
 <ul>
 <li>An instance type simply defines the size of the instance based on a number of different parameters, these being ECUs. This defines:<ul>
 <li>vCPUs this is the number of virtual CPUs on the instance. </li>
@@ -1238,8 +1271,18 @@
 <li>pull software updates and install during first boot</li>
 </ul>
 <h3 id="storage-options">storage options</h3>
+<h4 id="instance-store">Instance Store</h4>
 <ul>
 <li>instance backed storage - all data is lost when stopped or terminated. Reboot retains data. Not detachable. </li>
+<li>Ephemeral storage / temporary. </li>
+<li>No additional cost and included as part of EC2. </li>
+<li>very high i/o speed. I3 - 3.3 million read IOPS/1.4 million write IOPS. </li>
+<li>Good for cache/buffer.</li>
+<li>Not all instances support instance type volumes. The sizes will increase with the size of the EC2 instance.</li>
+<li>Same security and policy as the EC2. </li>
+</ul>
+<h4 id="ebs-storage">EBS Storage</h4>
+<ul>
 <li>EBS storage - attached by network, persistent, EBS is auto replicated by AWS for resiliency, encryption and backup, size and performance can vary, Detachable and re-attachable. </li>
 <li>delete on termination. This is set to True by default for root volume. </li>
 <li></li>

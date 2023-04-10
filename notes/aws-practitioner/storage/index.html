@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../awards/badges/" rel="prev"/>
-<link href="../domains/" rel="next"/>
+<link href="../compute/" rel="prev"/>
+<link href="../../aws-dva/introduction/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
-<title>Introduction - Syed's Home</title>
+<title>Storage - Syed's Home</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#introduction">
+<a class="md-skip" href="#storage">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Introduction
+              Storage
             
           </span>
 </div>
@@ -125,7 +125,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
         Study Notes
       </a>
 </li>
@@ -299,28 +299,10 @@
           AWS Practitioner
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/">
         Introduction
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resource-list">
-    Resource List
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../domains/">
@@ -332,10 +314,110 @@
         Computing
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../storage/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Storage
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3">
+    S3
+  </a>
+<nav aria-label="S3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limitations">
+    Limitations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spec">
+    Spec
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioning">
+    Versioning
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-access-logging">
+    Server Access Logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#object-level-logging">
+    Object-level logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encryption">
+    Encryption
+  </a>
+<nav aria-label="Encryption" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucket-level-encryption">
+    Bucket-level Encryption
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#folder-level-encryption">
+    Folder level Encryption
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-classes">
+    Storage Classes
+  </a>
+<nav aria-label="Storage Classes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-glacier">
+    S3 Glacier
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-glacier-deep-archive">
+    S3 Glacier Deep Archive
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fees">
+    Fees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs">
+    EBS
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -378,8 +460,90 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resource-list">
-    Resource List
+<a class="md-nav__link" href="#s3">
+    S3
+  </a>
+<nav aria-label="S3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limitations">
+    Limitations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spec">
+    Spec
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioning">
+    Versioning
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-access-logging">
+    Server Access Logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#object-level-logging">
+    Object-level logging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encryption">
+    Encryption
+  </a>
+<nav aria-label="Encryption" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bucket-level-encryption">
+    Bucket-level Encryption
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#folder-level-encryption">
+    Folder level Encryption
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-classes">
+    Storage Classes
+  </a>
+<nav aria-label="Storage Classes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-glacier">
+    S3 Glacier
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-glacier-deep-archive">
+    S3 Glacier Deep Archive
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fees">
+    Fees
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs">
+    EBS
   </a>
 </li>
 </ul>
@@ -389,25 +553,131 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="introduction">Introduction</h1>
-<p>This section will contain my study notes for the AWS Practitioner Exam. In particular these are my notes for preparing for CLF-C01.</p>
-<h2 id="resource-list">Resource List</h2>
+<h1 id="storage">Storage</h1>
+<h2 id="s3">S3</h2>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>0 bytes - 5TB per file.</li>
+<li>100 buckets per account - soft limit. </li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>Object storage service </li>
+<li>No fixed structure</li>
+<li>Flat address space, unique URL. </li>
+<li>Regional service, must specify the Region while upload</li>
+<li>Automated replication across multiple AZs for durability. </li>
+<li>Need to create buckets - name must be unique across all of S3. </li>
+<li>Unique Object key identifies a files in a bucket. Unique Key: Bucket + folder + file.</li>
+<li>Also, get a URL which is fully qualified</li>
+<li>Can create virtual folders for easy management</li>
+<li></li>
+</ul>
+<h3 id="spec">Spec</h3>
+<ul>
+<li>Durability - 11 9s</li>
+<li>Availability - 99.5% - 99.99% (depends on storage class)</li>
+</ul>
+<h3 id="versioning">Versioning</h3>
+<ul>
+<li>Keeps all versions of the objects in the same bucket. </li>
+<li></li>
+</ul>
+<h3 id="server-access-logging">Server Access Logging</h3>
+<ul>
+<li>Logs for access to bucket. </li>
+</ul>
+<h3 id="object-level-logging">Object-level logging</h3>
+<ul>
+<li>Object-level API activity.</li>
+</ul>
+<h3 id="encryption">Encryption</h3>
+<h4 id="bucket-level-encryption">Bucket-level Encryption</h4>
+<h4 id="folder-level-encryption">Folder level Encryption</h4>
+<h3 id="storage-classes">Storage Classes</h3>
 <table>
 <thead>
 <tr>
-<th align="left">Resource Name</th>
-<th align="left">Description</th>
-<th align="left">Links</th>
+<th>S3 Standard</th>
+<th>S3 INT</th>
+<th>S3 S-IA</th>
+<th>S3 Z-IA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Cloud Academy</td>
-<td align="left">AWS Cloud Practitioner Certificate Preparation Learning Path</td>
-<td align="left"><a href="https://cloudacademy.com/learning-paths/aws-cloud-practitioner-clf-c01-certification-preparation-for-aws-5597/">Cloud Academy</a></td>
+<td>High throughput</td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>Low Latency</td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>Frequent access to data</td>
+<td>Unknown (Frequent (30 days) + Infrequent)</td>
+<td>Infrequent</td>
+<td>Infrequent</td>
+</tr>
+<tr>
+<td>Durability Eleven 9s</td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td>Eleven 9s across single AZ</td>
+</tr>
+<tr>
+<td>Availability 99.99%</td>
+<td>99.9%</td>
+<td>99.9%</td>
+<td>9 9.5%</td>
+</tr>
+<tr>
+<td>SSL/TLS</td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+</tr>
+<tr>
+<td>Lifecycle rules</td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 </tr>
 </tbody>
 </table>
+<h4 id="s3-glacier">S3 Glacier</h4>
+<ul>
+<li>11 9s durability</li>
+<li>Lower cost of storage. </li>
+<li>Retrieval is not instant</li>
+<li>Vaults and Archives. Vaults are container for Archives. Vaults are region specific. </li>
+<li>No GUI. GUI is for management only. </li>
+<li>Moving data two step process - (1) Create Vault (2) Use API/SDK to move data. or via Data lifecycle from S3.</li>
+<li>Access is via API/SDK or AWS CLI. Either way an archival retrieval job needs to be create first. </li>
+<li>S3 Access of data comes at a cost based on retrieval options:</li>
+<li>Expedited - &lt;250MB, 5 mins, most expensive</li>
+<li>Standard - Any size, 3-5 hours, 2nd most expensive</li>
+<li>Bulk - Any size, 5-12 hours, cheapest</li>
+</ul>
+<h4 id="s3-glacier-deep-archive">S3 Glacier Deep Archive</h4>
+<ul>
+<li>Minimal access retrieval is 12 hours.</li>
+<li></li>
+</ul>
+<h3 id="fees">Fees</h3>
+<ul>
+<li>Minimum storage of 30 days of storage requirement on all tiers, except standard. Glacier has 90 days. Deep Archive 180 days.</li>
+<li>Per object monitoring fess in Intelligent Tier.</li>
+<li>Retrieval fees per GB for Infrequent Access and Glacier. </li>
+<li>S3 Glacier is at a fraction of the cost of S3.</li>
+</ul>
+<p>### Lifecycle Rules
+  * Moving data automatically between different tiers. </p>
+<h2 id="ebs">EBS</h2>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
