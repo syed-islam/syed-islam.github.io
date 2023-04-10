@@ -23,6 +23,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 nav:
   - About me: index.md
@@ -50,6 +53,7 @@ nav:
        - Introduction : ./notes/aws-practitioner/introduction.md
        - Domains : ./notes/aws-practitioner/domains.md
        - Computing : ./notes/aws-practitioner/compute.md
+       - Storage : ./notes/aws-practitioner/storage.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        

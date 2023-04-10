@@ -4,7 +4,7 @@
 ### Amazon Machine Images - AMI
 * Large selection, own AMI, market place AMI
   
-### Instant types 
+### Instance types 
   * An instance type simply defines the size of the instance based on a number of different parameters, these being ECUs. This defines:
     * vCPUs this is the number of virtual CPUs on the instance. 
     * Physical processor, this is the process speed used on the instance. 
@@ -74,7 +74,17 @@
  * pull software updates and install during first boot
   
 ### storage options 
+#### Instance Store
  * instance backed storage - all data is lost when stopped or terminated. Reboot retains data. Not detachable. 
+ * Ephemeral storage / temporary. 
+ * No additional cost and included as part of EC2. 
+ * very high i/o speed. I3 - 3.3 million read IOPS/1.4 million write IOPS. 
+ * Good for cache/buffer.
+ * Not all instances support instance type volumes. The sizes will increase with the size of the EC2 instance.
+ * Same security and policy as the EC2. 
+
+
+#### EBS Storage
  * EBS storage - attached by network, persistent, EBS is auto replicated by AWS for resiliency, encryption and backup, size and performance can vary, Detachable and re-attachable. 
    *  delete on termination. This is set to True by default for root volume. 
 *  
