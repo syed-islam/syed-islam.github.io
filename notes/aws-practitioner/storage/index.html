@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../compute/" rel="prev"/>
-<link href="../../aws-dva/introduction/" rel="next"/>
+<link href="../database/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Storage - Syed's Home</title>
@@ -415,9 +415,114 @@
 <a class="md-nav__link" href="#ebs">
     EBS
   </a>
+<nav aria-label="EBS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs-types">
+    EBS Types
+  </a>
+<nav aria-label="EBS Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssd">
+    SSD
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hd">
+    HD
+  </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    Security
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#efs">
+    EFS
+  </a>
+<nav aria-label="EFS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties_1">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-classes-and-performance">
+    Storage Classes and Performance
+  </a>
+<nav aria-label="Storage Classes and Performance" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard">
+    Standard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#infrequent-access">
+    Infrequent Access
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lifecycle">
+    Lifecycle
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-modes">
+    Performance Modes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#throughput-modes">
+    Throughput Modes
+  </a>
+<nav aria-label="Throughput Modes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duration-of-burst">
+    Duration of Burst
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#snow-family">
+    SNOW Family
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">
+    FAQ
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../database/">
+        Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../services/">
+        Services
+      </a>
 </li>
 </ul>
 </nav>
@@ -544,6 +649,101 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ebs">
     EBS
+  </a>
+<nav aria-label="EBS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ebs-types">
+    EBS Types
+  </a>
+<nav aria-label="EBS Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssd">
+    SSD
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hd">
+    HD
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    Security
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#efs">
+    EFS
+  </a>
+<nav aria-label="EFS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties_1">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-classes-and-performance">
+    Storage Classes and Performance
+  </a>
+<nav aria-label="Storage Classes and Performance" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard">
+    Standard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#infrequent-access">
+    Infrequent Access
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lifecycle">
+    Lifecycle
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-modes">
+    Performance Modes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#throughput-modes">
+    Throughput Modes
+  </a>
+<nav aria-label="Throughput Modes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duration-of-burst">
+    Duration of Burst
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#snow-family">
+    SNOW Family
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">
+    FAQ
   </a>
 </li>
 </ul>
@@ -678,6 +878,206 @@
 <p>### Lifecycle Rules
   * Moving data automatically between different tiers. </p>
 <h2 id="ebs">EBS</h2>
+<ul>
+<li>Persistent Block-level storage</li>
+<li>Attached to EC2 volumes and can meet IOPS requirements.</li>
+<li>Generally, EBS volume can be attached to a single storage (exception Multi-Attach).</li>
+<li>EBS backup - snapshots. Manually / cloudwatch scheduled event. Stored on S3 and incremental changes are stored. Restored to another EBS volume. </li>
+<li>Copy snapshot to anther for high durability. </li>
+<li>Replicated multiple times within the same AZ. Lives only in the single AZ.</li>
+<li>When creating an EBS Volume directly, need to specify the AZ can only be attached to EC2 instances in the same AZ. </li>
+</ul>
+<h3 id="ebs-types">EBS Types</h3>
+<h4 id="ssd">SSD</h4>
+<ul>
+<li>Better for work with smaller blocks</li>
+<li>Boot Volume</li>
+<li>SSD-GP2</li>
+<li>Balanced </li>
+<li>Boot Volume</li>
+<li>Provisioned IOPS SSD - io1</li>
+<li>Low latency/high throughput</li>
+<li>16000 IOPS of 250 MiB/s of throughput per volume</li>
+</ul>
+<h4 id="hd">HD</h4>
+<ul>
+<li>Throughput optimized HDD (st1)</li>
+<li>Frequently accesses, large throughput, data streaming, log processing</li>
+<li>cannot be used as boot volumes</li>
+<li>Cold HDD (sc1)</li>
+<li>lowest cost</li>
+<li>large in size and accessed infrequently</li>
+<li>cannot be used as boot volumes</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>Enable encryption at the time of creation. </li>
+<li>Uses AWS KMS to automatically encrypt data</li>
+<li>snapshots of encrypted volumes are also encrypted.</li>
+<li>Encryption is only available on selected instance types. </li>
+<li>Regional setting possible to configure all EBS volumes in the region to use encryption. </li>
+</ul>
+<h2 id="efs">EFS</h2>
+<h3 id="properties_1">Properties</h3>
+<ul>
+<li>File Storage Access like a File Manager</li>
+<li>Uses hierarchy structure</li>
+<li>Low Latency and multi-access.</li>
+<li>EFS is accessed via mountpoints that live in particular AZs and can be used by EC2s in that AZ.</li>
+<li>Uses standard OS API - NFS4.1 and 4.0.</li>
+<li>Replicated across AZs in a single region, making it highly available and reliable. </li>
+<li>Regional service. Not available in all regions.</li>
+</ul>
+<h3 id="storage-classes-and-performance">Storage Classes and Performance</h3>
+<h4 id="standard">Standard</h4>
+<ul>
+<li>Default</li>
+<li>Charged on the storage used at per month.</li>
+</ul>
+<h4 id="infrequent-access">Infrequent Access</h4>
+<ul>
+<li>Rarely accessed, lower cost. </li>
+<li>Higher latency of first byte read. </li>
+<li>Cost for storage space used + Cost for read and write. </li>
+</ul>
+<h4 id="lifecycle">Lifecycle</h4>
+<ul>
+<li>Moves data between the storage classes.</li>
+<li>Fixed duration of timers 14, 30, 60, 90 days. </li>
+<li>Metadata and files smaller than 128K in size. </li>
+<li>Can be switched on / off. </li>
+</ul>
+<h3 id="performance-modes">Performance Modes</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>General Purpose</th>
+<th>Max I/O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Throughput</td>
+<td>Standard</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>IOPS</td>
+<td>&lt;= 7K</td>
+<td>&gt;= 7k</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Low Latency</td>
+<td>High Latency</td>
+</tr>
+<tr>
+<td>Metric</td>
+<td>Cloudwatch % of IPOS</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="throughput-modes">Throughput Modes</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Bursting</th>
+<th>Provisioned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Throughput</td>
+<td>100MiB/s per TB</td>
+<td>Additional charges beyond the bursting option</td>
+</tr>
+</tbody>
+</table>
+<h4 id="duration-of-burst">Duration of Burst</h4>
+<ul>
+<li>50 MiB/s per TB is baseline, </li>
+<li>lower accumulates burst credit </li>
+<li>burst credit  is viewable on CloudMetrics.</li>
+</ul>
+<h2 id="snow-family">SNOW Family</h2>
+<ul>
+<li>Storage and compute capabilities.</li>
+<li>Few TB to 100PB of physical data transfer in and out of AWS.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Snowcone</th>
+<th>Snowball Compute Optimized</th>
+<th>Snowball Compute Optimized with GPU</th>
+<th>Snowball Storage Optimized</th>
+<th>Snow Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vcpu</td>
+<td>2</td>
+<td>52</td>
+<td>52</td>
+<td>24</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>memory</td>
+<td>4GB</td>
+<td>208GB</td>
+<td>208GB</td>
+<td>32GB</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>storage</td>
+<td>8TB</td>
+<td>39.5TB</td>
+<td>39.5TB</td>
+<td>80TB</td>
+<td>100PB</td>
+</tr>
+<tr>
+<td>SSD</td>
+<td>n/a</td>
+<td>7.68</td>
+<td>7.68</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Nvdia Tesla</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>cluster</td>
+<td>na</td>
+<td>5-10</td>
+<td>5-10</td>
+<td>5-10</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>use cases</td>
+<td>portable, battery, upto 8TB, DataSync, 10Gbit</td>
+<td>S3 API, 100Gbit network</td>
+<td>compute power, cluster</td>
+<td>80TB, SSD, Rack mounting, <strong>HIPPA compliant</strong></td>
+<td>10 petabyte</td>
+</tr>
+</tbody>
+</table>
+<h2 id="faq">FAQ</h2>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
