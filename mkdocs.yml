@@ -54,6 +54,8 @@ nav:
        - Domains : ./notes/aws-practitioner/domains.md
        - Computing : ./notes/aws-practitioner/compute.md
        - Storage : ./notes/aws-practitioner/storage.md
+       - Database: ./notes/aws-practitioner/database.md
+       - Services: ./notes/aws-practitioner/services.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        
