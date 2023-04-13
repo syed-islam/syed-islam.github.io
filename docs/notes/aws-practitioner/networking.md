@@ -103,5 +103,104 @@ Reserved addresses with subnet 10.0.1.0/24
  * Bastion hosts simply forwards incoming connections (ssh tunnel) to EC2s in the private subnet.
  * Bastion host is essentially an EC2 instance which is keep secured and tightly controlled.
 
+## VPN Connection
+ * On-prem to AWS
+ * Customer Gateway (CGW) and VGW (Virtual Private Gateway)
+ * Encrypted traffic over the Internet. 
+ * AWS Subnet Route tables will need routes to the On-prem resources. 
+ * VPN tunnel can only be initiate from CGW.
+ * Idle activity causes connection drop. Monitoring to keep alive. 
+ * Route Propagation can be turned on the route table and will allow routes to added to Route Tables.
+ * BGP on CGW enables dynamic routing and is recommended
+ * Security Groups also need to be configured for instances for the data connectivity. 
+
+## Direct Connect
+ * Private infrastructure and does not traverse the public network
+ * Router on On-Prem, AWS Partner [Customer Side (Router) +  AWS Side (Router)], AWS Region.
+ * Direct Connect enables connection to AWS Defined Region. 
+ * This enables access to public and private resources on AWS.
+ * The VPC would still need the Virtual Gateway (VGW) to enable on-prem traffic.
+ * Private Virtual Interface / Public Virtual Interface defines whether routes are to private subnet or public resources. Private Virtual Interface connects to VGW and Private Virtual Interface connects to Region. 
+ * Dedicated network route from on-prem to Direct Connect Location. 
+ * Its private connection and speeds of 1-10GBPs
+
+## VPC Peering
+ * 1-2-1 connection only. Not transitive. 
+ * CIDR blocks can't overlap.
+ * Can peer VPC in different regions
+ * Requester requests a peering connection, Acceptor Accepts it. 
+ * Route tables of both VPC needs to be updated to point to the peered connection. 
+
+## Transit Gateway
+ * A central hub to connect all VPCs for peering and VPN connections. 
+ * Saves from paired connections and 
+ * Connectivity can be achieved by individual connection directly to Transit Gateway.
+ * Centralized monitoring of network traffic as it goes through a central hub.
+
+
+## Route 53
+### Properties
+ * Global network of DNS Authoritative servers.
+ * Hosted zone - how to route traffic for a particular domain
+   * Public zone - how is traffic routed on the public internet
+   * Private zone - how is traffic routed inside AWS.
+  
+### Record Types
+|Record Type | Description|
+| ---------- | ----------- |
+|A| Route traffic to a resource using IP4|
+|AAAA| Route traffic to a resource using IP6|
+|CAA| Certificate authority for domain and subdomains|
+|CNAME|Used as an Alias of one name to another. Does **not** work for APEX.
+|MX| Mail Server|
+|NAPTR | Name Authority Pointer|
+|NS| Named server for hosted zone|
+|PTR| Map IP to domain name |
+
+**Alias** is a route 53 specific extension to DNS. Routes traffic to:
+ * S3 buckets
+ * ELBs
+ * Elastic Beanstalk
+ * CloudFront Distributions
+ * VPC Interface Endpoints
+
+
+### Routing Policies
+| Routing Policy | Description |
+| -------------- | ------------|
+| Simple | Default, no health check, single resource.|
+| Failover | Route to different policy based on health checks, active passive failover|
+|Geo-Location | Geographic location/origin of traffic |
+|Geo Proximity | Based on both users and resource location. Bias allows to adjust scope of resource and controls routing of traffic. |
+| Latency | Routing based on lowest latency |
+| Multi-value | Returns up to 8 records at once |
+| Weighted Routing Policy | Distributes traffic according to weights | 
+
+## CloudFront
+ * AWS CDN
+ * Uses Edge locations around the world to delivery best performance through cached data close to the user. 
+ * Distributions Types:
+   * Web - static / dynamic content, media using http/https, submit data via web forms, live streaming in real-time
+   * RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be **S3 bucket** not EC2.
+ * Origin can be EC2 server or S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.
+ * If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. 
+ * Caching behavior options can be controlled via methods and policies
+ * Can select Regions where edge location distributions will be places/used.
+ * WAF access control list can be placed on distribution
+ * Implementation of additional encryption can be setup with SSL Certificates
+
+## AWS Global Accelerator
+ * Get UDP and TCP traffic from end users to AWS endpoints via AWS infrastructure rather than public network. Optimized path for lowest latency and avoids unhealthy resources
+ * Uses 2 fixed IP addresses. Can use own IP or from AWS pool. These are mapped to multiple Global Accelerator endpoints. 
+ * Global Accelerator can be multi-region and can forward traffic to:
+ *  ELB
+ *  EC2
+ *  EIP
+*  Creation has 4 steps:
+   *  Create accelerator, give it name and select 2 IP Address.
+   *  Listener - TCP/UDP based and ports
+   *  Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health checks can be done at this stage
+   *  Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.
+*  Client affinity is supported for continued connections.
 
 ## Outstanding Question
