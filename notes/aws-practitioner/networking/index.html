@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../storage/" rel="prev"/>
-<link href="../networking/" rel="next"/>
+<link href="../database/" rel="prev"/>
+<link href="../services/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
-<title>Database - Syed's Home</title>
+<title>Networking - Syed's Home</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#database-types">
+<a class="md-skip" href="#networking">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Database
+              Networking
             
           </span>
 </div>
@@ -319,14 +319,19 @@
         Storage
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../database/">
+        Database
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Database
+          Networking
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Database
+        Networking
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -335,48 +340,58 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#database-types">
-    Database Types
+<a class="md-nav__link" href="#ip-ranges">
+    IP Ranges
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#types-of-workloads">
-    Types of workloads
+<a class="md-nav__link" href="#vpc">
+    VPC
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dynamodb">
-    DynamoDB
-  </a>
-<nav aria-label="DynamoDB" class="md-nav">
+<nav aria-label="VPC" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties">
     Properties
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limits">
+    Limits
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-documentdb">
-    Amazon DocumentDB
+<a class="md-nav__link" href="#subnets">
+    Subnets
   </a>
-<nav aria-label="Amazon DocumentDB" class="md-nav">
+<nav aria-label="Subnets" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_1">
     Properties
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#public-subnet">
+    Public Subnet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#private-subnet">
+    Private Subnet
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-keyspaces">
-    Amazon Keyspaces
+<a class="md-nav__link" href="#nacl-network-access-control-list">
+    NACL - Network Access Control List
   </a>
-<nav aria-label="Amazon Keyspaces" class="md-nav">
+<nav aria-label="NACL - Network Access Control List" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_2">
@@ -384,174 +399,141 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#typical-usage">
-    Typical usage
+<a class="md-nav__link" href="#structure">
+    Structure
   </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elasticache">
-    Elasticache
-  </a>
-<nav aria-label="Elasticache" class="md-nav">
+<nav aria-label="Structure" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#memcached">
-    MemcacheD
+<a class="md-nav__link" href="#inbound">
+    Inbound
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#redis">
-    Redis
+<a class="md-nav__link" href="#outbound">
+    Outbound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inbound_1">
+    Inbound
   </a>
 </li>
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#neptune">
-    Neptune
+<a class="md-nav__link" href="#security-groups">
+    Security Groups
   </a>
-<nav aria-label="Neptune" class="md-nav">
+<nav aria-label="Security Groups" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure_1">
+    Structure
+  </a>
+<nav aria-label="Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inbound_2">
+    Inbound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outbound_1">
+    Outbound
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internet-gateway">
+    Internet Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nat-gateway">
+    NAT Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bastion-host">
+    Bastion Host
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vpn-connection">
+    VPN Connection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-connect">
+    Direct Connect
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vpc-peering">
+    VPC Peering
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transit-gateway">
+    Transit Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#route-53">
+    Route 53
+  </a>
+<nav aria-label="Route 53" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_3">
     Properties
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-types">
+    Record Types
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-timestream">
-    Amazon Timestream
-  </a>
-<nav aria-label="Amazon Timestream" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_4">
-    Properties
+<a class="md-nav__link" href="#routing-policies">
+    Routing Policies
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-quantum-ledger-database-qldb">
-    Amazon Quantum Ledger Database (QLDB)
-  </a>
-<nav aria-label="Amazon Quantum Ledger Database (QLDB)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_5">
-    Properties
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-elastic-search-service">
-    Amazon Elastic Search Service
+<a class="md-nav__link" href="#cloudfront">
+    CloudFront
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-rds-deployment">
-    AWS RDS Deployment
+<a class="md-nav__link" href="#aws-global-accelerator">
+    AWS Global Accelerator
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-dynamo-db">
-    Amazon Dynamo DB
-  </a>
-<nav aria-label="Amazon Dynamo DB" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_6">
-    Properties
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#secondary-index">
-    Secondary Index
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#provisioned-capacity">
-    Provisioned Capacity
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#on-demand">
-    On-Demand
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#encryption">
-    Encryption
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#advantages">
-    Advantages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#disadvantages">
-    Disadvantages
+<a class="md-nav__link" href="#outstanding-question">
+    Outstanding Question
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#redshift">
-    Redshift
-  </a>
-<nav aria-label="Redshift" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties-and-advantages">
-    Properties and advantages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#structure">
-    Structure
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#communication">
-    Communication
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#metrics">
-    Metrics
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#access-to-other-sources">
-    Access to other sources
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#backup">
-    Backup
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../networking/">
-        Networking
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../services/">
@@ -599,48 +581,58 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#database-types">
-    Database Types
+<a class="md-nav__link" href="#ip-ranges">
+    IP Ranges
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#types-of-workloads">
-    Types of workloads
+<a class="md-nav__link" href="#vpc">
+    VPC
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dynamodb">
-    DynamoDB
-  </a>
-<nav aria-label="DynamoDB" class="md-nav">
+<nav aria-label="VPC" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties">
     Properties
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limits">
+    Limits
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-documentdb">
-    Amazon DocumentDB
+<a class="md-nav__link" href="#subnets">
+    Subnets
   </a>
-<nav aria-label="Amazon DocumentDB" class="md-nav">
+<nav aria-label="Subnets" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_1">
     Properties
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#public-subnet">
+    Public Subnet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#private-subnet">
+    Private Subnet
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-keyspaces">
-    Amazon Keyspaces
+<a class="md-nav__link" href="#nacl-network-access-control-list">
+    NACL - Network Access Control List
   </a>
-<nav aria-label="Amazon Keyspaces" class="md-nav">
+<nav aria-label="NACL - Network Access Control List" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_2">
@@ -648,166 +640,138 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#typical-usage">
-    Typical usage
+<a class="md-nav__link" href="#structure">
+    Structure
   </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elasticache">
-    Elasticache
-  </a>
-<nav aria-label="Elasticache" class="md-nav">
+<nav aria-label="Structure" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#memcached">
-    MemcacheD
+<a class="md-nav__link" href="#inbound">
+    Inbound
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#redis">
-    Redis
+<a class="md-nav__link" href="#outbound">
+    Outbound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inbound_1">
+    Inbound
   </a>
 </li>
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#neptune">
-    Neptune
+<a class="md-nav__link" href="#security-groups">
+    Security Groups
   </a>
-<nav aria-label="Neptune" class="md-nav">
+<nav aria-label="Security Groups" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure_1">
+    Structure
+  </a>
+<nav aria-label="Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inbound_2">
+    Inbound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outbound_1">
+    Outbound
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internet-gateway">
+    Internet Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nat-gateway">
+    NAT Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bastion-host">
+    Bastion Host
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vpn-connection">
+    VPN Connection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-connect">
+    Direct Connect
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vpc-peering">
+    VPC Peering
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transit-gateway">
+    Transit Gateway
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#route-53">
+    Route 53
+  </a>
+<nav aria-label="Route 53" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#properties_3">
     Properties
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-types">
+    Record Types
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-timestream">
-    Amazon Timestream
-  </a>
-<nav aria-label="Amazon Timestream" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_4">
-    Properties
+<a class="md-nav__link" href="#routing-policies">
+    Routing Policies
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-quantum-ledger-database-qldb">
-    Amazon Quantum Ledger Database (QLDB)
-  </a>
-<nav aria-label="Amazon Quantum Ledger Database (QLDB)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_5">
-    Properties
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-elastic-search-service">
-    Amazon Elastic Search Service
+<a class="md-nav__link" href="#cloudfront">
+    CloudFront
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-rds-deployment">
-    AWS RDS Deployment
+<a class="md-nav__link" href="#aws-global-accelerator">
+    AWS Global Accelerator
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#amazon-dynamo-db">
-    Amazon Dynamo DB
+<a class="md-nav__link" href="#outstanding-question">
+    Outstanding Question
   </a>
-<nav aria-label="Amazon Dynamo DB" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties_6">
-    Properties
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#secondary-index">
-    Secondary Index
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#provisioned-capacity">
-    Provisioned Capacity
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#on-demand">
-    On-Demand
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#encryption">
-    Encryption
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#advantages">
-    Advantages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#disadvantages">
-    Disadvantages
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#redshift">
-    Redshift
-  </a>
-<nav aria-label="Redshift" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#properties-and-advantages">
-    Properties and advantages
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#structure">
-    Structure
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#communication">
-    Communication
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#metrics">
-    Metrics
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#access-to-other-sources">
-    Access to other sources
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#backup">
-    Backup
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -816,213 +780,285 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Database</h1>
-<h2 id="database-types">Database Types</h2>
-<ol>
-<li>Relational<ol>
-<li>MySQL</li>
-<li>MariaDB</li>
-<li>PostgreSQL</li>
-<li>Aurora</li>
-<li>Oracle</li>
-<li>SQL Server</li>
-</ol>
-</li>
-<li>Key-Value</li>
-<li>Document</li>
-<li>In-memory</li>
-<li>Graph</li>
-<li>Columnar</li>
-<li>Time Series</li>
-<li>Quantum Ledger</li>
-<li>Search </li>
-</ol>
-<h2 id="types-of-workloads">Types of workloads</h2>
-<ol>
-<li>OLTP - Online Transaction Processing. Predictable and structured work. </li>
-<li>OLAP - Online Analytics Processing. Retrospective, predictive, streaming. </li>
-</ol>
-<h2 id="dynamodb">DynamoDB</h2>
+<h1 id="networking">Networking</h1>
+<h2 id="ip-ranges">IP Ranges</h2>
+<p>Reserved addresses with subnet 10.0.1.0/24
+ * 10.0.1.0 - Network
+ * 10.0.1.1 - AWS Routing
+ * 10.0.1.2 - AWS DNS
+ * 10.0.1.3 - AWS Future
+ * 10.0.1.255 - Broadcast</p>
+<h2 id="vpc">VPC</h2>
 <h3 id="properties">Properties</h3>
 <ul>
-<li>Key, Value data store. </li>
-<li>No schema. </li>
+<li>Isolated piece of the AWS Cloud only accessible by your AWS Account</li>
+<li>Define a name and a CIDR block from /16 to /28.</li>
 </ul>
-<h2 id="amazon-documentdb">Amazon DocumentDB</h2>
+<h3 id="limits">Limits</h3>
+<ul>
+<li>5 VPC per region per account</li>
+<li>VPCs exist within a region.</li>
+</ul>
+<h2 id="subnets">Subnets</h2>
 <h3 id="properties_1">Properties</h3>
 <ul>
-<li>JSON Data as the value which is referred to as a document. </li>
+<li>Reside inside a VPC and segment VPC.</li>
+<li>CIDR must reside within the CIDR of the VPC.</li>
+<li>Can be <strong>Public</strong> or <strong>Private</strong>.</li>
+<li>Each subnet has <strong>a</strong> route table. </li>
+<li>A route table can be attached to multiple subnets. </li>
+<li>Each subnet comes with a default route table with a <strong>local</strong> route that can't be deleted.</li>
+<li>Subnets have to reside within one AZs, can't span multiple AZs.</li>
 </ul>
-<h2 id="amazon-keyspaces">Amazon Keyspaces</h2>
+<h3 id="public-subnet">Public Subnet</h3>
+<ul>
+<li>Needs an entry in the route table pointing to the Internet Gateway.</li>
+</ul>
+<h3 id="private-subnet">Private Subnet</h3>
+<ul>
+<li>No route entry for the Internet Gateway.</li>
+<li>Needs a route entry pointing to a configured NAT Gateway in a public subnet to get outbound communications to the Internet. </li>
+</ul>
+<h2 id="nacl-network-access-control-list">NACL - Network Access Control List</h2>
 <h3 id="properties_2">Properties</h3>
 <ul>
-<li>Columnar database</li>
-<li>Apache Casandra</li>
-</ul>
-<h3 id="typical-usage">Typical usage</h3>
-<ul>
-<li>Analytical process</li>
-<li>Big Data processing</li>
-<li>Data Warehouses</li>
-</ul>
-<h2 id="elasticache">Elasticache</h2>
-<ul>
-<li>In-memory DB used as cache</li>
-</ul>
-<h3 id="memcached">MemcacheD</h3>
-<h3 id="redis">Redis</h3>
-<ul>
-<li>Persistence with transaction logs. </li>
-</ul>
-<h2 id="neptune">Neptune</h2>
-<h3 id="properties_3">Properties</h3>
-<ul>
-<li>Graph Database</li>
-</ul>
-<h2 id="amazon-timestream">Amazon Timestream</h2>
-<h3 id="properties_4">Properties</h3>
-<ul>
-<li>Time Series Database</li>
-<li>Data is gathered over time and stored with time as the key. </li>
-<li>Idea for Dev Ops applications which collect millions of data per second. </li>
-<li>IOT application data storage is also a good use case. </li>
-</ul>
-<h2 id="amazon-quantum-ledger-database-qldb">Amazon Quantum Ledger Database (QLDB)</h2>
-<h3 id="properties_5">Properties</h3>
-<ul>
-<li>Cryptographic verification to confirm that data is immutable and remains unchanged. </li>
-<li>Quantum ledger uses block chain, hash of the record data and previous record data. </li>
-<li>Financial Transactional data that shouldn't change. </li>
-<li>Insurance history of claims</li>
-<li>Auditing is built in.</li>
-</ul>
-<h2 id="amazon-elastic-search-service">Amazon Elastic Search Service</h2>
-<ul>
-<li>Ingest data from multiple sources in raw format.</li>
-<li>Indexes the data and make it searchable.</li>
-<li>Each document is stored as json document.</li>
-<li>Elastic search uses reverse indexes - words against documents</li>
-</ul>
-<h2 id="aws-rds-deployment">AWS RDS Deployment</h2>
-<ul>
-<li>Instance Type and Instance Size</li>
-<li>Single-AZ vs Multi-AZ</li>
-<li>Failover 60-120s - DNS updated automatically.<ul>
-<li>Patching</li>
-<li>Host failure</li>
-<li>AZ Fails</li>
-<li>Reboot with failover</li>
-<li>Instance class on primary DB is modified. </li>
-</ul>
-</li>
-<li>EBS (scalable storage) used by MySQL, PostgreSQL, MariaDB, Oracle, SQL Server.</li>
-<li>SSD Storage (20GB - 64TB [SQLServer 16TB]), Provisioned (8000 IOPS - 80000 IOPS [SQLServer 40000] / 100GB - 64 TB [SQLServer 16TB])</li>
-<li>Autoscaling of storage can be enabled on configuration. &lt;10% storage for 5 mins and 6 hours since last scale up. </li>
-<li>Aurora - shared cluster storage.</li>
-<li>Grows automatically and doesn't need to be configured.</li>
-<li>Read Replica</li>
-<li>Read only traffic. </li>
-<li>Where multi-AZ config is enabled, read replica is created from secondary db.</li>
-<li>Auto Backup</li>
-<li>Backup to S3</li>
-<li>0-35 days of retention</li>
-<li>Manual backup can be done at any time and backups need to be deleted manually</li>
-<li>Encryption can be defined using KMS keys. </li>
-<li>Backtrack - Aurora allows backtrack up to 72 hours. Allows you to back in time. Aurora retains transactional log data for the duration of the backtrack. </li>
-</ul>
-<h2 id="amazon-dynamo-db">Amazon Dynamo DB</h2>
-<h3 id="properties_6">Properties</h3>
-<ul>
-<li>NoSQL DB</li>
-<li>Key Value Store type. Key or indexes. </li>
-<li>Ultra high performance at any scale with single digit latency. </li>
-<li>Fully managed service</li>
-<li>No patches / No backup - all handled by AWS.</li>
-<li>Setup tables and provisioned throughput for each table. </li>
-<li>Pricing :  Provisioned Throughput + Size</li>
-<li>Creation requires DB name and Primary Key at its simplest form.</li>
-<li>Partition Key and Index can be used</li>
-<li>1 Query can use only 1 Index. Query needs to be explicit about what index to use.</li>
-<li></li>
-</ul>
-<h3 id="secondary-index">Secondary Index</h3>
-<ul>
-<li>Global - everywhere in the table</li>
-<li>Local - only within the single partition key. </li>
-</ul>
-<h3 id="provisioned-capacity">Provisioned Capacity</h3>
-<ul>
-<li>Read Capacity Units</li>
-<li>Write Capacity Units</li>
-<li>5 default.</li>
-<li>Each query can use more than one RCU/WCU</li>
-<li>Known load and query patterns.</li>
-<li>Auto-scaling can happen of the provisioned capacity based on utilization based on minimum and maximum capacity. </li>
-</ul>
-<h3 id="on-demand">On-Demand</h3>
-<ul>
-<li>Scaled on demand</li>
-<li>Not as cost-effective as standard.</li>
-</ul>
-<h3 id="encryption">Encryption</h3>
-<ul>
-<li>Default is on</li>
-<li>Customer managed or AWS managed Key can be selected. </li>
-</ul>
-<h3 id="advantages">Advantages</h3>
-<ul>
-<li>Fully managed - backup, redundancies</li>
-<li>Schemaless</li>
-<li>Auto HA - Across 3 AZ</li>
-<li>Fast ms and unlimited scalability.</li>
-<li>Constant performance. </li>
-</ul>
-<h3 id="disadvantages">Disadvantages</h3>
-<ul>
-<li>Eventual consistency due to replication</li>
-<li>Queries not flexible as SQL</li>
-<li>Max record size of 400KB</li>
-<li>20 global and 5 secondary index per table.</li>
-<li>Max number of tables per account - can be adjusted by AWS</li>
-<li>PovisionedThroughputException. </li>
-<li>Adjustments take a few mins. </li>
-</ul>
-<h2 id="redshift">Redshift</h2>
-<h3 id="properties-and-advantages">Properties and advantages</h3>
-<ul>
-<li>Based on Postgre SQL</li>
-<li>Massively parallel processing</li>
-<li>Columnar data storage</li>
-<li>Result caching</li>
+<li>Provides security for subnets and controls traffic in and out of subnets.</li>
+<li>Default NACL is attached to each subnet created. Default NACL allows all traffic in and out. </li>
+<li>All NACLs have a default rule at the end of the list with Deny. Implicit Deny. </li>
+<li>There are Inbound NACLs and Outbound NACLs</li>
+<li>NACLs are <strong>stateless</strong>.</li>
+<li>Each subnet can have only one NACL.</li>
+<li>Same NACLs can be associated with multiple subnets.</li>
+<li>Evaluation stops at first match of a rule.</li>
 </ul>
 <h3 id="structure">Structure</h3>
+<h4 id="inbound">Inbound</h4>
 <ul>
-<li>Cluster has a database and at least one compute node. More than one compute node has a leader node. </li>
-<li>Leader node is the gateway to the cluster and creates the execution plans for query. </li>
-<li>Compute Nodes can be of two types</li>
-<li>RA3 node types - High performance and scalable</li>
-<li>Dense node types - High performance with fixed local SSD</li>
-<li>Nodes can be between 1-32.</li>
+<li>Rule Number</li>
+<li>Type (HTTP)</li>
+<li>Protocol (TCP)</li>
+<li>Port Range (80)</li>
+<li>Source (0.0.0.0/-)</li>
+<li>Action (Allow/Deny)</li>
 </ul>
-<h3 id="communication">Communication</h3>
+<h4 id="outbound">Outbound</h4>
+<h4 id="inbound_1">Inbound</h4>
 <ul>
-<li>JDBC</li>
-<li>ODBD</li>
+<li>Rule Number</li>
+<li>Type (HTTP)</li>
+<li>Protocol (TCP)</li>
+<li>Port Range (80)</li>
+<li>Destination (0.0.0.0/-)</li>
+<li>Action (Allow/Deny)</li>
 </ul>
-<h3 id="metrics">Metrics</h3>
+<h2 id="security-groups">Security Groups</h2>
+<h3 id="property">Property</h3>
 <ul>
-<li>Disk usage is available in CloudWatch</li>
-<li>CPU and Memory Utilization - Query/ Load performance data is only available from Redshift console and not CloudWatch. </li>
+<li>Security Groups work at the instance level. </li>
+<li>Rules are an explicit Allow, they can't be deny. </li>
+<li>All Rules are evaluated before a decision is made.</li>
+<li>Implicit Deny if no rules match</li>
+<li>There are inbound and outbound security groups</li>
+<li>They are <strong>stateful</strong></li>
+<li><strong>Default</strong> - All inbound from same security group, All Outbound Traffic allowed to everywhere. </li>
 </ul>
-<h3 id="access-to-other-sources">Access to other sources</h3>
+<h3 id="structure_1">Structure</h3>
+<h4 id="inbound_2">Inbound</h4>
 <ul>
-<li>Accessing data from S3 can be provided by IAM Roles to Redshift. </li>
+<li>Type (MySQL)</li>
+<li>Protocol (TCP)</li>
+<li>Port Range (3306)</li>
+<li>Source 10.0.1.0/24</li>
 </ul>
-<h3 id="backup">Backup</h3>
+<h4 id="outbound_1">Outbound</h4>
 <ul>
-<li>Automated snapshots for backups</li>
-<li>Optionally - Backup cluster to a secondary region.</li>
+<li>Type</li>
+<li>Protocol</li>
+<li>Port Range</li>
+<li>Destination</li>
 </ul>
+<h2 id="internet-gateway">Internet Gateway</h2>
+<ul>
+<li>Attaches to VPC and allows connections to the Internet.</li>
+<li>Managed by AWS.</li>
+</ul>
+<h2 id="nat-gateway">NAT Gateway</h2>
+<ul>
+<li>Sits within the public subnet</li>
+<li>Needs an EIP</li>
+<li>Does not accept any inbound traffic from Internet</li>
+<li>Its managed by AWS. Has high availability setup by AWS.</li>
+</ul>
+<h2 id="bastion-host">Bastion Host</h2>
+<ul>
+<li>Resides on the public subnet, hardened, and allows incoming connections from Internet. </li>
+<li>Bastion hosts simply forwards incoming connections (ssh tunnel) to EC2s in the private subnet.</li>
+<li>Bastion host is essentially an EC2 instance which is keep secured and tightly controlled.</li>
+</ul>
+<h2 id="vpn-connection">VPN Connection</h2>
+<ul>
+<li>On-prem to AWS</li>
+<li>Customer Gateway (CGW) and VGW (Virtual Private Gateway)</li>
+<li>Encrypted traffic over the Internet. </li>
+<li>AWS Subnet Route tables will need routes to the On-prem resources. </li>
+<li>VPN tunnel can only be initiate from CGW.</li>
+<li>Idle activity causes connection drop. Monitoring to keep alive. </li>
+<li>Route Propagation can be turned on the route table and will allow routes to added to Route Tables.</li>
+<li>BGP on CGW enables dynamic routing and is recommended</li>
+<li>Security Groups also need to be configured for instances for the data connectivity. </li>
+</ul>
+<h2 id="direct-connect">Direct Connect</h2>
+<ul>
+<li>Private infrastructure and does not traverse the public network</li>
+<li>Router on On-Prem, AWS Partner [Customer Side (Router) +  AWS Side (Router)], AWS Region.</li>
+<li>Direct Connect enables connection to AWS Defined Region. </li>
+<li>This enables access to public and private resources on AWS.</li>
+<li>The VPC would still need the Virtual Gateway (VGW) to enable on-prem traffic.</li>
+<li>Private Virtual Interface / Public Virtual Interface defines whether routes are to private subnet or public resources. Private Virtual Interface connects to VGW and Private Virtual Interface connects to Region. </li>
+<li>Dedicated network route from on-prem to Direct Connect Location. </li>
+<li>Its private connection and speeds of 1-10GBPs</li>
+</ul>
+<h2 id="vpc-peering">VPC Peering</h2>
+<ul>
+<li>1-2-1 connection only. Not transitive. </li>
+<li>CIDR blocks can't overlap.</li>
+<li>Can peer VPC in different regions</li>
+<li>Requester requests a peering connection, Acceptor Accepts it. </li>
+<li>Route tables of both VPC needs to be updated to point to the peered connection. </li>
+</ul>
+<h2 id="transit-gateway">Transit Gateway</h2>
+<ul>
+<li>A central hub to connect all VPCs for peering and VPN connections. </li>
+<li>Saves from paired connections and </li>
+<li>Connectivity can be achieved by individual connection directly to Transit Gateway.</li>
+<li>Centralized monitoring of network traffic as it goes through a central hub.</li>
+</ul>
+<h2 id="route-53">Route 53</h2>
+<h3 id="properties_3">Properties</h3>
+<ul>
+<li>Global network of DNS Authoritative servers.</li>
+<li>Hosted zone - how to route traffic for a particular domain</li>
+<li>Public zone - how is traffic routed on the public internet</li>
+<li>Private zone - how is traffic routed inside AWS.</li>
+</ul>
+<h3 id="record-types">Record Types</h3>
+<table>
+<thead>
+<tr>
+<th>Record Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Route traffic to a resource using IP4</td>
+</tr>
+<tr>
+<td>AAAA</td>
+<td>Route traffic to a resource using IP6</td>
+</tr>
+<tr>
+<td>CAA</td>
+<td>Certificate authority for domain and subdomains</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>Used as an Alias of one name to another. Does <strong>not</strong> work for APEX.</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>Mail Server</td>
+</tr>
+<tr>
+<td>NAPTR</td>
+<td>Name Authority Pointer</td>
+</tr>
+<tr>
+<td>NS</td>
+<td>Named server for hosted zone</td>
+</tr>
+<tr>
+<td>PTR</td>
+<td>Map IP to domain name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alias</strong> is a route 53 specific extension to DNS. Routes traffic to:
+ * S3 buckets
+ * ELBs
+ * Elastic Beanstalk
+ * CloudFront Distributions
+ * VPC Interface Endpoints</p>
+<h3 id="routing-policies">Routing Policies</h3>
+<table>
+<thead>
+<tr>
+<th>Routing Policy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple</td>
+<td>Default, no health check, single resource.</td>
+</tr>
+<tr>
+<td>Failover</td>
+<td>Route to different policy based on health checks, active passive failover</td>
+</tr>
+<tr>
+<td>Geo-Location</td>
+<td>Geographic location/origin of traffic</td>
+</tr>
+<tr>
+<td>Geo Proximity</td>
+<td>Based on both users and resource location. Bias allows to adjust scope of resource and controls routing of traffic.</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Routing based on lowest latency</td>
+</tr>
+<tr>
+<td>Multi-value</td>
+<td>Returns up to 8 records at once</td>
+</tr>
+<tr>
+<td>Weighted Routing Policy</td>
+<td>Distributes traffic according to weights</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cloudfront">CloudFront</h2>
+<ul>
+<li>AWS CDN</li>
+<li>Uses Edge locations around the world to delivery best performance through cached data close to the user. </li>
+<li>Distributions Types:</li>
+<li>Web - static / dynamic content, media using http/https, submit data via web forms, live streaming in real-time</li>
+<li>RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be <strong>S3 bucket</strong> not EC2.</li>
+<li>Origin can be EC2 server or S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.</li>
+<li>If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. </li>
+<li>Caching behavior options can be controlled via methods and policies</li>
+<li>Can select Regions where edge location distributions will be places/used.</li>
+<li>WAF access control list can be placed on distribution</li>
+<li>Implementation of additional encryption can be setup with SSL Certificates</li>
+</ul>
+<h2 id="aws-global-accelerator">AWS Global Accelerator</h2>
+<ul>
+<li>Get UDP and TCP traffic from end users to AWS endpoints via AWS infrastructure rather than public network. Optimized path for lowest latency and avoids unhealthy resources</li>
+<li>Uses 2 fixed IP addresses. Can use own IP or from AWS pool. These are mapped to multiple Global Accelerator endpoints. </li>
+<li>Global Accelerator can be multi-region and can forward traffic to:</li>
+<li>ELB</li>
+<li>EC2</li>
+<li>EIP</li>
+<li>Creation has 4 steps:</li>
+<li>Create accelerator, give it name and select 2 IP Address.</li>
+<li>Listener - TCP/UDP based and ports</li>
+<li>Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health checks can be done at this stage</li>
+<li>Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.</li>
+<li>Client affinity is supported for continued connections.</li>
+</ul>
+<h2 id="outstanding-question">Outstanding Question</h2>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
