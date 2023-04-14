@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../networking/" rel="prev"/>
-<link href="../../aws-dva/introduction/" rel="next"/>
+<link href="../queuing-service/" rel="prev"/>
+<link href="../management/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
-<title>Services - Syed's Home</title>
+<title>Streaming - Syed's Home</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#services">
+<a class="md-skip" href="#streaming-data-amazon-kinesis">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Services
+              Streaming
             
           </span>
 </div>
@@ -329,14 +329,24 @@
         Networking
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../other-services/">
+        Other Services
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../queuing-service/">
+        Queuing Service
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Services
+          Streaming
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Services
+        Streaming
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -345,31 +355,89 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-datasync">
-    AWS DataSync
+<a class="md-nav__link" href="#amazon-kinesis-data-streams">
+    Amazon Kinesis Data Streams
   </a>
-<nav aria-label="AWS DataSync" class="md-nav">
+<nav aria-label="Amazon Kinesis Data Streams" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#between-non-aws-storage">
-    Between Non-AWS Storage
+<a class="md-nav__link" href="#properties">
+    Properties
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#between-aws-storage">
-    Between AWS Storage
+<a class="md-nav__link" href="#structure">
+    Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kcl">
+    KCL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand">
+    On Demand
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#provisioned">
+    Provisioned
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-opshub">
-    AWS OpsHub
+<a class="md-nav__link" href="#consumer">
+    Consumer
+  </a>
+<nav aria-label="Consumer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classic">
+    Classic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enhanced-fan-out">
+    Enhanced Fan out
   </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-video-streams">
+    Amazon Kinesis Video Streams
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-data-firehose">
+    Amazon Kinesis Data Firehose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-data-analytics">
+    Amazon Kinesis Data Analytics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../management/">
+        Management
+      </a>
 </li>
 </ul>
 </nav>
@@ -412,27 +480,80 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-datasync">
-    AWS DataSync
+<a class="md-nav__link" href="#amazon-kinesis-data-streams">
+    Amazon Kinesis Data Streams
   </a>
-<nav aria-label="AWS DataSync" class="md-nav">
+<nav aria-label="Amazon Kinesis Data Streams" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#between-non-aws-storage">
-    Between Non-AWS Storage
+<a class="md-nav__link" href="#properties">
+    Properties
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#between-aws-storage">
-    Between AWS Storage
+<a class="md-nav__link" href="#structure">
+    Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kcl">
+    KCL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#on-demand">
+    On Demand
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#provisioned">
+    Provisioned
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-opshub">
-    AWS OpsHub
+<a class="md-nav__link" href="#consumer">
+    Consumer
+  </a>
+<nav aria-label="Consumer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classic">
+    Classic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enhanced-fan-out">
+    Enhanced Fan out
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-video-streams">
+    Amazon Kinesis Video Streams
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-data-firehose">
+    Amazon Kinesis Data Firehose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-kinesis-data-analytics">
+    Amazon Kinesis Data Analytics
   </a>
 </li>
 </ul>
@@ -442,26 +563,85 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="services">Services</h1>
-<h2 id="aws-datasync">AWS DataSync</h2>
-<h3 id="between-non-aws-storage">Between Non-AWS Storage</h3>
+<h1 id="streaming-data-amazon-kinesis">Streaming Data - Amazon Kinesis</h1>
 <ul>
-<li>Snow devices to S3</li>
-<li>On-prem data center to S3</li>
+<li>No Free Tier, each service has its own pricing based on attributes.</li>
 </ul>
-<h3 id="between-aws-storage">Between AWS Storage</h3>
+<h2 id="amazon-kinesis-data-streams">Amazon Kinesis Data Streams</h2>
+<h3 id="properties">Properties</h3>
 <ul>
-<li>EBS to S3</li>
-<li>Windows FXs to S3</li>
+<li>real-time data collection messaging service</li>
+<li>Maintains a copy of all data in the received order</li>
+<li>Data is stored for 24 hours default, upto 65 days if configured using <code>IncreaseStreamRetentionPeriod</code>.</li>
+<li>Ability to process large data streams in real-time, ability to read and replay records to multiple consumer applications. </li>
+<li>Kinesis Data Stream can encrypt data using KMS as producers put data on the stream.</li>
+<li>Kinesis data stream has <em>put to get latency</em> of less than 1 seconds.</li>
 </ul>
-<h2 id="aws-opshub">AWS OpsHub</h2>
+<h3 id="structure">Structure</h3>
 <ul>
-<li>Comes as a software and not on the AWS Console. </li>
-<li>Manages the SNOW devices for data transfer</li>
-<li>Configure fleets of cluster devices</li>
-<li>Dashboard and Metrics to the snow devices.</li>
-<li>Integrates with AWS Systems Manager for automation of different tasks. </li>
-<li>GUI based as opposed to previous way of managing via AWS CLI. </li>
+<li>Stream is made of one or more <strong>Shards</strong></li>
+<li>Shards hold <strong>Data Records</strong> in sequence. Shards can handle 1000 records/second. Write - 1000 records/second 1MB/second. Read - 1MB/seconds. </li>
+<li>Data Record is made of Partition Key (which shard), Sequence Number (per shard ordering) and Actual Data (up to 1MB). </li>
+<li>Producers put data on streams and consumers read data using Kinesis Client Library (KCL).</li>
+<li>Kinesis Data Stream does not inspect or alter the data payload, consumers must do what is necessary. </li>
+<li>Data in streams are immutable.</li>
+<li>Data can't be removed and can only expire.</li>
+</ul>
+<h3 id="kcl">KCL</h3>
+<ul>
+<li>KCL manages a Record Processor per shard ensuring data processed from each Shard.</li>
+<li>KCL uses DynamoDB to store control data and creates one table per application reading data from a stream.</li>
+<li>Can run on EC2, Elastic Beanstalk and Data Centre Servers. </li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<h4 id="on-demand">On Demand</h4>
+<ul>
+<li>Adjusts throughput based on demand</li>
+<li>Billed for actual usage. </li>
+</ul>
+<h4 id="provisioned">Provisioned</h4>
+<ul>
+<li>Specify the number of shards</li>
+<li>Billed for hourly provision of shards</li>
+<li>Splitting and Merging shard operations happens during increase and decrease.</li>
+</ul>
+<h3 id="consumer">Consumer</h3>
+<h4 id="classic">Classic</h4>
+<ul>
+<li>Pulls data from streams</li>
+<li>Limits of how many times consumers can pull</li>
+</ul>
+<h4 id="enhanced-fan-out">Enhanced Fan out</h4>
+<ul>
+<li>Every consumer gets 2 MBPs throughput per shard and limits are removed. </li>
+</ul>
+<h2 id="amazon-kinesis-video-streams">Amazon Kinesis Video Streams</h2>
+<ul>
+<li>Stream processing binary-encoded data such as video and audio. </li>
+<li></li>
+</ul>
+<h2 id="amazon-kinesis-data-firehose">Amazon Kinesis Data Firehose</h2>
+<ul>
+<li>Streaming delivery service</li>
+<li>Data can be dynamically transformed and scaled automatically to deliver to data store. Can transform to Parquet from JSON. Can use Lambda for transformation.</li>
+<li>No need to develop custom consumers</li>
+<li>Buffers data during delivery, Buffer Size and Buffer Duration can be configured during creation. This buffering makes it near real-time. </li>
+<li>Destinations:</li>
+<li>Amazon S3</li>
+<li>Amazon Redshift</li>
+<li>Amazon Elasticsearch</li>
+<li>Splunk</li>
+<li>Generic HTTP endpoints</li>
+<li>DataDog</li>
+<li>MongoDB Cloud</li>
+<li>New Relic</li>
+<li>No free tier, charged for usage not provisioned. </li>
+</ul>
+<h2 id="amazon-kinesis-data-analytics">Amazon Kinesis Data Analytics</h2>
+<ul>
+<li>Read from stream real-time and analytics on streams</li>
+<li>Only SQL available when used with Firehose</li>
+<li>Apache Flink with Java and Scala are available with only Data Streams.</li>
 </ul>
 </article>
 </div>

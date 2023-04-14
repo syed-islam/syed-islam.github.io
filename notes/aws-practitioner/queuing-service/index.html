@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../introduction/" rel="prev"/>
-<link href="../compute/" rel="next"/>
+<link href="../other-services/" rel="prev"/>
+<link href="../streaming/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
-<title>Domains - Syed's Home</title>
+<title>Queuing Service - Syed's Home</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#domains-covered-in-the-exam">
+<a class="md-skip" href="#decoupling-and-queuing">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Domains
+              Queuing Service
             
           </span>
 </div>
@@ -304,86 +304,10 @@
         Introduction
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Domains
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../domains/">
         Domains
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cloud-concepts">
-    Cloud Concepts
-  </a>
-<nav aria-label="Cloud Concepts" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#benefits-of-cloud">
-    Benefits of Cloud:
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#use-cases-for-cloud-computing">
-    Use cases for Cloud Computing:
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aws-global-infrastructure">
-    AWS Global Infrastructure
-  </a>
-<nav aria-label="AWS Global Infrastructure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#availability-zone">
-    Availability Zone
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#region">
-    Region
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#edge-location">
-    Edge Location
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#regional-edge-cache">
-    Regional Edge Cache
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#faq">
-    FAQ
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#network-infrastructure">
-    Network Infrastructure
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#questions">
-    Questions
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../compute/">
@@ -410,10 +334,110 @@
         Other Services
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../queuing-service/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Queuing Service
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Queuing Service
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties">
+    Properties
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-sqs">
+    Amazon SQS
+  </a>
+<nav aria-label="Amazon SQS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard-queue">
+    Standard Queue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fifo-queues">
+    FIFO Queues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dead-letter-queue">
+    Dead Letter Queue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delay-queue">
+    Delay Queue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consumer-polling">
+    Consumer polling
+  </a>
+<nav aria-label="Consumer polling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#short-polling">
+    Short polling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#long-polling">
+    Long polling
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messasge-specifics">
+    Messasge Specifics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sns-simple-notification-service">
+    SNS - Simple Notification Service
+  </a>
+<nav aria-label="SNS - Simple Notification Service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#message-retry">
+    Message Retry
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notification-services">
+    Notification Services:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-mq-service">
+    Amazon MQ Service
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../streaming/">
@@ -466,66 +490,90 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cloud-concepts">
-    Cloud Concepts
+<a class="md-nav__link" href="#properties">
+    Properties
   </a>
-<nav aria-label="Cloud Concepts" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-sqs">
+    Amazon SQS
+  </a>
+<nav aria-label="Amazon SQS" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#benefits-of-cloud">
-    Benefits of Cloud:
+<a class="md-nav__link" href="#standard-queue">
+    Standard Queue
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-cases-for-cloud-computing">
-    Use cases for Cloud Computing:
+<a class="md-nav__link" href="#fifo-queues">
+    FIFO Queues
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-global-infrastructure">
-    AWS Global Infrastructure
+<a class="md-nav__link" href="#dead-letter-queue">
+    Dead Letter Queue
   </a>
-<nav aria-label="AWS Global Infrastructure" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delay-queue">
+    Delay Queue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consumer-polling">
+    Consumer polling
+  </a>
+<nav aria-label="Consumer polling" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#availability-zone">
-    Availability Zone
+<a class="md-nav__link" href="#short-polling">
+    Short polling
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#region">
-    Region
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#edge-location">
-    Edge Location
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#regional-edge-cache">
-    Regional Edge Cache
+<a class="md-nav__link" href="#long-polling">
+    Long polling
   </a>
 </li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messasge-specifics">
+    Messasge Specifics
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#faq">
-    FAQ
+<a class="md-nav__link" href="#sns-simple-notification-service">
+    SNS - Simple Notification Service
+  </a>
+<nav aria-label="SNS - Simple Notification Service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#property">
+    Property
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#network-infrastructure">
-    Network Infrastructure
+<a class="md-nav__link" href="#message-retry">
+    Message Retry
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#questions">
-    Questions
+<a class="md-nav__link" href="#notification-services">
+    Notification Services:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#amazon-mq-service">
+    Amazon MQ Service
   </a>
 </li>
 </ul>
@@ -535,78 +583,105 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="domains-covered-in-the-exam">Domains covered in the Exam</h1>
-<ol>
-<li>Security and Compliance</li>
-<li>Technology - CORE AWS services</li>
-<li>Billing and Pricing</li>
-<li>Cloud Concepts</li>
-</ol>
-<h2 id="cloud-concepts">Cloud Concepts</h2>
-<p><code>Cloud Computing</code>
-:   Cloud computing is a remote virtual pool of on-demand shared resources offering to compute, storage, database and network services that can be rapidly deployed at scale.</p>
-<p><code>Resources Types</code>
-:   Compute, Storage, Database and Network.</p>
-<p><code>Cloud model types</code>
-:   Public Cloud, Private Cloud, Hybrid Cloud. These are differentiated based on Security, Data Location, Capital Expenditure, Operational Expenditure and Tenancy.</p>
-<p><code>Cloud Service Models</code>
-:   Infrastructure as a Service (IaaS), Software as a Service (SaaS) - Gmail, Platform as a Service (PaaS) -</p>
-<p><code>Dedicated Host</code>
-:   Choose instance placement, visibility of cores and sockets, meets licensing needs. </p>
-<p><code>Dedicated Instance</code>
-: More costly than shared, uses dedicated hardware without the visibility. </p>
-<p><code>High Availability</code>
-:   Replication across multiple geographical zones. </p>
-<h3 id="benefits-of-cloud">Benefits of Cloud:</h3>
-<ol>
-<li>On-demand</li>
-<li>Scalibility</li>
-<li>Economy of Scale</li>
-<li>Flexibility &amp; Scalibility</li>
-<li>Growth</li>
-<li>Utility based metering</li>
-</ol>
-<h3 id="use-cases-for-cloud-computing">Use cases for Cloud Computing:</h3>
+<h1 id="decoupling-and-queuing">Decoupling and Queuing</h1>
+<h2 id="properties">Properties</h2>
 <ul>
-<li>Traffic Bursting</li>
-<li>Backup and Disaster Recovery</li>
-<li>Test and Dev environments. </li>
-<li>Proof of Concepts. </li>
-<li>Big Data and Data Manipulation</li>
+<li>Loose coupling</li>
+<li>Asynchronous connectivity between sub-systems.</li>
 </ul>
-<h3 id="aws-global-infrastructure">AWS Global Infrastructure</h3>
-<h4 id="availability-zone">Availability Zone</h4>
-<p>At least one more AZ close to an AZ with high-speed, low-latency connectivity for data replication. In reality multiple-AZs are linked together. AZs will be in the same geographic area but will have independent power and networking to ensure that failure in one doesn't impact another. </p>
-<p>Multi-AZ deployment is best practice and maintains high availability of infrastructure in architecture design. </p>
-<p>AZ names us-east-1<strong>a</strong> may not designate the same AZ across accounts. This is done by AWS for better load balancing. </p>
-<p>61 AZs at present with another 12 planned. </p>
-<h4 id="region">Region</h4>
-<p>Region is made up of a group of AZs within a certain geographical region. Every region is independent of one another will have at least <em>three</em> AZs. Regional deployments help with:
-1. latency
-2. regulation, laws and compliance 
-3. high availability and resiliency</p>
-<p>Most services are region specific and not all services are available in every region. </p>
-<p><strong>IAM</strong> and <strong>CloudFront</strong> are not tied to a specific region. </p>
-<p><strong>AWS GovCloud</strong> acts as an isolated region only available to the government and government-regulated industries that must meet <em>strict</em> guidelines. </p>
-<p>20 Regions at present with another 4 planned. </p>
-<h4 id="edge-location">Edge Location</h4>
-<p>Places in major cities and highly populated areas and far outnumber the number of AZs. They are not used for traditional infrastructure. 
-They are used by <strong>Amazon CloudFront</strong> and <strong>Lambda@Edge</strong> for cache data and to reduce latency for end-user access by using edge location at CDN. </p>
-<h4 id="regional-edge-cache">Regional Edge Cache</h4>
-<p>Type of Edge Location. These sit between Cloud Front Origin servers and Edge Locations and have larger cache-width.</p>
-<h2 id="faq">FAQ</h2>
-<ol>
-<li>Dedicated Instance vs Dedicated Host. </li>
-</ol>
-<h2 id="network-infrastructure">Network Infrastructure</h2>
-<ol>
-<li>VPC - Virtual Private Cloud (Virtual Networks)</li>
-</ol>
-<h2 id="questions">Questions</h2>
-<h1 id="monitoring">Monitoring</h1>
-<h2 id="cloudwatch">CloudWatch</h2>
+<h2 id="amazon-sqs">Amazon SQS</h2>
 <ul>
-<li>metrics for cluster size scaling up and down for ECS</li>
+<li>Producers put messages to the SQS Queue</li>
+<li>Consumer is polling the queue for pick up and processing</li>
+<li>Visibility Timeout is set when picked up by consumer</li>
+<li>Delete message from Consumer deletes the message or visibility timeout expiry causes message to become visible on the queue.</li>
+<li>Visibility Timeout - min 0s, Default 30s and maximum is 12 hours. </li>
+<li>Visibility timeout can be setup for entire queue or individual messages. </li>
+<li>Step functions should be used if more than 12 hours delay is needed. </li>
+</ul>
+<h3 id="standard-queue">Standard Queue</h3>
+<ul>
+<li>Standard Queue - <strong>At least delivery</strong> guaranteed. </li>
+<li>120K in-flight messages in a standard queue. Short Polling will return error if exceeded, Long polling won't return any errors.</li>
+</ul>
+<h3 id="fifo-queues">FIFO Queues</h3>
+<ul>
+<li><strong>First in First Out</strong>, implements exactly once delivery. </li>
+<li>Lower performance than Standard Queue. </li>
+<li>20K in-flight messages. </li>
+</ul>
+<h3 id="dead-letter-queue">Dead Letter Queue</h3>
+<ul>
+<li>Messages are Delivered here after <code>MaxReceivedCount</code> reaches the limits set for a Queue. </li>
+<li>Messages can be put back into the original queue once the problem has been resolved but may break FIFO order in doing so. </li>
+<li>SNS is commonly used to dispatch notification when messages arrive in dead letter queue for examination. </li>
+</ul>
+<h3 id="delay-queue">Delay Queue</h3>
+<ul>
+<li>Delay queue - the message is not initially available until the delay timeout is over. Can range min 0s and max is 15mins</li>
+</ul>
+<h3 id="consumer-polling">Consumer polling</h3>
+<h4 id="short-polling">Short polling</h4>
+<ul>
+<li>Default for queues</li>
+<li>Consumers use ReceiveMessage request and SQS responds even when no messages are found</li>
+<li>This can happen when either the consumer sets <code>ReceiveMessage</code> or queue parameter <code>ReceiveMessageWaitTime</code> is set to 0.</li>
+</ul>
+<h4 id="long-polling">Long polling</h4>
+<ul>
+<li><code>ReceiveMessage</code> or <code>ReceiveMessageWaitTime</code> is set to larger than 0 and less than 20 seconds. </li>
+<li>SQS waits for at least one message or the max number <code>MaxNumberOfMessages</code> specified. </li>
+<li>Empty response happens when the Wait time expires. </li>
+</ul>
+<h3 id="messasge-specifics">Messasge Specifics</h3>
+<ul>
+<li>Minimum size is 1 byte / 1 character</li>
+<li>Maximum is 256 KB (default)</li>
+<li>SQS Extended Client Library enables messages to be 2GB and leverages S3.</li>
+</ul>
+<h2 id="sns-simple-notification-service">SNS - Simple Notification Service</h2>
+<h3 id="property">Property</h3>
+<ul>
+<li>1:M Messages distribution model</li>
+<li>A single message is published to a Topic which is then pushed out to subscribers. </li>
+<li>A Topic doesn't store messages, once published the message are pushed out to subscribers. </li>
+<li>A single topic can have 12M subscriptions</li>
+<li>100K Topics are allowed and </li>
+<li>US-EAST1 allows a rate of 30K/seconds which varies by regions. </li>
+<li>Max Message is 256KB and breaks into chunks of 64KB and deals with them as individual requests.</li>
+<li>Extended Library can increase the message size to 2GB using S3.</li>
+<li>Message Filtering allows subscribers to filter messages using SNSMessagePolicy via JSON specifications. Removes the needs to have multiple Topics for each Subscriber but enables filtering on the single topic from Producer.</li>
+</ul>
+<h3 id="message-retry">Message Retry</h3>
+<ul>
+<li>Controlled using SNS Delivery Policy</li>
+<li>Retry Patterns:</li>
+<li>Linear</li>
+<li>Geometric</li>
+<li>Exponential back-off</li>
+<li>maximum and Minimum tries</li>
+<li>Messages can be sent to Dead Letter Queue which can be delivered.</li>
+</ul>
+<h3 id="notification-services">Notification Services:</h3>
+<ul>
+<li>Apple Push</li>
+<li>Windows Push</li>
+<li>Amazon Messages</li>
+<li>HTTPS endpoints</li>
+<li>Email</li>
+<li>SMS </li>
+<li>MFA</li>
+<li>OTP</li>
+</ul>
+<h2 id="amazon-mq-service">Amazon MQ Service</h2>
+<ul>
+<li>Enables migration of existing on-prem queues to Cloud</li>
+<li>Amazon MQ is AWS managed message broker service for Apache ActiveMQ, and its compliant with:</li>
+<li>JMS, </li>
+<li>NMS, </li>
+<li>MQTT and </li>
+<li>WebSockets.</li>
+<li>Amazon MQ also provides message encryption in transit using SSL and at rest using AES 256 encryption.</li>
 </ul>
 </article>
 </div>
