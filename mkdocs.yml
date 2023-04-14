@@ -56,7 +56,10 @@ nav:
        - Storage : ./notes/aws-practitioner/storage.md
        - Database: ./notes/aws-practitioner/database.md
        - Networking: ./notes/aws-practitioner/networking.md
-       - Services: ./notes/aws-practitioner/services.md
+       - Other Services: ./notes/aws-practitioner/other-services.md
+       - Queuing Service: ./notes/aws-practitioner/queuing-service.md
+       - Streaming : ./notes/aws-practitioner/streaming.md
+       - Management : ./notes/aws-practitioner/management.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        
