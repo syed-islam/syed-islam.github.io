@@ -59,6 +59,7 @@ nav:
        - Other Services: ./notes/aws-practitioner/other-services.md
        - Queuing Service: ./notes/aws-practitioner/queuing-service.md
        - Streaming : ./notes/aws-practitioner/streaming.md
+       - Security and Compliance : ./notes/aws-practitioner/security-compliance.md
        - Management : ./notes/aws-practitioner/management.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
