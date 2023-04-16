@@ -376,6 +376,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#authentication">
+    Authentication
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#features">
     Features
   </a>
@@ -405,6 +410,20 @@
 <a class="md-nav__link" href="#roles">
     Roles
   </a>
+<nav aria-label="Roles" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-service-roles">
+    AWS Service Roles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#federated-access-to-roles">
+    Federated Access to Roles
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#identify-providers">
@@ -441,6 +460,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#access-advisor">
+    Access Advisor
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#service-control-policies">
     Service Control Policies
   </a>
@@ -451,6 +475,45 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#best-practice">
     Best Practice
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-dashboard">
+    User Dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-kms">
+    AWS KMS
+  </a>
+<nav aria-label="AWS KMS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components_1">
+    Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cmk-types">
+    CMK Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-encryption-keys-deks">
+    Data Encryption Keys (DEKs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-policies">
+    Key Policies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grants">
+    Grants
   </a>
 </li>
 </ul>
@@ -521,6 +584,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#authentication">
+    Authentication
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#features">
     Features
   </a>
@@ -550,6 +618,20 @@
 <a class="md-nav__link" href="#roles">
     Roles
   </a>
+<nav aria-label="Roles" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-service-roles">
+    AWS Service Roles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#federated-access-to-roles">
+    Federated Access to Roles
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#identify-providers">
@@ -586,6 +668,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#access-advisor">
+    Access Advisor
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#service-control-policies">
     Service Control Policies
   </a>
@@ -596,6 +683,45 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#best-practice">
     Best Practice
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-dashboard">
+    User Dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-kms">
+    AWS KMS
+  </a>
+<nav aria-label="AWS KMS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components_1">
+    Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cmk-types">
+    CMK Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-encryption-keys-deks">
+    Data Encryption Keys (DEKs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-policies">
+    Key Policies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grants">
+    Grants
   </a>
 </li>
 </ul>
@@ -627,10 +753,12 @@
 <li>Authentication - Password - Prove that you are the users.</li>
 <li>Authorization - Access to services and features. </li>
 </ul>
-<p>### Authentication
-  * username/password
-  * MFA
-  * Federated Access (no AWS IAM user credential needed)</p>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>username/password</li>
+<li>MFA</li>
+<li>Federated Access (no AWS IAM user credential needed)</li>
+</ul>
 <h3 id="features">Features</h3>
 <ul>
 <li>Setup password complexity requirements. Enforce password policies. </li>
@@ -648,6 +776,10 @@
 <ul>
 <li>Groups users</li>
 <li>Associated to IAM policies </li>
+<li>Used to often related to a job-role.</li>
+<li>Users inherit the permissions of the group..</li>
+<li>Default 300 Groups</li>
+<li>An user can be attached to 10 Groups and 10 policies can be attached to a group.</li>
 </ul>
 <h4 id="iam-policies">IAM policies</h4>
 <ul>
@@ -660,6 +792,25 @@
 <li>Identity with associated permissions</li>
 <li>Assumed by identity or service that need to acquire temporary permissions. </li>
 <li>No passwords, assumed if correctly permissioned.</li>
+<li>Roles can be assumed by - trusted users, AWS services and applications. This is done using a trust relationship.</li>
+<li>Policies are associated with Roles just like other identities</li>
+<li>Roles an be assumed cross-account by users, federated users as well. </li>
+<li>Temporary ability to get permissions or capabilities, by using Roles.</li>
+<li>When users assume a role, users existing permissions are replaced and only has the permissions attached to the role. </li>
+<li>For a Role, trusted entity has to include a user, as well as, a policy needs to be associated with the user to be able to assume the role. So this has to be both way, trusted by the role policy and policy for the user to assume the role. </li>
+</ul>
+<h5 id="aws-service-roles">AWS Service Roles</h5>
+<ul>
+<li>Allows AWS services to access other AWS resource on your own account. </li>
+<li>For example - EC2 gets access to AWS Resources. EC2 needs to access to S3. Removes the need to store credentials locally.</li>
+<li><strong>Service-linked roles</strong> Can only be used by specific AWS services to interact with other AWS services. Created at the time of first use and uses AWS managed polices. Example - <code>AWSServiceRoleForAmazonSSm</code>, <code>AWSServiceRoleForCloudTrail</code> and <code>AWSServiceRoleForCloudWatchEvents</code>. It will have a fixed service principal that can't be edited. </li>
+</ul>
+<h5 id="federated-access-to-roles">Federated Access to Roles</h5>
+<ul>
+<li>Two options:</li>
+<li>Web Identity - Large base of external users using Google, Facebook etc. </li>
+<li>SAML2.0 federation - Employees of the firm using existing directory services</li>
+<li>Identity Provider Authenticates the user and Service Provider enables access to services once authentication. </li>
 </ul>
 <h4 id="identify-providers">Identify Providers</h4>
 <ul>
@@ -686,6 +837,12 @@
 <ul>
 <li>Select organizational unit/account based user activity and services accessed by the users</li>
 </ul>
+<h4 id="access-advisor">Access Advisor</h4>
+<ul>
+<li>Services that a user can access and which policies are granting the access</li>
+<li>Last time services were accessed by the user</li>
+<li>This option sits under a user</li>
+</ul>
 <h4 id="service-control-policies">Service Control Policies</h4>
 <ul>
 <li>SCPs are used with organizations to setup boundaries or permissions. They don't grant permissions</li>
@@ -699,6 +856,49 @@
 <li>Rotate Credentials regularly</li>
 <li>Enable IAM Access Analyzer</li>
 </ul>
+<h2 id="user-dashboard">User Dashboard</h2>
+<ul>
+<li>Shows the list of users and pertinent information about the users.</li>
+<li>Attributes</li>
+<li>Username</li>
+<li>Path - organizational structure representations. Paths can also be referred to in policies</li>
+<li>Group - which groups user belongs to</li>
+<li>Last login</li>
+<li>MFA</li>
+<li>Password age</li>
+<li>Console last sign-in</li>
+<li>Access Key ID - Active/Inactive and ID</li>
+<li>Active Key Age</li>
+<li>ARN</li>
+<li>Console Access </li>
+<li>Signing Certificates</li>
+</ul>
+<h2 id="aws-kms">AWS KMS</h2>
+<ul>
+<li>The Key Management Service (KMS) is a managed service used to store and generate encryption keys that can be used by other AWS services and applications to encrypt and decrypt your data.</li>
+<li>AWS administrators do <strong>not</strong> have access to KMS keys and cannot recover deleted keys. </li>
+<li>KSM keys are for encryption at rest only. SSL is needed for encryption in transit.</li>
+<li>Integrates with CloudTrail for usage tracking. </li>
+<li>KMS is region-specific. Each region requires its own instance of KMS. </li>
+</ul>
+<h3 id="components_1">Components</h3>
+<p>There are 4 key components of AWS KSM:
+  1. Customer Master Keys (CMK)
+  2. Data Encryption Keys (DEKs)
+  3. Key Policies
+  4. Grants</p>
+<h3 id="cmk-types">CMK Types</h3>
+<ol>
+<li>Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.</li>
+<li>AWS  - hese are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.</li>
+<li>AWS Owned - These are not visible within the KMS console or anywhere within your account, neither do you have the ability to audit and track their usage, they are essentially abstracted from your AWS account.But of course, some services use this key type to encrypt your data within your account.Examples of AWS Owned CMKs include:•The S3 Master key uses SSE-S3 encryption•The default encryption option used on all Amazon DynamoDBtables uses AWS owned keys.</li>
+</ol>
+<h3 id="data-encryption-keys-deks">Data Encryption Keys (DEKs)</h3>
+<p>Data keys are created by CMKs however they are used outside of KMS to perform encryption against your data, either in your own applications or by other AWS services.</p>
+<h3 id="key-policies">Key Policies</h3>
+<p>Key policies determine who can do what with the key, for example, defining who can use the key to perform cryptographic operations, in addition to those who can administer the CMK to perform functions such as deleting and revoking the key.  Controlling access to CMKs can’t be done using IAM alone. In ALL cases, to manage access to your CMKs, you MUST use a key policy.</p>
+<h3 id="grants">Grants</h3>
+<p>Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
