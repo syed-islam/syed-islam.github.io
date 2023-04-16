@@ -11,15 +11,17 @@
    * NDA needs to be signed before the agreement can be viewed
 
 ## IAM
+
 ### Components
  * Identity - username - Which user/who is it?
  * Authentication - Password - Prove that you are the users.
  * Authorization - Access to services and features. 
 
- ### Authentication
-  * username/password
-  * MFA
-  * Federated Access (no AWS IAM user credential needed)
+### Authentication
+
+ * username/password
+ * MFA
+ * Federated Access (no AWS IAM user credential needed)
 
 ### Features
  * Setup password complexity requirements. Enforce password policies. 
@@ -78,3 +80,24 @@
  * Enable MFA
  * Rotate Credentials regularly
  * Enable IAM Access Analyzer
+
+## User Dashboard
+ * Shows the list of users and pertinent information about the users.
+ * Attributes
+   * Username
+   * Path - organizational structure representations. Paths can also be referred to in policies
+   * Group - which groups user belongs to
+   * Last login
+   * MFA
+   * Password age
+   * Console last sign-in
+   * Access Key ID - Active/Inactive and ID
+   * Active Key Age
+   * ARN
+   * Console Access 
+   * Signing Certificates
+
+### Access Advisor
+ * 
+
+
