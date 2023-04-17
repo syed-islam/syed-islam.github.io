@@ -159,3 +159,73 @@ Key policies determine who can do what with the key, for example, defining who c
 
 ### Grants
 Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.
+
+## STS - Secure Token Service
+Used for federated user access to roles. Steps for SAML based role assumption:
+ 1. A user within an internal organization initiates a request to authenticate against the Active Directory Federated Service, an ADFS server, via a web browser using a single sign on URL. 
+ 2. If their authentication is successful by using their Active Directory credentials, SAML will then issue a successful authentication assertion back to the user's client, requesting federated access. 
+ 3. The SAML assertion is then sent to the AWS Security Token Service, to assume a role within IAM using the ```AssumeRoleWithSAML``` API. 
+ 4. STS then responds to the user requesting federated access with temporary security credentials, with an assumed role and associated permissions, allowing S3, EC2, and RDS access as per our example, the user then has federated access to the necessary AWS services as per the role's permissions.
+
+## IAM Policies 
+
+
+### Policy Syntax
+Represented as JSON and has at least one statement.
+ 1. Version : Policy language version.
+ 2. Statement : Array of statements is possible.
+    1. *SID* : Unique ID for the policy. 
+    2. Effect : Allow|Deny
+    3. *[NOT] Principal* : Who? Only for resource-based policy.
+    4. [NOT] Action : API Calls to which effect apply
+    5. *Condition* : Key,Value pair condition filters that must match.
+       1. IP Address : ```aws:sourceIp```; 10.0.0.0/16
+
+### Policy Types
+
+#### Identity-based policies
+ * Policies associated with anything tha depicts and identity
+ * Can be of the following variants:
+   * Managed Policies - both are saved in library and can be reused across multiple identities:
+     * AWS Management Policies
+     * Customer Managed Policies
+   * In-line Policies
+     * Embedded directly into the identity and can't easily be replicated to the identity.
+
+##### Creation
+ 1. Copy existing policy
+ 2. Policy Generator. Use UI and dropdown to create policy. 
+ 3. Create your own policy using JSON. This option also has a simple visual editor.
+
+  
+#### Resource-based policies
+ * Policies are attached to resources themselves.
+ * Has **principal** attribute to describe who the policy applies to 
+ * 
+#### Permission Boundaries
+ * These policies can be associated with a **role** or **user**.
+ * Don't grant permissions but define the maximum permissions that can be granted. Act as guardrail. 
+  
+#### Organization Service Control Policies (SCPs)
+ * These policies can be associated Organizations or Organization units. 
+ * Don't grant permissions but define the maximum permissions that can be granted to users of the Organization or OU. 
+ * SCPs can be viewed from IAM but can't be edited from IAM and must be done from AWS Organizations services.
+
+
+#### Policy Evaluation
+ 1. Authentication Check
+ 2. Context (Service and request)
+ 3. Policy Evaluation
+    1. Be default all access to a resource is denied
+    2. Allows need to be explicit
+    3. Explicit deny will take precedence and will lead to deny
+ 4. Result of evaluation - Allow/deny
+  
+ ##### Evaluation Order
+  1. Organizational SCP
+  2. Resource-based Policies
+  3. IAM Permission Boundaries
+  4. Identity-based policies
+
+
+

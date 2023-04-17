@@ -49,31 +49,34 @@
  * Pools established database connections for enabling connections at scale
  * Can refuse connections that can't be serviced. 
 
+## Amazon Cognito
+ * Used for managing federated users access to roles. Specifically recommended for Mobile applications. 
 
-## AWS KMS
- * The Key Management Service (KMS) is a managed service used to store and generate encryption keys that can be used by other AWS services and applications to encrypt and decrypt your data.
- * AWS administrators do **not** have access to KMS keys and cannot recover deleted keys. 
- * KSM keys are for encryption at rest only. SSL is needed for encryption in transit.
- * Integrates with CloudTrail for usage tracking. 
- * KMS is region-specific. Each region requires its own instance of KMS. 
+## AWS Trusted Advisor
+ Makes recommendations to improve infrastructure use across environment based on known best practices.
 
-### Components
- There are 4 key components of AWS KSM:
-  1. Customer Master Keys (CMK)
-  2. Data Encryption Keys (DEKs)
-  3. Key Policies
-  4. Grants
+ Make recommendations in the following areas:
+  * Cost Optimization - is there unused resources.
+  * Performance - where can we take advantage of provisioned capabilities
+  * Security - weakness/vulnerabilities
+  * Fault Tolerance - Multi-AZ
+  * Service Limits - 80% limits are highlighted
 
-### CMK Types
- 1. Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.
- 2. AWS  - hese are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.
- 3. AWS Owned - These are not visible within the KMS console or anywhere within your account, neither do you have the ability to audit and track their usage, they are essentially abstracted from your AWS account.But of course, some services use this key type to encrypt your data within your account.Examples of AWS Owned CMKs include:•The S3 Master key uses SSE-S3 encryption•The default encryption option used on all Amazon DynamoDBtables uses AWS owned keys.
+|       | Basic | Developer | Business | Enterprise | 
+| ----- | ----- | --------- | -------- | ---------- |
+| Cost Optimization | :x:  | :x: | :material-check:| :material-check:|
+|Performance  |  :x: | :x: |:material-check: |:material-check: |
+| Security |  6 core checks | 6 core checks |:material-check: |:material-check: |
+| Fault Tolerance |  :x: | :x: |:material-check: | :material-check:|
+| Service Limits |  :material-check: |:material-check:  |:material-check: |:material-check: |
 
-### Data Encryption Keys (DEKs)
-Data keys are created by CMKs however they are used outside of KMS to perform encryption against your data, either in your own applications or by other AWS services.
+Core Security Checks:
+ * S3 bucket permissions
+ * Security Groups - specific ports unrestricted
+ * EBS public snapshot
+ * RDS public snapshot
+ * IAM use
+ * MFA on Root account.
+  
 
-### Key Policies
-Key policies determine who can do what with the key, for example, defining who can use the key to perform cryptographic operations, in addition to those who can administer the CMK to perform functions such as deleting and revoking the key.  Controlling access to CMKs can’t be done using IAM alone. In ALL cases, to manage access to your CMKs, you MUST use a key policy.
 
-### Grants
-Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.
