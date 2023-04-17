@@ -404,38 +404,14 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-kms">
-    AWS KMS
-  </a>
-<nav aria-label="AWS KMS" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#components">
-    Components
+<a class="md-nav__link" href="#amazon-cognito">
+    Amazon Cognito
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cmk-types">
-    CMK Types
+<a class="md-nav__link" href="#aws-trusted-advisor">
+    AWS Trusted Advisor
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#data-encryption-keys-deks">
-    Data Encryption Keys (DEKs)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-policies">
-    Key Policies
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#grants">
-    Grants
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -560,38 +536,14 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-kms">
-    AWS KMS
-  </a>
-<nav aria-label="AWS KMS" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#components">
-    Components
+<a class="md-nav__link" href="#amazon-cognito">
+    Amazon Cognito
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cmk-types">
-    CMK Types
+<a class="md-nav__link" href="#aws-trusted-advisor">
+    AWS Trusted Advisor
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#data-encryption-keys-deks">
-    Data Encryption Keys (DEKs)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-policies">
-    Key Policies
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#grants">
-    Grants
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -659,32 +611,73 @@
 <li>Pools established database connections for enabling connections at scale</li>
 <li>Can refuse connections that can't be serviced. </li>
 </ul>
-<h2 id="aws-kms">AWS KMS</h2>
+<h2 id="amazon-cognito">Amazon Cognito</h2>
 <ul>
-<li>The Key Management Service (KMS) is a managed service used to store and generate encryption keys that can be used by other AWS services and applications to encrypt and decrypt your data.</li>
-<li>AWS administrators do <strong>not</strong> have access to KMS keys and cannot recover deleted keys. </li>
-<li>KSM keys are for encryption at rest only. SSL is needed for encryption in transit.</li>
-<li>Integrates with CloudTrail for usage tracking. </li>
-<li>KMS is region-specific. Each region requires its own instance of KMS. </li>
+<li>Used for managing federated users access to roles. Specifically recommended for Mobile applications. </li>
 </ul>
-<h3 id="components">Components</h3>
-<p>There are 4 key components of AWS KSM:
-  1. Customer Master Keys (CMK)
-  2. Data Encryption Keys (DEKs)
-  3. Key Policies
-  4. Grants</p>
-<h3 id="cmk-types">CMK Types</h3>
-<ol>
-<li>Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.</li>
-<li>AWS  - hese are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.</li>
-<li>AWS Owned - These are not visible within the KMS console or anywhere within your account, neither do you have the ability to audit and track their usage, they are essentially abstracted from your AWS account.But of course, some services use this key type to encrypt your data within your account.Examples of AWS Owned CMKs include:•The S3 Master key uses SSE-S3 encryption•The default encryption option used on all Amazon DynamoDBtables uses AWS owned keys.</li>
-</ol>
-<h3 id="data-encryption-keys-deks">Data Encryption Keys (DEKs)</h3>
-<p>Data keys are created by CMKs however they are used outside of KMS to perform encryption against your data, either in your own applications or by other AWS services.</p>
-<h3 id="key-policies">Key Policies</h3>
-<p>Key policies determine who can do what with the key, for example, defining who can use the key to perform cryptographic operations, in addition to those who can administer the CMK to perform functions such as deleting and revoking the key.  Controlling access to CMKs can’t be done using IAM alone. In ALL cases, to manage access to your CMKs, you MUST use a key policy.</p>
-<h3 id="grants">Grants</h3>
-<p>Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.</p>
+<h2 id="aws-trusted-advisor">AWS Trusted Advisor</h2>
+<p>Makes recommendations to improve infrastructure use across environment based on known best practices.</p>
+<p>Make recommendations in the following areas:
+  * Cost Optimization - is there unused resources.
+  * Performance - where can we take advantage of provisioned capabilities
+  * Security - weakness/vulnerabilities
+  * Fault Tolerance - Multi-AZ
+  * Service Limits - 80% limits are highlighted</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Basic</th>
+<th>Developer</th>
+<th>Business</th>
+<th>Enterprise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost Optimization</td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>Performance</td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>Security</td>
+<td>6 core checks</td>
+<td>6 core checks</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>Fault Tolerance</td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><img alt="❌" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/274c.svg" title=":x:"/></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>Service Limits</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7Z"></path></svg></span></td>
+</tr>
+</tbody>
+</table>
+<p>Core Security Checks:
+ * S3 bucket permissions
+ * Security Groups - specific ports unrestricted
+ * EBS public snapshot
+ * RDS public snapshot
+ * IAM use
+ * MFA on Root account.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

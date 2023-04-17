@@ -519,6 +519,68 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sts-secure-token-service">
+    STS - Secure Token Service
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iam-policies_1">
+    IAM Policies
+  </a>
+<nav aria-label="IAM Policies" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-syntax">
+    Policy Syntax
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-types">
+    Policy Types
+  </a>
+<nav aria-label="Policy Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identity-based-policies">
+    Identity-based policies
+  </a>
+<nav aria-label="Identity-based policies" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation">
+    Creation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-based-policies">
+    Resource-based policies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-boundaries">
+    Permission Boundaries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#organization-service-control-policies-scps">
+    Organization Service Control Policies (SCPs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-evaluation">
+    Policy Evaluation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -727,6 +789,68 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sts-secure-token-service">
+    STS - Secure Token Service
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iam-policies_1">
+    IAM Policies
+  </a>
+<nav aria-label="IAM Policies" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-syntax">
+    Policy Syntax
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-types">
+    Policy Types
+  </a>
+<nav aria-label="Policy Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identity-based-policies">
+    Identity-based policies
+  </a>
+<nav aria-label="Identity-based policies" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation">
+    Creation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-based-policies">
+    Resource-based policies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-boundaries">
+    Permission Boundaries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#organization-service-control-policies-scps">
+    Organization Service Control Policies (SCPs)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-evaluation">
+    Policy Evaluation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -899,6 +1023,78 @@
 <p>Key policies determine who can do what with the key, for example, defining who can use the key to perform cryptographic operations, in addition to those who can administer the CMK to perform functions such as deleting and revoking the key.  Controlling access to CMKs can’t be done using IAM alone. In ALL cases, to manage access to your CMKs, you MUST use a key policy.</p>
 <h3 id="grants">Grants</h3>
 <p>Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.</p>
+<h2 id="sts-secure-token-service">STS - Secure Token Service</h2>
+<p>Used for federated user access to roles. Steps for SAML based role assumption:
+ 1. A user within an internal organization initiates a request to authenticate against the Active Directory Federated Service, an ADFS server, via a web browser using a single sign on URL. 
+ 2. If their authentication is successful by using their Active Directory credentials, SAML will then issue a successful authentication assertion back to the user's client, requesting federated access. 
+ 3. The SAML assertion is then sent to the AWS Security Token Service, to assume a role within IAM using the <code>AssumeRoleWithSAML</code> API. 
+ 4. STS then responds to the user requesting federated access with temporary security credentials, with an assumed role and associated permissions, allowing S3, EC2, and RDS access as per our example, the user then has federated access to the necessary AWS services as per the role's permissions.</p>
+<h2 id="iam-policies_1">IAM Policies</h2>
+<h3 id="policy-syntax">Policy Syntax</h3>
+<p>Represented as JSON and has at least one statement.
+ 1. Version : Policy language version.
+ 2. Statement : Array of statements is possible.
+    1. <em>SID</em> : Unique ID for the policy. 
+    2. Effect : Allow|Deny
+    3. <em>[NOT] Principal</em> : Who? Only for resource-based policy.
+    4. [NOT] Action : API Calls to which effect apply
+    5. <em>Condition</em> : Key,Value pair condition filters that must match.
+       1. IP Address : <code>aws:sourceIp</code>; 10.0.0.0/16</p>
+<h3 id="policy-types">Policy Types</h3>
+<h4 id="identity-based-policies">Identity-based policies</h4>
+<ul>
+<li>Policies associated with anything tha depicts and identity</li>
+<li>Can be of the following variants:</li>
+<li>Managed Policies - both are saved in library and can be reused across multiple identities:<ul>
+<li>AWS Management Policies</li>
+<li>Customer Managed Policies</li>
+</ul>
+</li>
+<li>In-line Policies<ul>
+<li>Embedded directly into the identity and can't easily be replicated to the identity.</li>
+</ul>
+</li>
+</ul>
+<h5 id="creation">Creation</h5>
+<ol>
+<li>Copy existing policy</li>
+<li>Policy Generator. Use UI and dropdown to create policy. </li>
+<li>Create your own policy using JSON. This option also has a simple visual editor.</li>
+</ol>
+<h4 id="resource-based-policies">Resource-based policies</h4>
+<ul>
+<li>Policies are attached to resources themselves.</li>
+<li>Has <strong>principal</strong> attribute to describe who the policy applies to </li>
+<li></li>
+</ul>
+<h4 id="permission-boundaries">Permission Boundaries</h4>
+<ul>
+<li>These policies can be associated with a <strong>role</strong> or <strong>user</strong>.</li>
+<li>Don't grant permissions but define the maximum permissions that can be granted. Act as guardrail. </li>
+</ul>
+<h4 id="organization-service-control-policies-scps">Organization Service Control Policies (SCPs)</h4>
+<ul>
+<li>These policies can be associated Organizations or Organization units. </li>
+<li>Don't grant permissions but define the maximum permissions that can be granted to users of the Organization or OU. </li>
+<li>SCPs can be viewed from IAM but can't be edited from IAM and must be done from AWS Organizations services.</li>
+</ul>
+<h4 id="policy-evaluation">Policy Evaluation</h4>
+<ol>
+<li>Authentication Check</li>
+<li>Context (Service and request)</li>
+<li>Policy Evaluation<ol>
+<li>Be default all access to a resource is denied</li>
+<li>Allows need to be explicit</li>
+<li>Explicit deny will take precedence and will lead to deny</li>
+</ol>
+</li>
+<li>Result of evaluation - Allow/deny</li>
+</ol>
+<p>##### Evaluation Order
+  1. Organizational SCP
+  2. Resource-based Policies
+  3. IAM Permission Boundaries
+  4. Identity-based policies</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
