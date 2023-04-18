@@ -222,9 +222,37 @@ All Plans get:
  * Reports the findings as Medium or High and the type of findings.
 
 
+## AWS Resilience Hub
+ * Information about how resilient is your design.
 
+## AWS Backup
+ * Can be used to manage backup across multiple AWS services
+ * Central managed service
+ * Supports multiple regions
+ * Central backup hub
+ * logging and monitoring
 
+### Policies
+ * schedule
+ * window
+ * lifecycle rules
+ * backup vault 
+ * regional copies 
+ * tags
 
+### Integrates
+ * **EFS** needs to use AWS Backup
+ * EBS
+ * EC2
+ * RDS
+ * Aurora
+ * DynamoDB
+ * DFS
+ * Storage Gateway Volumes
+ * FSx (Windows and Lustre)
+
+## Data Lifecycle Manager
+ * EBS Backup across cross-region
 
 
 
