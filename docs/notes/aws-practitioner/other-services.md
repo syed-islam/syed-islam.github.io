@@ -168,6 +168,61 @@ All Plans get:
 
 
 ## AWS Firewall Manager
+ * Simplify the management of security protection across multiple-AWS Accounts. 
+ * AWS Firewall manager can apply the security / firewall policies across multiple Accounts and automatically new resources. 
+ * Simplifies security management
+ * Integrates with AWS organization and is required for using AWS Firewall manager
+
+### Integration
+ * AWS WAF
+ * AWS Shield Advanced
+ * AWS Network Firewall
+ * VPC Security Groups
+ * Amazon Route53 Resolver DNS Firewall
+
+### Steps for configuraiton
+ 1. AWS Firewall Manager Administrator Account - define rules
+ 2. Account has to be part of an organization
+ 3. AWS Firewall manager as the Firewall Manager account. 
+ 4. Enable AWS Config for all accounts, all regions for firewall manager to work
+ 5. Enable Sharing with AWS Organizations in Resource Access Manager
+ 6. Enable regions within AWS Management console where firewall manager is no enabled by default.
+
+
+## AWS Shield
+ * Protect against DDOS attacks:
+   * SYN Flood
+   * DNS Query flood
+   * HTTP Flood/Cache-busting
+
+### Levels of Featurs
+ * Standard - free for all AWS Account. Protect against Level 3 and Level 4 attacks. 
+ * Advanced - Web Apps on EC2, CloudFronts, ELBs and Route53. 24x7 DDOS protection team. Level 3,4,7 protection. Cost protection and get AWS WAF included. $3K / month current cost.
+
+## Amazon Inspector
+ * Analyze **EC2** instance for security issues
+ * Rules for security standards and vulnerability definitions
+ * Install agent on the EC2
+ * Gives a prioritized list of findings 
+
+## Amazon Guard Duty
+ * Intelligent Threat Identification using AI
+ * Analyze CloudTrail logs, VPC Flow logs and DNS query logs for review
+ * Sample Findings are provided for each type of problem.
+ * Critical, Medium and Low severity findings. 
+
+## AWS Security Hub
+???
+
+## Amazon Macie
+ * Machine learning to analyze objects in S3
+ * Identifies critical private data - PII
+ * Automatically keeps track of changes to data to only check new objects
+ * One time or scheduled run possible
+ * Reports the findings as Medium or High and the type of findings.
+
+
+
 
 
 

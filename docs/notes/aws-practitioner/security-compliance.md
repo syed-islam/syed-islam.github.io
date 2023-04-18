@@ -226,6 +226,7 @@ Represented as JSON and has at least one statement.
   2. Resource-based Policies
   3. IAM Permission Boundaries
   4. Identity-based policies
+  5. 
 
 
 
