@@ -69,6 +69,9 @@
 | Security |  6 core checks | 6 core checks |:material-check: |:material-check: |
 | Fault Tolerance |  :x: | :x: |:material-check: | :material-check:|
 | Service Limits |  :material-check: |:material-check:  |:material-check: |:material-check: |
+| Track recent changes | ||:material-check:|:material-check:|
+| API | ||:material-check:|:material-check:|
+| CloudWatch Integration| ||:material-check:|:material-check:|
 
 Core Security Checks:
  * S3 bucket permissions
@@ -77,6 +80,99 @@ Core Security Checks:
  * RDS public snapshot
  * IAM use
  * MFA on Root account.
+
+All Plans get:
+ * Trusted Advisor Notification (opt in/out)
+ * Exclude items
+ * Action Links
+ * Access Management
+ * Refresh - 24 hourly update, manual refresh at 5 mins interval.
+
+## AWS Organizations
+ * Centrally manage multiple AWS accounts. Helps with security & compliance and account management. 
   
+### Components
+
+#### Organization
+
+ * A hierarchical structure for Accounts. 
+
+#### Root
+ * Top level of organization
+ * Single root at an organization
+
+#### Organizational Unit 
+ * Groups of Accounts, hierarchical structure
+ * Can be attached to root or another OU
+ * Can be 5 level deeps
+
+#### Account
+ * AWS Accounts an be controlled from a Master Account.
+ * Master Account can be used for consolidated billing from all OUs and Accounts. 
+ * Master Account should be kept to a minimum as it can create additional accounts, invite accounts, remove accounts and apply SCP.
+ * Two types:
+   * Enable Consolidated Billing
+   * Enable all features - needed for SCP. 
+ * Master Account and Resource-based linked policies are not impacted by SCPs
+ * Root Account is still able to perform a lot of functionalities even after an attached SCP. 
+  
+#### Service Control Policies
+ * Sets the permission boundary
+ * Can be applied to Root, OU or Account. 
+ * Once set it applies to all children of the leaf where set
+ * Does not grant policies
+ * AWS organizations with 'Enable All Settings' are required and needs to be setup from root account
+ * By default the root account gets a SCP of ```FullAWSAccess```. This is why everything works by default.
+ * SCPs don't affect resource-base policies then affect the principals. 
+ * SCPs affect all users, role in addition to root. Root still able to change password, MFA settings, root access keys and x.509 certificates for root. 
+ * Organization removal - removes all SCPs. Re-enabling goes back to default. 
+ * SCPs do not affect - Master Account, service-linked roles and CloudFront Keys.
+
+
+
+## AWS WAF (Web Application Firewall)
+
+ * Helps with mitigation of attack patterns: OWASP Top 10 Attack Patterns
+ * Filtering request on source IP address or country of origin
+ * Reduces the risk by block traffic at the perimeter.
+
+### Integrations
+ * Amazon API Gateway
+ * CloudFront Distributions
+ * Application Load Balancer
+ * AWS AppSync GraphQL API
+
+### Traffic Types
+ * HTTP 
+ * HTTPS
+
+### Components
+#### Web ACLs
+ * Main building block of WAF service
+ * Associated with the integrated services to allow of block traffic
+ * Contains rules to allow/block traffic
+ * Default rule also exists to allow/block
+
+#### Rules
+ * Statement (criteria)
+ * Action
+   * Allow - forwarded
+   * Block - blocked and informs requester of block
+   * Count - counts traffic match
+  
+#### Rule Groups
+ * A collection of rules that can be applied to Web ACLs
+ * WAF comes with some AWS collections or can be purchased from AWS Marketplace
+ * You can do your own
+ * Rule Groups have weights and this limits the number of rules that can be put on WAF to ensure performance. 
+
+
+## AWS Firewall Manager
+
+
+
+
+
+
 
 
