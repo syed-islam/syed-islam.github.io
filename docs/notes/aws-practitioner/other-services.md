@@ -258,6 +258,9 @@ All Plans get:
  * Based on best practices from AWS
  * based on AWS Well-Architected Framework
 
+## Monitoring
+### CloudWatch
+ * metrics for cluster size scaling up and down for ECS
 
 
 
