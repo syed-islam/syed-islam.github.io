@@ -2,6 +2,7 @@
 
 ## IP Ranges
 Reserved addresses with subnet 10.0.1.0/24
+
  * 10.0.1.0 - Network
  * 10.0.1.1 - AWS Routing
  * 10.0.1.2 - AWS DNS
@@ -47,22 +48,15 @@ Reserved addresses with subnet 10.0.1.0/24
  * Evaluation stops at first match of a rule.
 
 ### Structure
-#### Inbound
- * Rule Number
- * Type (HTTP)
- * Protocol (TCP)
- * Port Range (80)
- * Source (0.0.0.0/-)
- * Action (Allow/Deny)
 
-#### Outbound
-#### Inbound
- * Rule Number
- * Type (HTTP)
- * Protocol (TCP)
- * Port Range (80)
- * Destination (0.0.0.0/-)
- * Action (Allow/Deny)
+| Inbound | Outbound |
+| ------| ------ |
+ Rule Number | Rule Number|
+ Type (HTTP) | Type (HTTP)|
+ Protocol (TCP) | Protocol (TCP)|
+ Port Range (80) | Port Range (80)|
+ Source (0.0.0.0/-) | Destination (0.0.0.0/-)|
+ Action (Allow/Deny)| Action (Allow/Deny)|
 
 ## Security Groups
 ### Property
@@ -75,18 +69,13 @@ Reserved addresses with subnet 10.0.1.0/24
  * **Default** - All inbound from same security group, All Outbound Traffic allowed to everywhere. 
 
 ### Structure
-#### Inbound
- * Type (MySQL)
- * Protocol (TCP)
- * Port Range (3306)
- * Source 10.0.1.0/24
 
-#### Outbound
- * Type
- * Protocol
- * Port Range
- * Destination
-
+| Inbound | Outbound |
+| ------| ------ |
+|Type (MySQL) | Type|
+| Protocol (TCP) |Protocol (TCP) |
+| Port Range (3306) |Port Range  |
+| Source 10.0.1.0/24 |Source  | 
 
 ## Internet Gateway
  * Attaches to VPC and allows connections to the Internet.
@@ -158,6 +147,7 @@ Reserved addresses with subnet 10.0.1.0/24
 |PTR| Map IP to domain name |
 
 **Alias** is a route 53 specific extension to DNS. Routes traffic to:
+
  * S3 buckets
  * ELBs
  * Elastic Beanstalk
@@ -204,7 +194,8 @@ Reserved addresses with subnet 10.0.1.0/24
 *  Client affinity is supported for continued connections.
 
 ## ELB - Elastic Load Balancer
-Targets could be a fleet of 
+Targets could be a fleet of:
+
  * EC2 instances, 
  * Lambda functions, 
  * a range of IP addresses, 
@@ -212,8 +203,26 @@ Targets could be a fleet of
 
 Managed by AWS and is elastic. 
 
+
+### Comparison
+[AWS Comparison Table](https://aws.amazon.com/elasticloadbalancing/features/#compare)
+
+### Components
+ * **Listener** - The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions.
+ * **Target Groups** - A target group is simply a group of resources that you want your ELB to route requests to, for example a fleet of EC2 instances. 
+ * **Rules** - Rules are associated to each listener that you have configured within your ELB, and they help to define how an incoming request gets routed to which target group. 
+
+
+
 ### ELB Nodes
 An ELB node will need to be placed to any Availability Zones for which you want to route traffic to. Without the Availability Zone associated, the ELB will not be able to route traffic to any targets within that Availability Zone even if they are defined within the target group. This is because the nodes are used by the ELB to distribute traffic to your target groups. 
+
+### Internal or Internet-facing ELBs.
+ * **Internet-facing ELBs** - public DNS name, public IP address, internal IP address 
+ * **Internal** - Internal IP address. 
+
+Communication to Target Group is only done via Internal IP. 
+
 
 ### Cross-Zone load balancing
  * Not set - distributes to nodes
@@ -278,6 +287,7 @@ Once a connection is established, the connection remains open for the duration o
  * Security Group for the Load Balancer
  * Configure Routing to Target Group
 
+
 ### Classic Load Balancer
  * Classic environment
  * Operates at both request and connection level. 
@@ -285,23 +295,9 @@ Once a connection is established, the connection remains open for the duration o
 !!! note
     For target we select EC2 instances directly and not target groups.
 
-### Components
- * **Listener** - The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions.
- * **Target Groups** - A target group is simply a group of resources that you want your ELB to route requests to, for example a fleet of EC2 instances. 
- * **Rules** - Rules are associated to each listener that you have configured within your ELB, and they help to define how an incoming request gets routed to which target group. 
 
 ### Health Check
 Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.
-
-### Internal or Internet-facing ELBs.
- * **Internet-facing ELBs** - public DNS name, public IP address, internal IP address 
- * **Internal** - Internal IP address. 
-
-Communication to Target Group is only done via Internal IP. 
-
-### Comparison
-[AWS Comparison Table](https://aws.amazon.com/elasticloadbalancing/features/#compare)
-
 
 
 ## Server Certificate (SSL/TLS)

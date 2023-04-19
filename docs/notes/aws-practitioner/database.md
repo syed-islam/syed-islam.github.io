@@ -19,13 +19,6 @@
 1. OLTP - Online Transaction Processing. Predictable and structured work. 
 2. OLAP - Online Analytics Processing. Retrospective, predictive, streaming. 
 
-## DynamoDB
-
-### Properties
- * Key, Value data store. 
- * No schema. 
-
-
 ## Amazon DocumentDB
 
 ### Properties
