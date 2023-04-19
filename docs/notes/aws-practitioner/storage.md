@@ -57,13 +57,16 @@
  * Moving data two step process - (1) Create Vault (2) Use API/SDK to move data. or via Data lifecycle from S3.
  * Access is via API/SDK or AWS CLI. Either way an archival retrieval job needs to be create first. 
  * S3 Access of data comes at a cost based on retrieval options:
-   * Expedited - <250MB, 5 mins, most expensive
-   * Standard - Any size, 3-5 hours, 2nd most expensive
-   * Bulk - Any size, 5-12 hours, cheapest
-
+   * Set 1
+     * Expedited - <250MB, 5 mins, most expensive
+     * Standard - Any size, 3-5 hours, 2nd most expensive
+     * Bulk - Any size, 5-12 hours, cheapest
+   * Set 2
+     * Instant Retrieval - milliseconds
+     * Flexible Retrieval - mins to hours
+     
 #### S3 Glacier Deep Archive
  * Minimal access retrieval is 12 hours.
- * 
 
 ### Fees
  * Minimum storage of 30 days of storage requirement on all tiers, except standard. Glacier has 90 days. Deep Archive 180 days.
@@ -171,6 +174,7 @@
 |GPU| n/a|n/a|Nvdia Tesla | n/a | n/a|
 |cluster| na | 5-10 |5-10 |5-10 |n/a|
 |use cases| portable, battery, upto 8TB, DataSync, 10Gbit | S3 API, 100Gbit network |compute power, cluster |80TB, SSD, Rack mounting, **HIPPA compliant** |10 petabyte|
+
 
 
 
