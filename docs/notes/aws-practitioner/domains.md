@@ -79,13 +79,68 @@ Type of Edge Location. These sit between Cloud Front Origin servers and Edge Loc
 ## Network Infrastructure
 1. VPC - Virtual Private Cloud (Virtual Networks)
 
-## Questions
 
-
-
-# Monitoring
-## CloudWatch
+## Monitoring
+### CloudWatch
  * metrics for cluster size scaling up and down for ECS
+
+
+## AWS Well-Architected Framework
+
+### Operational Excellence
+aims at constant improvement and efficient managing of workloads, as well as gaining operational insights and continuous improvement of processes and procedures to support business value
+
+#### Principles
+1. Operations-as-Code
+2. Frequent and reversible changes
+3. Evolve procedures alongside the workload
+4. Failure prevention
+5. Learning from operational failures
+
+### Security
+describes how to protect data, systems, and components using cloud technologies, how user rights and privileges are correctly managed, and how integrity and conformity of information is maintained.
+
+#### Principles
+1. Implementation of a strong identity foundation
+2. Traceability
+3. Apply security at all levels
+4. Security by automation
+5. Data protection
+6. Access
+7. Incident preparation
+
+### Reliability
+focuses on the ability of a workload to perform correctly and as intended at the expected time. Including quickly recovery and prevention from failures
+
+#### Principles
+1. Automatic recovery
+2. Test recovery procedures
+3. Horizontal scaling for better availability
+4. Stop guessing capacity
+5. Manage changes in automation
+
+
+### Performance Efficiency
+Efficient allocation and right-sizing of computing resources by the system requirements and interception of demand changes
+
+#### Principles
+1. Make use of advanced technologies
+2. Global in minutes
+3. Serverless architectures
+4. Experiment more
+5. Know the options - make the right choices
+
+### Cost Optimization
+Understanding and controlling expenses, avoiding unnecessary costs, and analyzing spend in detail
+
+#### Principles
+1. Implement Cloud Financial Management
+2. Adopt a consumption model
+3. Measure overall efficiency
+4. Stop spending money on data center operations
+5. Analyze and attribute expenses
+
+
 
 
 

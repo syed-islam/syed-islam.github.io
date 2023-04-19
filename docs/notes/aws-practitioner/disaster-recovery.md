@@ -5,7 +5,7 @@
    * Cost of loss
    * Dependencies
    * Consumers
-   * Regulator
+   * Regulatory requirements
 
 ## RTO
  * Maximum amount of time a service is allowed to be unavailable.

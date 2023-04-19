@@ -62,6 +62,8 @@ nav:
        - Security and Compliance : ./notes/aws-practitioner/security-compliance.md
        - Disaster Recovery : ./notes/aws-practitioner/disaster-recovery.md
        - Management : ./notes/aws-practitioner/management.md
+       - Billing, Pricing and Support : ./notes/aws-practitioner/billing-pricing-service.md
+       - Summary Table: ./notes/aws-practitioner/short-hand-table.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        

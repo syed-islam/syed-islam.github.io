@@ -254,6 +254,12 @@ All Plans get:
 ## Data Lifecycle Manager
  * EBS Backup across cross-region
 
+### AWS Well-Architected Tool
+ * Based on best practices from AWS
+ * based on AWS Well-Architected Framework
+
+
+
 
 
 
