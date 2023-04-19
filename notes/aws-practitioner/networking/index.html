@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../database/" rel="prev"/>
-<link href="../other-services/" rel="next"/>
+<link href="../queuing-service/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Networking - Syed's Home</title>
@@ -311,7 +311,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../compute/">
-        Computing
+        Compute
       </a>
 </li>
 <li class="md-nav__item">
@@ -402,25 +402,6 @@
 <a class="md-nav__link" href="#structure">
     Structure
   </a>
-<nav aria-label="Structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound">
-    Inbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outbound">
-    Outbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound_1">
-    Inbound
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -440,20 +421,6 @@
 <a class="md-nav__link" href="#structure_1">
     Structure
   </a>
-<nav aria-label="Structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound_2">
-    Inbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outbound_1">
-    Outbound
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -528,17 +495,103 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#outstanding-question">
-    Outstanding Question
+<a class="md-nav__link" href="#elb-elastic-load-balancer">
+    ELB - Elastic Load Balancer
+  </a>
+<nav aria-label="ELB - Elastic Load Balancer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparison">
+    Comparison
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components">
+    Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elb-nodes">
+    ELB Nodes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internal-or-internet-facing-elbs">
+    Internal or Internet-facing ELBs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-zone-load-balancing">
+    Cross-Zone load balancing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alb">
+    ALB
+  </a>
+<nav aria-label="ALB" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#target-group-configuration">
+    Target Group Configuration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#load-balancer-configuration">
+    Load Balancer Configuration
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nlb">
+    NLB
+  </a>
+<nav aria-label="NLB" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration_1">
+    Configuration
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../other-services/">
-        Other Services
-      </a>
+<a class="md-nav__link" href="#classic-load-balancer">
+    Classic Load Balancer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#health-check">
+    Health Check
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-certificate-ssltls">
+    Server Certificate (SSL/TLS)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outstanding-question">
+    Outstanding Question
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../queuing-service/">
@@ -563,6 +616,21 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../management/">
         Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../billing-pricing-service/">
+        Billing, Pricing and Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../other-services/">
+        Other Services
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../short-hand-table/">
+        Summary Table
       </a>
 </li>
 </ul>
@@ -668,25 +736,6 @@
 <a class="md-nav__link" href="#structure">
     Structure
   </a>
-<nav aria-label="Structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound">
-    Inbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outbound">
-    Outbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound_1">
-    Inbound
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -706,20 +755,6 @@
 <a class="md-nav__link" href="#structure_1">
     Structure
   </a>
-<nav aria-label="Structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inbound_2">
-    Inbound
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outbound_1">
-    Outbound
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -794,6 +829,97 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#elb-elastic-load-balancer">
+    ELB - Elastic Load Balancer
+  </a>
+<nav aria-label="ELB - Elastic Load Balancer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparison">
+    Comparison
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components">
+    Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elb-nodes">
+    ELB Nodes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internal-or-internet-facing-elbs">
+    Internal or Internet-facing ELBs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-zone-load-balancing">
+    Cross-Zone load balancing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alb">
+    ALB
+  </a>
+<nav aria-label="ALB" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#target-group-configuration">
+    Target Group Configuration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#load-balancer-configuration">
+    Load Balancer Configuration
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nlb">
+    NLB
+  </a>
+<nav aria-label="NLB" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration_1">
+    Configuration
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classic-load-balancer">
+    Classic Load Balancer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#health-check">
+    Health Check
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-certificate-ssltls">
+    Server Certificate (SSL/TLS)
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#outstanding-question">
     Outstanding Question
   </a>
@@ -807,12 +933,14 @@
 <article class="md-content__inner md-typeset">
 <h1 id="networking">Networking</h1>
 <h2 id="ip-ranges">IP Ranges</h2>
-<p>Reserved addresses with subnet 10.0.1.0/24
- * 10.0.1.0 - Network
- * 10.0.1.1 - AWS Routing
- * 10.0.1.2 - AWS DNS
- * 10.0.1.3 - AWS Future
- * 10.0.1.255 - Broadcast</p>
+<p>Reserved addresses with subnet 10.0.1.0/24</p>
+<ul>
+<li>10.0.1.0 - Network</li>
+<li>10.0.1.1 - AWS Routing</li>
+<li>10.0.1.2 - AWS DNS</li>
+<li>10.0.1.3 - AWS Future</li>
+<li>10.0.1.255 - Broadcast</li>
+</ul>
 <h2 id="vpc">VPC</h2>
 <h3 id="properties">Properties</h3>
 <ul>
@@ -857,25 +985,40 @@
 <li>Evaluation stops at first match of a rule.</li>
 </ul>
 <h3 id="structure">Structure</h3>
-<h4 id="inbound">Inbound</h4>
-<ul>
-<li>Rule Number</li>
-<li>Type (HTTP)</li>
-<li>Protocol (TCP)</li>
-<li>Port Range (80)</li>
-<li>Source (0.0.0.0/-)</li>
-<li>Action (Allow/Deny)</li>
-</ul>
-<h4 id="outbound">Outbound</h4>
-<h4 id="inbound_1">Inbound</h4>
-<ul>
-<li>Rule Number</li>
-<li>Type (HTTP)</li>
-<li>Protocol (TCP)</li>
-<li>Port Range (80)</li>
-<li>Destination (0.0.0.0/-)</li>
-<li>Action (Allow/Deny)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Inbound</th>
+<th>Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rule Number</td>
+<td>Rule Number</td>
+</tr>
+<tr>
+<td>Type (HTTP)</td>
+<td>Type (HTTP)</td>
+</tr>
+<tr>
+<td>Protocol (TCP)</td>
+<td>Protocol (TCP)</td>
+</tr>
+<tr>
+<td>Port Range (80)</td>
+<td>Port Range (80)</td>
+</tr>
+<tr>
+<td>Source (0.0.0.0/-)</td>
+<td>Destination (0.0.0.0/-)</td>
+</tr>
+<tr>
+<td>Action (Allow/Deny)</td>
+<td>Action (Allow/Deny)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="security-groups">Security Groups</h2>
 <h3 id="property">Property</h3>
 <ul>
@@ -888,20 +1031,32 @@
 <li><strong>Default</strong> - All inbound from same security group, All Outbound Traffic allowed to everywhere. </li>
 </ul>
 <h3 id="structure_1">Structure</h3>
-<h4 id="inbound_2">Inbound</h4>
-<ul>
-<li>Type (MySQL)</li>
-<li>Protocol (TCP)</li>
-<li>Port Range (3306)</li>
-<li>Source 10.0.1.0/24</li>
-</ul>
-<h4 id="outbound_1">Outbound</h4>
-<ul>
-<li>Type</li>
-<li>Protocol</li>
-<li>Port Range</li>
-<li>Destination</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Inbound</th>
+<th>Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type (MySQL)</td>
+<td>Type</td>
+</tr>
+<tr>
+<td>Protocol (TCP)</td>
+<td>Protocol (TCP)</td>
+</tr>
+<tr>
+<td>Port Range (3306)</td>
+<td>Port Range</td>
+</tr>
+<tr>
+<td>Source 10.0.1.0/24</td>
+<td>Source</td>
+</tr>
+</tbody>
+</table>
 <h2 id="internet-gateway">Internet Gateway</h2>
 <ul>
 <li>Attaches to VPC and allows connections to the Internet.</li>
@@ -1009,12 +1164,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Alias</strong> is a route 53 specific extension to DNS. Routes traffic to:
- * S3 buckets
- * ELBs
- * Elastic Beanstalk
- * CloudFront Distributions
- * VPC Interface Endpoints</p>
+<p><strong>Alias</strong> is a route 53 specific extension to DNS. Routes traffic to:</p>
+<ul>
+<li>S3 buckets</li>
+<li>ELBs</li>
+<li>Elastic Beanstalk</li>
+<li>CloudFront Distributions</li>
+<li>VPC Interface Endpoints</li>
+</ul>
 <h3 id="routing-policies">Routing Policies</h3>
 <table>
 <thead>
@@ -1083,6 +1240,117 @@
 <li>Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.</li>
 <li>Client affinity is supported for continued connections.</li>
 </ul>
+<h2 id="elb-elastic-load-balancer">ELB - Elastic Load Balancer</h2>
+<p>Targets could be a fleet of:</p>
+<ul>
+<li>EC2 instances, </li>
+<li>Lambda functions, </li>
+<li>a range of IP addresses, </li>
+<li>or even Containers.</li>
+</ul>
+<p>Managed by AWS and is elastic. </p>
+<h3 id="comparison">Comparison</h3>
+<p><a href="https://aws.amazon.com/elasticloadbalancing/features/#compare">AWS Comparison Table</a></p>
+<h3 id="components">Components</h3>
+<ul>
+<li><strong>Listener</strong> - The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions.</li>
+<li><strong>Target Groups</strong> - A target group is simply a group of resources that you want your ELB to route requests to, for example a fleet of EC2 instances. </li>
+<li><strong>Rules</strong> - Rules are associated to each listener that you have configured within your ELB, and they help to define how an incoming request gets routed to which target group. </li>
+</ul>
+<h3 id="elb-nodes">ELB Nodes</h3>
+<p>An ELB node will need to be placed to any Availability Zones for which you want to route traffic to. Without the Availability Zone associated, the ELB will not be able to route traffic to any targets within that Availability Zone even if they are defined within the target group. This is because the nodes are used by the ELB to distribute traffic to your target groups. </p>
+<h3 id="internal-or-internet-facing-elbs">Internal or Internet-facing ELBs.</h3>
+<ul>
+<li><strong>Internet-facing ELBs</strong> - public DNS name, public IP address, internal IP address </li>
+<li><strong>Internal</strong> - Internal IP address. </li>
+</ul>
+<p>Communication to Target Group is only done via Internal IP. </p>
+<h3 id="cross-zone-load-balancing">Cross-Zone load balancing</h3>
+<ul>
+<li>Not set - distributes to nodes</li>
+<li>Set - distributes to targets evenly. </li>
+<li>Default - ALB on,  NLB off</li>
+</ul>
+<h3 id="alb">ALB</h3>
+<ul>
+<li>HTTP/HTTPs protocol.</li>
+<li>Request level</li>
+<li>Advanced Routing</li>
+<li>TLS Termination</li>
+<li>Route to particular ports / targeted </li>
+<li>Visibility features for application architecture.</li>
+<li>cross-zone is always on. </li>
+</ul>
+<h4 id="configuration">Configuration</h4>
+<h5 id="target-group-configuration">Target Group Configuration</h5>
+<p>Define a Target Group, consisting of:</p>
+<ul>
+<li>Type<ul>
+<li>Instance</li>
+<li>IP</li>
+<li>Lambda</li>
+</ul>
+</li>
+<li>Protocol, Port and VPC</li>
+<li>Health check<ul>
+<li>Protocol</li>
+<li>Path</li>
+<li>Healthy/unhealthy thresholds</li>
+<li>Interval</li>
+<li>Success codes</li>
+</ul>
+</li>
+<li>Register Targets in the group</li>
+</ul>
+<h5 id="load-balancer-configuration">Load Balancer Configuration</h5>
+<ul>
+<li>Public / Private</li>
+<li>Listeners</li>
+<li>Rules can be added under listeners</li>
+<li>Multiple Rules can exist.</li>
+<li>Select AZs for node deployment</li>
+<li>Security Group for the Load Balancer</li>
+<li>Configure Routing to Target Group</li>
+</ul>
+<h3 id="nlb">NLB</h3>
+<ul>
+<li>connection level</li>
+<li>ultra-high performance - millions of requests per second. </li>
+<li>TCP/UDP protocol. Layer 4.</li>
+<li>Listeners - TCP/TLS/UDP.</li>
+<li>cross-zone can be turned on or off, default off. </li>
+</ul>
+<p>If your application requires a <em>Static IP</em> then NLB is the only option. </p>
+<p>Once a connection is established, the connection remains open for the duration of the request. </p>
+<h4 id="configuration_1">Configuration</h4>
+<ul>
+<li>Public / Private</li>
+<li>Listeners</li>
+<li>Rules can be added under listeners</li>
+<li>Multiple Rules can exist.</li>
+<li>Select AZs for node deployment</li>
+<li>Security Group for the Load Balancer</li>
+<li>Configure Routing to Target Group</li>
+</ul>
+<h3 id="classic-load-balancer">Classic Load Balancer</h3>
+<ul>
+<li>Classic environment</li>
+<li>Operates at both request and connection level. </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For target we select EC2 instances directly and not target groups.</p>
+</div>
+<h3 id="health-check">Health Check</h3>
+<p>Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.</p>
+<h2 id="server-certificate-ssltls">Server Certificate (SSL/TLS)</h2>
+<p>HTTPS on ALB requires additional configuration.
+The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. </p>
+<p>Certificate Selection:
+ 1. Choose certificate from ACM
+ 2. Upload to ACM
+ 3. Choose from IAM
+ 4. Upload to IAM</p>
 <h2 id="outstanding-question">Outstanding Question</h2>
 </article>
 </div>

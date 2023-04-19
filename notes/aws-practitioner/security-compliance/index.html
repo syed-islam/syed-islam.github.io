@@ -311,7 +311,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../compute/">
-        Computing
+        Compute
       </a>
 </li>
 <li class="md-nav__item">
@@ -327,11 +327,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../networking/">
         Networking
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../other-services/">
-        Other Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -434,11 +429,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#security-token-service-endpoints">
-    Security Token Service Endpoints
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#access-reports">
     Access Reports
   </a>
@@ -520,8 +510,8 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sts-secure-token-service">
-    STS - Secure Token Service
+<a class="md-nav__link" href="#sts-security-token-service">
+    STS - Security Token Service
   </a>
 </li>
 <li class="md-nav__item">
@@ -592,6 +582,21 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../management/">
         Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../billing-pricing-service/">
+        Billing, Pricing and Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../other-services/">
+        Other Services
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../short-hand-table/">
+        Summary Table
       </a>
 </li>
 </ul>
@@ -709,11 +714,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#security-token-service-endpoints">
-    Security Token Service Endpoints
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#access-reports">
     Access Reports
   </a>
@@ -795,8 +795,8 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sts-secure-token-service">
-    STS - Secure Token Service
+<a class="md-nav__link" href="#sts-security-token-service">
+    STS - Security Token Service
   </a>
 </li>
 <li class="md-nav__item">
@@ -946,11 +946,6 @@
 <li>Needed for federated access</li>
 <li>Active Directory or Google Identity Provider are examples</li>
 </ul>
-<h3 id="security-token-service-endpoints">Security Token Service Endpoints</h3>
-<ul>
-<li>Request temporary, limited-privilege credentials for IAM users or Federated users.</li>
-<li>Enabled globally and best practice is to disable regions not being used. </li>
-</ul>
 <h3 id="access-reports">Access Reports</h3>
 <h4 id="access-analyzer">Access Analyzer</h4>
 <ul>
@@ -1028,23 +1023,33 @@
 <p>Key policies determine who can do what with the key, for example, defining who can use the key to perform cryptographic operations, in addition to those who can administer the CMK to perform functions such as deleting and revoking the key.  Controlling access to CMKs can’t be done using IAM alone. In ALL cases, to manage access to your CMKs, you MUST use a key policy.</p>
 <h3 id="grants">Grants</h3>
 <p>Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.</p>
-<h2 id="sts-secure-token-service">STS - Secure Token Service</h2>
-<p>Used for federated user access to roles. Steps for SAML based role assumption:
- 1. A user within an internal organization initiates a request to authenticate against the Active Directory Federated Service, an ADFS server, via a web browser using a single sign on URL. 
- 2. If their authentication is successful by using their Active Directory credentials, SAML will then issue a successful authentication assertion back to the user's client, requesting federated access. 
- 3. The SAML assertion is then sent to the AWS Security Token Service, to assume a role within IAM using the <code>AssumeRoleWithSAML</code> API. 
- 4. STS then responds to the user requesting federated access with temporary security credentials, with an assumed role and associated permissions, allowing S3, EC2, and RDS access as per our example, the user then has federated access to the necessary AWS services as per the role's permissions.</p>
+<h2 id="sts-security-token-service">STS - Security Token Service</h2>
+<ul>
+<li>Request temporary, limited-privilege credentials for IAM users or Federated users.</li>
+<li>Enabled globally and best practice is to disable regions not being used. </li>
+</ul>
+<p>Used for federated user access to roles.  Steps for SAML based role assumption:</p>
+<ol>
+<li>A user within an internal organization initiates a request to authenticate against the Active Directory Federated Service, an ADFS server, via a web browser using a single sign on URL. </li>
+<li>If their authentication is successful by using their Active Directory credentials, SAML will then issue a successful authentication assertion back to the user's client, requesting federated access. </li>
+<li>The SAML assertion is then sent to the AWS Security Token Service, to assume a role within IAM using the <code>AssumeRoleWithSAML</code> API. </li>
+<li>STS then responds to the user requesting federated access with temporary security credentials, with an assumed role and associated permissions, allowing S3, EC2, and RDS access as per our example, the user then has federated access to the necessary AWS services as per the role's permissions.</li>
+</ol>
 <h2 id="iam-policies_1">IAM Policies</h2>
 <h3 id="policy-syntax">Policy Syntax</h3>
-<p>Represented as JSON and has at least one statement.
- 1. Version : Policy language version.
- 2. Statement : Array of statements is possible.
-    1. <em>SID</em> : Unique ID for the policy. 
-    2. Effect : Allow|Deny
-    3. <em>[NOT] Principal</em> : Who? Only for resource-based policy.
-    4. [NOT] Action : API Calls to which effect apply
-    5. <em>Condition</em> : Key,Value pair condition filters that must match.
-       1. IP Address : <code>aws:sourceIp</code>; 10.0.0.0/16</p>
+<p>Represented as JSON and has at least one statement.</p>
+<ol>
+<li>Version : Policy language version.</li>
+<li>Statement : Array of statements is possible.<ol>
+<li><em>SID</em> : Unique ID for the policy. </li>
+<li>Effect : Allow|Deny</li>
+<li><em>[NOT] Principal</em> : Who? Only for resource-based policy.</li>
+<li>[NOT] Action : API Calls to which effect apply</li>
+<li><em>Condition</em> : Key,Value pair condition filters that must match.</li>
+<li>IP Address : <code>aws:sourceIp</code>; 10.0.0.0/16</li>
+</ol>
+</li>
+</ol>
 <h3 id="policy-types">Policy Types</h3>
 <h4 id="identity-based-policies">Identity-based policies</h4>
 <ul>
