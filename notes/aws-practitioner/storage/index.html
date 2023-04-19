@@ -899,14 +899,21 @@
 <li>Moving data two step process - (1) Create Vault (2) Use API/SDK to move data. or via Data lifecycle from S3.</li>
 <li>Access is via API/SDK or AWS CLI. Either way an archival retrieval job needs to be create first. </li>
 <li>S3 Access of data comes at a cost based on retrieval options:</li>
+<li>Set 1<ul>
 <li>Expedited - &lt;250MB, 5 mins, most expensive</li>
 <li>Standard - Any size, 3-5 hours, 2nd most expensive</li>
 <li>Bulk - Any size, 5-12 hours, cheapest</li>
 </ul>
+</li>
+<li>Set 2<ul>
+<li>Instant Retrieval - milliseconds</li>
+<li>Flexible Retrieval - mins to hours</li>
+</ul>
+</li>
+</ul>
 <h4 id="s3-glacier-deep-archive">S3 Glacier Deep Archive</h4>
 <ul>
 <li>Minimal access retrieval is 12 hours.</li>
-<li></li>
 </ul>
 <h3 id="fees">Fees</h3>
 <ul>
