@@ -423,6 +423,14 @@ Create a Configuration:
 !!! note
     Associate ASG directly to the Classic Load Balancer or to a Target Group from its configuration. ALB / NLB can then forward traffic to the target group and would automatically pickup all the EC2 instances in the ASG for load balancing. 
 
+
+## Compute Savings Plans
+### Compute Savings Plans
+Compute Savings Plans provide the most flexibility and help to reduce your costs by up to 66%. These plans automatically apply to EC2 instance usage regardless of instance family, size, AZ, Region, OS or tenancy, and also apply to Fargate or Lambda usage. 
+
+### EC2 Instance Savings Plans
+EC2 Instance Savings Plans provide the lowest prices, offering savings up to 72% in exchange for commitment to usage of individual instance families in a Region (e.g. M5 usage in N. Virginia). This automatically reduces your cost on the selected instance family in that region regardless of AZ, size, OS or tenancy. EC2 Instance Savings Plans give you the flexibility to change your usage between instances within a family in that region. For example, you can move from c5.xlarge running Windows to c5.2xlarge running Linux and automatically benefit from the Savings Plan prices.
+
 ## FAQ
 
 
