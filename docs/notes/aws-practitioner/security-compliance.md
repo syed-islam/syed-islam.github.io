@@ -79,9 +79,6 @@
  * Active Directory or Google Identity Provider are examples
 
 
-### Security Token Service Endpoints
- * Request temporary, limited-privilege credentials for IAM users or Federated users.
- * Enabled globally and best practice is to disable regions not being used. 
 
 ### Access Reports
 #### Access Analyzer
@@ -160,8 +157,12 @@ Key policies determine who can do what with the key, for example, defining who c
 ### Grants
 Grants allow you to programmatically delegate your permissions to another principal or user, and so the grant consists of 2 parties, the user who creates the Grant, and the Grantee who then uses that grant to perform cryptographic operations.
 
-## STS - Secure Token Service
-Used for federated user access to roles. Steps for SAML based role assumption:
+## STS - Security Token Service
+ * Request temporary, limited-privilege credentials for IAM users or Federated users.
+ * Enabled globally and best practice is to disable regions not being used. 
+
+Used for federated user access to roles.  Steps for SAML based role assumption:
+
  1. A user within an internal organization initiates a request to authenticate against the Active Directory Federated Service, an ADFS server, via a web browser using a single sign on URL. 
  2. If their authentication is successful by using their Active Directory credentials, SAML will then issue a successful authentication assertion back to the user's client, requesting federated access. 
  3. The SAML assertion is then sent to the AWS Security Token Service, to assume a role within IAM using the ```AssumeRoleWithSAML``` API. 
@@ -172,6 +173,7 @@ Used for federated user access to roles. Steps for SAML based role assumption:
 
 ### Policy Syntax
 Represented as JSON and has at least one statement.
+
  1. Version : Policy language version.
  2. Statement : Array of statements is possible.
     1. *SID* : Unique ID for the policy. 
