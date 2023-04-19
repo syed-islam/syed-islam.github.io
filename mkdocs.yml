@@ -56,13 +56,13 @@ nav:
        - Storage : ./notes/aws-practitioner/storage.md
        - Database: ./notes/aws-practitioner/database.md
        - Networking: ./notes/aws-practitioner/networking.md
-       - Other Services: ./notes/aws-practitioner/other-services.md
        - Queuing Service: ./notes/aws-practitioner/queuing-service.md
        - Streaming : ./notes/aws-practitioner/streaming.md
        - Security and Compliance : ./notes/aws-practitioner/security-compliance.md
        - Disaster Recovery : ./notes/aws-practitioner/disaster-recovery.md
        - Management : ./notes/aws-practitioner/management.md
        - Billing, Pricing and Support : ./notes/aws-practitioner/billing-pricing-service.md
+       - Other Services: ./notes/aws-practitioner/other-services.md
        - Summary Table: ./notes/aws-practitioner/short-hand-table.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md

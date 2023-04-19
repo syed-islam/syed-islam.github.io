@@ -20,7 +20,7 @@
  * Data can't be removed and can only expire.
  
 
-### KCL
+### Kinesis Client Library (KCL)
  * KCL manages a Record Processor per shard ensuring data processed from each Shard.
  * KCL uses DynamoDB to store control data and creates one table per application reading data from a stream.
  * Can run on EC2, Elastic Beanstalk and Data Centre Servers. 
