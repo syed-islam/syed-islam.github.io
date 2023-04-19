@@ -203,4 +203,119 @@ Reserved addresses with subnet 10.0.1.0/24
    *  Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.
 *  Client affinity is supported for continued connections.
 
+## ELB - Elastic Load Balancer
+Targets could be a fleet of 
+ * EC2 instances, 
+ * Lambda functions, 
+ * a range of IP addresses, 
+ * or even Containers.
+
+Managed by AWS and is elastic. 
+
+### ELB Nodes
+An ELB node will need to be placed to any Availability Zones for which you want to route traffic to. Without the Availability Zone associated, the ELB will not be able to route traffic to any targets within that Availability Zone even if they are defined within the target group. This is because the nodes are used by the ELB to distribute traffic to your target groups. 
+
+### Cross-Zone load balancing
+ * Not set - distributes to nodes
+ * Set - distributes to targets evenly. 
+ * Default - ALB on,  NLB off
+
+### ALB
+ * HTTP/HTTPs protocol.
+ * Request level
+ * Advanced Routing
+ * TLS Termination
+ * Route to particular ports / targeted 
+ * Visibility features for application architecture.
+ * cross-zone is always on. 
+
+####  Configuration
+
+##### Target Group Configuration
+
+Define a Target Group, consisting of:
+
+ * Type
+     * Instance
+     * IP
+     * Lambda
+ * Protocol, Port and VPC
+ * Health check
+     * Protocol
+     * Path
+     * Healthy/unhealthy thresholds
+     * Interval
+     * Success codes
+ * Register Targets in the group
+
+##### Load Balancer Configuration
+
+ * Public / Private
+ * Listeners
+   * Rules can be added under listeners
+   * Multiple Rules can exist.
+ * Select AZs for node deployment
+ * Security Group for the Load Balancer
+ * Configure Routing to Target Group
+
+### NLB
+ * connection level
+ * ultra-high performance - millions of requests per second. 
+ * TCP/UDP protocol. Layer 4.
+ * Listeners - TCP/TLS/UDP.
+ * cross-zone can be turned on or off, default off. 
+
+If your application requires a *Static IP* then NLB is the only option. 
+
+Once a connection is established, the connection remains open for the duration of the request. 
+
+####  Configuration
+ *  Public / Private
+ * Listeners
+   * Rules can be added under listeners
+   * Multiple Rules can exist.
+ * Select AZs for node deployment
+ * Security Group for the Load Balancer
+ * Configure Routing to Target Group
+
+### Classic Load Balancer
+ * Classic environment
+ * Operates at both request and connection level. 
+
+!!! note
+    For target we select EC2 instances directly and not target groups.
+
+### Components
+ * **Listener** - The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions.
+ * **Target Groups** - A target group is simply a group of resources that you want your ELB to route requests to, for example a fleet of EC2 instances. 
+ * **Rules** - Rules are associated to each listener that you have configured within your ELB, and they help to define how an incoming request gets routed to which target group. 
+
+### Health Check
+Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.
+
+### Internal or Internet-facing ELBs.
+ * **Internet-facing ELBs** - public DNS name, public IP address, internal IP address 
+ * **Internal** - Internal IP address. 
+
+Communication to Target Group is only done via Internal IP. 
+
+### Comparison
+[AWS Comparison Table](https://aws.amazon.com/elasticloadbalancing/features/#compare)
+
+
+
+## Server Certificate (SSL/TLS)
+HTTPS on ALB requires additional configuration.
+The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. 
+
+Certificate Selection:
+ 1. Choose certificate from ACM
+ 2. Upload to ACM
+ 3. Choose from IAM
+ 4. Upload to IAM
+
+
+
+
+
 ## Outstanding Question
