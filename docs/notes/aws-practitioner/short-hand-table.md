@@ -17,3 +17,11 @@
 | AWS Ground Station | |service is for controlling satellite communications and processing data using satellites.|
 |Amazon QuickSight | | | a business intelligence service for creating visualizations and dashboards.|
 |AWS Security Bulletin ||  security announcement provider service. |
+|AWS SES | Simple Email Service |  Used to send only emails out of AWS |
+|AWS CodeDeploy ||  Automate Code Deployments to instances including EC2 |
+|AWS CodePipeline ||  Continuous Code Delivery Pipeline |
+|AWS CodeCommit || Fully-managed source control service |
+|AWS CodeBuild ||  Fully Managed continuous integration service that compiles source code, run tests and produce software packages ready to deploy. |
+|AWS CodeBuild ||  Fully Managed continuous integration service that compiles source code, run tests and produce software packages ready to deploy. |
+|AWS CodeStar ||  Quickly Develop, Build, and Deploy Applications on AWS. |
+|AWS SWS | Simple workflow |  The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that coordinate work across distributed components. |

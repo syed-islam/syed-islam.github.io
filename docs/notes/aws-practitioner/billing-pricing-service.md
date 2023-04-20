@@ -66,6 +66,23 @@ AWS is easier to measure the cost.
  * Best to use pre-defined tags rather than make them up on the fly. 
  * Setup policies where new resources can't be launched without tags
  * Do regular review of tags.
- * 
- 
+
+
+## Amazon Services
+
+| | Basic | Developer | Business | Enterprise On-Ramp | Enterprise |
+|-- | -- | --| --| --|-- |
+| Use case | | Testing AWS | Prod | Business Critical | Business Critical|
+| Trusted Advisor | | Service Quota / Basic checks | Full | Full | FUll |
+| Architectural Guidance | | General | Use-case contextual  | Consultative review based on application |Consultative review based on application|
+| Technical Account Manager | X | X | X | Pool | Designated, proactive monitoring and optimization |
+|Training | X|X|X|X| self-paced labs|
+| Account Assistance | X | X | X | Concierge |   Concierge |
+|Enhanced Technical Support | | Business hours emails, 1 contact | 24x7, unlimited contacts | 24x7, unlimited contacts | 24x7, unlimited contacts |
+| API | X | X | Yes | Yes | Yes|
+| 3rd party software support | | Interoperability and troubleshooting |Interoperability and troubleshooting | Interoperability and troubleshooting| Interoperability and troubleshooting |
+|Proactive Programs | |Automation Workflows : ```AWSSupport``` | Infrastructure Event Management (paid), Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | Infrastructure Event Management (one-per-year), Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | Infrastructure Event Management, Proactive reviews workshop and deep-dives, Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | 
+
+
+
   
