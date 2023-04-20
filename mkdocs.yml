@@ -27,6 +27,10 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
 nav:
   - About me: index.md
   - Academia: 
@@ -63,7 +67,7 @@ nav:
        - Management : ./notes/aws-practitioner/management.md
        - Billing, Pricing and Support : ./notes/aws-practitioner/billing-pricing-service.md
        - Other Services: ./notes/aws-practitioner/other-services.md
-       - Summary Table: ./notes/aws-practitioner/short-hand-table.md
+       - Summary: ./notes/aws-practitioner/short-hand-table.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        

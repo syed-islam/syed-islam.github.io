@@ -1,6 +1,6 @@
 # Summary
 
-| Topic | Sub-Topic | Description | 
+| Topic | Area | Description | 
 | ----- | ----- | ----------- | 
 | Cost Explorer       |  -     | Detailed view of Cost. Base Free, Granular + API charged.  |
 | Billing Dashboard       |  -     | Detailed view of Bills and cost from major services |
