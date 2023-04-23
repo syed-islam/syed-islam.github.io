@@ -52,7 +52,7 @@
 ## Amazon Cognito
  * Used for managing federated users access to roles. Specifically recommended for Mobile applications. 
 
-## AWS Trusted Advisor
+## AWS Trusted Advisor (CPSFS)
  Makes recommendations to improve infrastructure use across environment based on known best practices.
 
  Make recommendations in the following areas:
