@@ -564,6 +564,15 @@
 <a class="md-nav__link" href="#policy-evaluation">
     Policy Evaluation
   </a>
+<nav aria-label="Policy Evaluation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-order">
+    Evaluation Order
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -854,6 +863,15 @@
 <a class="md-nav__link" href="#policy-evaluation">
     Policy Evaluation
   </a>
+<nav aria-label="Policy Evaluation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluation-order">
+    Evaluation Order
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -878,12 +896,16 @@
 <ul>
 <li>Self-service AWS Security Reports</li>
 <li>View and manage contacts between you and AWS for Account or Organization. </li>
-<li>Reports</li>
+<li>Reports<ul>
 <li>Audit Compliance Artifacts/Reports, can be shared with IAM users (Auditors).</li>
 <li>Audit artifacts validate AWS portion of the service not user</li>
-<li>Agreements</li>
+</ul>
+</li>
+<li>Agreements<ul>
 <li>Can be applied to all Accounts in an Organization</li>
 <li>NDA needs to be signed before the agreement can be viewed</li>
+</ul>
+</li>
 </ul>
 <h2 id="iam">IAM</h2>
 <h3 id="components">Components</h3>
@@ -946,9 +968,11 @@
 </ul>
 <h5 id="federated-access-to-roles">Federated Access to Roles</h5>
 <ul>
-<li>Two options:</li>
+<li>Two options:<ul>
 <li>Web Identity - Large base of external users using Google, Facebook etc. </li>
 <li>SAML2.0 federation - Employees of the firm using existing directory services</li>
+</ul>
+</li>
 <li>Identity Provider Authenticates the user and Service Provider enables access to services once authentication. </li>
 </ul>
 <h4 id="identify-providers">Identify Providers</h4>
@@ -1016,11 +1040,13 @@
 <li>KMS is region-specific. Each region requires its own instance of KMS. </li>
 </ul>
 <h3 id="components_1">Components</h3>
-<p>There are 4 key components of AWS KSM:
-  1. Customer Master Keys (CMK)
-  2. Data Encryption Keys (DEKs)
-  3. Key Policies
-  4. Grants</p>
+<p>There are 4 key components of AWS KMS:</p>
+<ol>
+<li>Customer Master Keys (CMK)</li>
+<li>Data Encryption Keys (DEKs)</li>
+<li>Key Policies</li>
+<li>Grants</li>
+</ol>
 <h3 id="cmk-types">CMK Types</h3>
 <ol>
 <li>Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.</li>
@@ -1064,7 +1090,7 @@
 <h4 id="identity-based-policies">Identity-based policies</h4>
 <ul>
 <li>Policies associated with anything tha depicts and identity</li>
-<li>Can be of the following variants:</li>
+<li>Can be of the following variants:<ul>
 <li>Managed Policies - both are saved in library and can be reused across multiple identities:<ul>
 <li>AWS Management Policies</li>
 <li>Customer Managed Policies</li>
@@ -1072,6 +1098,8 @@
 </li>
 <li>In-line Policies<ul>
 <li>Embedded directly into the identity and can't easily be replicated to the identity.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1085,7 +1113,6 @@
 <ul>
 <li>Policies are attached to resources themselves.</li>
 <li>Has <strong>principal</strong> attribute to describe who the policy applies to </li>
-<li></li>
 </ul>
 <h4 id="permission-boundaries">Permission Boundaries</h4>
 <ul>
@@ -1110,11 +1137,13 @@
 </li>
 <li>Result of evaluation - Allow/deny</li>
 </ol>
-<p>##### Evaluation Order
-  1. Organizational SCP
-  2. Resource-based Policies
-  3. IAM Permission Boundaries
-  4. Identity-based policies</p>
+<h5 id="evaluation-order">Evaluation Order</h5>
+<ol>
+<li>Organizational SCP</li>
+<li>Resource-based Policies</li>
+<li>IAM Permission Boundaries</li>
+<li>Identity-based policies</li>
+</ol>
 <h2 id="aws-security-hub">AWS Security Hub</h2>
 <p>AWS Security Hub is a service that helps customers to improve their security posture on AWS by providing a comprehensive view of security and compliance across their AWS accounts. It aggregates security findings from various AWS services and third-party tools and presents them in a single dashboard. Doing so makes it easier for customers to identify and prioritize security issues and take corrective actions. Moreover, it offers automated compliance checks against industry standards and best practices such as PCI DSS, HIPAA, and CIS AWS Foundations Benchmark. With AWS Security Hub, customers can automate security and compliance checks, eliminate manual processes, and increase the efficiency of their security operations.</p>
 </article>

@@ -1215,9 +1215,11 @@
 <ul>
 <li>AWS CDN</li>
 <li>Uses Edge locations around the world to delivery best performance through cached data close to the user. </li>
-<li>Distributions Types:</li>
+<li>Distributions Types:<ul>
 <li>Web - static / dynamic content, media using http/https, submit data via web forms, live streaming in real-time</li>
 <li>RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be <strong>S3 bucket</strong> not EC2.</li>
+</ul>
+</li>
 <li>Origin can be EC2 server or S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.</li>
 <li>If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. </li>
 <li>Caching behavior options can be controlled via methods and policies</li>
@@ -1229,15 +1231,19 @@
 <ul>
 <li>Get UDP and TCP traffic from end users to AWS endpoints via AWS infrastructure rather than public network. Optimized path for lowest latency and avoids unhealthy resources</li>
 <li>Uses 2 fixed IP addresses. Can use own IP or from AWS pool. These are mapped to multiple Global Accelerator endpoints. </li>
-<li>Global Accelerator can be multi-region and can forward traffic to:</li>
+<li>Global Accelerator can be multi-region and can forward traffic to:<ul>
 <li>ELB</li>
 <li>EC2</li>
 <li>EIP</li>
-<li>Creation has 4 steps:</li>
+</ul>
+</li>
+<li>Creation has 4 steps:<ul>
 <li>Create accelerator, give it name and select 2 IP Address.</li>
 <li>Listener - TCP/UDP based and ports</li>
-<li>Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health checks can be done at this stage</li>
+<li>Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health  checks can be done at this stage</li>
 <li>Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.</li>
+</ul>
+</li>
 <li>Client affinity is supported for continued connections.</li>
 </ul>
 <h2 id="elb-elastic-load-balancer">ELB - Elastic Load Balancer</h2>

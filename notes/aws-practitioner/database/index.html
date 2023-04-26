@@ -825,25 +825,17 @@
 <article class="md-content__inner md-typeset">
 <h1>Database</h1>
 <h2 id="database-types">Database Types</h2>
-<ol>
-<li>Relational<ol>
-<li>MySQL</li>
-<li>MariaDB</li>
-<li>PostgreSQL</li>
-<li>Aurora</li>
-<li>Oracle</li>
-<li>SQL Server</li>
-</ol>
-</li>
-<li>Key-Value</li>
-<li>Document</li>
-<li>In-memory</li>
-<li>Graph</li>
-<li>Columnar</li>
-<li>Time Series</li>
-<li>Quantum Ledger</li>
-<li>Search </li>
-</ol>
+<ul>
+<li>Relational - (1) MySQL, (2) MariaDB, (3) PostgreSQL, (4) Aurora, (5) Oracle, (6) SQL Server</li>
+<li>Key-Value - (1) DynamoDB</li>
+<li>Document - (1) DocumentDB</li>
+<li>In-memory - (1) Elasticache (MemcacheD, Redis)</li>
+<li>Graph - (1) Neptune</li>
+<li>Columnar - (1) KeySpace</li>
+<li>Time Series - (1) Timestream</li>
+<li>Quantum Ledger - (1) QLDB</li>
+<li>Search - (1)  Elastic Search  </li>
+</ul>
 <h2 id="types-of-workloads">Types of workloads</h2>
 <ol>
 <li>OLTP - Online Transaction Processing. Predictable and structured work. </li>
@@ -916,19 +908,27 @@
 <li>Instance class on primary DB is modified. </li>
 </ul>
 </li>
-<li>EBS (scalable storage) used by MySQL, PostgreSQL, MariaDB, Oracle, SQL Server.</li>
+<li>EBS (scalable storage) used by MySQL, PostgreSQL, MariaDB, Oracle, SQL Server.<ul>
 <li>SSD Storage (20GB - 64TB [SQLServer 16TB]), Provisioned (8000 IOPS - 80000 IOPS [SQLServer 40000] / 100GB - 64 TB [SQLServer 16TB])</li>
 <li>Autoscaling of storage can be enabled on configuration. &lt;10% storage for 5 mins and 6 hours since last scale up. </li>
-<li>Aurora - shared cluster storage.</li>
+</ul>
+</li>
+<li>Aurora - shared cluster storage.<ul>
 <li>Grows automatically and doesn't need to be configured.</li>
-<li>Read Replica</li>
+</ul>
+</li>
+<li>Read Replica<ul>
 <li>Read only traffic. </li>
 <li>Where multi-AZ config is enabled, read replica is created from secondary db.</li>
-<li>Auto Backup</li>
+</ul>
+</li>
+<li>Auto Backup<ul>
 <li>Backup to S3</li>
 <li>0-35 days of retention</li>
 <li>Manual backup can be done at any time and backups need to be deleted manually</li>
 <li>Encryption can be defined using KMS keys. </li>
+</ul>
+</li>
 <li>Backtrack - Aurora allows backtrack up to 72 hours. Allows you to back in time. Aurora retains transactional log data for the duration of the backtrack. </li>
 </ul>
 <h2 id="amazon-dynamo-db">Amazon Dynamo DB</h2>
@@ -944,7 +944,6 @@
 <li>Creation requires DB name and Primary Key at its simplest form.</li>
 <li>Partition Key and Index can be used</li>
 <li>1 Query can use only 1 Index. Query needs to be explicit about what index to use.</li>
-<li></li>
 </ul>
 <h3 id="secondary-index">Secondary Index</h3>
 <ul>
@@ -963,7 +962,7 @@
 <h3 id="on-demand">On-Demand</h3>
 <ul>
 <li>Scaled on demand</li>
-<li>Not as cost-effective as standard.</li>
+<li>Not as cost-effective as provisioned.</li>
 </ul>
 <h3 id="encryption">Encryption</h3>
 <ul>
@@ -1000,9 +999,11 @@
 <ul>
 <li>Cluster has a database and at least one compute node. More than one compute node has a leader node. </li>
 <li>Leader node is the gateway to the cluster and creates the execution plans for query. </li>
-<li>Compute Nodes can be of two types</li>
+<li>Compute Nodes can be of two types:<ul>
 <li>RA3 node types - High performance and scalable</li>
 <li>Dense node types - High performance with fixed local SSD</li>
+</ul>
+</li>
 <li>Nodes can be between 1-32.</li>
 </ul>
 <h3 id="communication">Communication</h3>

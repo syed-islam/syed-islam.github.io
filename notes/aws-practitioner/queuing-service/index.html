@@ -621,7 +621,7 @@
 </ul>
 <h3 id="standard-queue">Standard Queue</h3>
 <ul>
-<li>Standard Queue - <strong>At least delivery</strong> guaranteed. </li>
+<li>Standard Queue - <strong>At least once delivery</strong> guaranteed. </li>
 <li>120K in-flight messages in a standard queue. Short Polling will return error if exceeded, Long polling won't return any errors.</li>
 </ul>
 <h3 id="fifo-queues">FIFO Queues</h3>
@@ -696,11 +696,13 @@
 <h2 id="amazon-mq-service">Amazon MQ Service</h2>
 <ul>
 <li>Enables migration of existing on-prem queues to Cloud</li>
-<li>Amazon MQ is AWS managed message broker service for Apache ActiveMQ, and its compliant with:</li>
+<li>Amazon MQ is AWS managed message broker service for Apache ActiveMQ, and its compliant with:<ul>
 <li>JMS, </li>
 <li>NMS, </li>
 <li>MQTT and </li>
 <li>WebSockets.</li>
+</ul>
+</li>
 <li>Amazon MQ also provides message encryption in transit using SSL and at rest using AES 256 encryption.</li>
 </ul>
 </article>

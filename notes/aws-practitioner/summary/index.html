@@ -711,6 +711,191 @@
 <td>Architecture</td>
 <td>RSPCO - Reliability, Security, Performance, Cost Optimization and Operational Excellence</td>
 </tr>
+<tr>
+<td>S3</td>
+<td>Storage</td>
+<td>S3 Standard, S3 Intelligent Tier, S3 Standard Infrequent-Access, S3 1 Zone Infrequent-Access</td>
+</tr>
+<tr>
+<td>S3 Glacier</td>
+<td>Storage</td>
+<td>Instant Retrieval (ms), Flexible Retrieval (min), Deep Archive (12h)</td>
+</tr>
+<tr>
+<td>S3 Data Lifecycle</td>
+<td>Storage</td>
+<td>One direction, 30 days (except standard) -&gt; 90 days (Glacier) -&gt; 180 days (Deep Archive)</td>
+</tr>
+<tr>
+<td>EBS</td>
+<td>Storage</td>
+<td>SSD (General Purpose - GP2/ Provisioned IOPS - io1), HDD (Throughput Optimized - st1, Cold - sc1)</td>
+</tr>
+<tr>
+<td>EFS</td>
+<td>Storage</td>
+<td>Retrieval (Standard/Infrequent Access), Performance Modes (General Purpose, Max I/O), Throughput Modes (Bursting/Provisioned)</td>
+</tr>
+<tr>
+<td>Snow Family</td>
+<td>Storage</td>
+<td>Snowcone (4Gb/8TB), Snowball Compute (208GB/40TB), Snowball Storage (32GB/80TB), Snow Mobile (100PB)</td>
+</tr>
+<tr>
+<td>EC2</td>
+<td>Compute</td>
+<td>Instance Type, Instance Family, Purchase Option (on-demand, reserved, scheduled, spot, computer savings plan, instance savings plan, Instance/EBS Storage, Status Check)</td>
+</tr>
+<tr>
+<td>ECS</td>
+<td>Compute</td>
+<td>Launch (Fargate/EC2)</td>
+</tr>
+<tr>
+<td>ECR</td>
+<td>Compute</td>
+<td>Registry, Repository, Repository Policy, Authorization Token</td>
+</tr>
+<tr>
+<td>EKS</td>
+<td>Compute</td>
+<td>Kubernetes, Docker/Rocket, Worker Nodes - Specific AMI, on-demand EC2</td>
+</tr>
+<tr>
+<td>Beanstalk</td>
+<td>Compute</td>
+<td>Application Version, Environment, Environment Tier (Web Server Tier/ Worker Tier), Configuration Template, Application</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>Compute</td>
+<td>15min, 10GB, Components - Application, Event source, Trigger, Downstream Resources, Log Streams</td>
+</tr>
+<tr>
+<td>AWS Batch</td>
+<td>Compute</td>
+<td>Jobs, Job Definitions, Job Queues, Jobs Scheduling, Compute Environments (ECS Managed/Unmanaged)</td>
+</tr>
+<tr>
+<td>AWS Lightsail</td>
+<td>Compute</td>
+<td>VPS, easy deployment of web sites and blogs, fixed monthly cost</td>
+</tr>
+<tr>
+<td>RDS</td>
+<td>DB</td>
+<td>(1) MySQL, (2) MariaDB, (3) PostgreSQL, (4) Aurora, (5) Oracle, (6) SQL Server. Instance Type/Family, EBS Storage with Auto scaling. Single/Multi-AZ. Auto backup. Read Replica</td>
+</tr>
+<tr>
+<td>DynamoDB</td>
+<td>DB</td>
+<td>Key-Value, 400KB max record size, unlimited scalability, RCU/WCU, Not SQL flexibility</td>
+</tr>
+<tr>
+<td>DocumentDB</td>
+<td>DB</td>
+<td>JSON docs</td>
+</tr>
+<tr>
+<td>Elasticache (MemcacheD, Redis)</td>
+<td>DB</td>
+<td>In-memory cache</td>
+</tr>
+<tr>
+<td>Graph</td>
+<td>DB</td>
+<td>Neptune</td>
+</tr>
+<tr>
+<td>KeySpace</td>
+<td>DB</td>
+<td>Columnar, Casandra</td>
+</tr>
+<tr>
+<td>TimeStream</td>
+<td>DB</td>
+<td>Time Series</td>
+</tr>
+<tr>
+<td>QLDB</td>
+<td>DB</td>
+<td>Quantum Ledger</td>
+</tr>
+<tr>
+<td>Redshift</td>
+<td>DB</td>
+<td>Data Warehouse, Redshift Spectrum, RA3 Node / Dense Node</td>
+</tr>
+<tr>
+<td>Elastic Search</td>
+<td>DB</td>
+<td>Indexes multiple sources as JSON documents and search capability</td>
+</tr>
+<tr>
+<td>Aurora</td>
+<td>DB</td>
+<td>Cluster based growth, backtrack, Global DB, Serverless option</td>
+</tr>
+<tr>
+<td>IP Reserved</td>
+<td>Network</td>
+<td>Network, AWS Routing, AWS DNS, AWS Future, Broadcast</td>
+</tr>
+<tr>
+<td>VPC CIDR</td>
+<td>Network</td>
+<td>from /16 to /28</td>
+</tr>
+<tr>
+<td>NACL</td>
+<td>Network</td>
+<td>subnet, rules in order of number, 20 rules, allow/deny, stateless, stops first match, explicit deny, default - all allow</td>
+</tr>
+<tr>
+<td>Security Groups</td>
+<td>Network</td>
+<td>Only Allow, implicit deny, all evaluated, 50 rules, stateful, default - inbound blocked, outbound allowed</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Network</td>
+<td>Customer Gateway - Virtual Private Gateway, IPSec Tunnel.</td>
+</tr>
+<tr>
+<td>Direct Connect</td>
+<td>Network</td>
+<td>AWS Region Access for Public and VPC (Virtual Private Gateway) for Private Resources, Public/Private Virtual Interface on the Router</td>
+</tr>
+<tr>
+<td>VPC Peering</td>
+<td>Network</td>
+<td>1-2-1 VPC connectivity, Non-Transitive, Non-overlapping CIDR Blocks, Route tables need updating</td>
+</tr>
+<tr>
+<td>Transit Gateway</td>
+<td>Network</td>
+<td>Central hub for multiple VPN and VPC Peering</td>
+</tr>
+<tr>
+<td>Route 53</td>
+<td>Network</td>
+<td>A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, Alias (S3, CloudFront, ELB, Beanstalk, VPC Interface Endpoint), Routing - simple, Failover, Geo-Location, Geo Proximity, Latency, Multi-value, Weighted. Health check.</td>
+</tr>
+<tr>
+<td>Cloud Front</td>
+<td>Network</td>
+<td>AWS CDN, Web/RMTP, Caching at edge, Static Sites - EC2 / S3, WAF Integration</td>
+</tr>
+<tr>
+<td>AWS Global Accelerator</td>
+<td>Network</td>
+<td>UPD/TCP Traffic via private link, 2 fixed IP Address, Forward to - ELB, EC2, EIP across regions Multi-region, Health check</td>
+</tr>
+<tr>
+<td>ELB ...</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 </article>

@@ -483,10 +483,12 @@
 <li>Record and track all API call.</li>
 <li>Each API requests is captured as an event. </li>
 <li>The events are stored in log files within S3.</li>
-<li>Event Metadata:</li>
+<li>Event Metadata:<ul>
 <li>Identify of the caller</li>
 <li>Request timestamp</li>
 <li>Source IP Address</li>
+</ul>
+</li>
 <li>New log files are created every 5 mins. </li>
 <li>Can be delivered to a CloudWatch Logs for metric monitoring and alerting via SNS.</li>
 <li>Global service and supported in all regions.</li>
@@ -499,7 +501,7 @@
 <li>Discover compatible resources</li>
 <li>Stores configuration history</li>
 <li>Snapshot of current configuration </li>
-<li>Notification of changes via SN</li>
+<li>Notification of changes via SNS</li>
 <li>Integration with CloudTrail to check who/what was responsible for change</li>
 <li>Compliance check</li>
 <li>Security analysis. Custom rules such as are EBS volumes encrypted. </li>

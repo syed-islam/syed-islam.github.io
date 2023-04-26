@@ -381,6 +381,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#pilot-light">
+    Pilot Light
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#warm-standby">
     Warm Standby
   </a>
@@ -478,6 +483,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#pilot-light">
+    Pilot Light
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#warm-standby">
     Warm Standby
   </a>
@@ -499,13 +509,15 @@
 <article class="md-content__inner md-typeset">
 <h1 id="disaster-recovery">Disaster Recovery</h1>
 <ul>
-<li>back strategies need to be part of the disaster recovery planning</li>
-<li>How to decide RTO / RPO:</li>
+<li>backup strategies need to be part of the disaster recovery planning</li>
+<li>How to decide RTO / RPO:<ul>
 <li>Impact on business if app outage is extended?</li>
 <li>Cost of loss</li>
 <li>Dependencies</li>
 <li>Consumers</li>
 <li>Regulatory requirements</li>
+</ul>
+</li>
 </ul>
 <h2 id="rto">RTO</h2>
 <ul>
@@ -551,28 +563,58 @@
 <ul>
 <li>RTO is usually 24 hours and RPO is hours.</li>
 </ul>
-<p>Point in time recovery options
- |Database | Storage|
- |-------| -------|
- |RDS Snapshot | EBS Snapshot|
- |Aurora Snapshot | EFS Snapshot|
- |DynamoBD Snapshot ||
- |Redshift Snapshot ||
- |DocumentDB Snapshot ||
- |Neptune Snapshot ||</p>
-<p>### Pilot Light
-  * Introduction of data replication between DR Region
-  * Core infrastructure is in place in DR Region
-  * Ability to scale out faster
-  * RPO reduced as asynchronous data replication across regions. 
-  * Servers are switched off and not running
-  * Cross Region data replications
-    * S3 cross-region replication - Automatically replicates objects from source to DR region
-    * RDF cross-region replicas - Replica DB in a separate region created from snapshots
-    * Aurora Global Database - low latency reads in multiple regions
-    * DyanmoDB global tables - multi-region deployment of table without need to crete replica
-    * DocumentDB global Clusters - single primary region and 5 replicas across regions
-    * Global Datastore for Amazon ElasticCache for Redis - cross-regional replica cluster and low latency reads</p>
+<p>Point in time recovery options:</p>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RDS Snapshot</td>
+<td>EBS Snapshot</td>
+</tr>
+<tr>
+<td>Aurora Snapshot</td>
+<td>EFS Snapshot</td>
+</tr>
+<tr>
+<td>DynamoBD Snapshot</td>
+<td></td>
+</tr>
+<tr>
+<td>Redshift Snapshot</td>
+<td></td>
+</tr>
+<tr>
+<td>DocumentDB Snapshot</td>
+<td></td>
+</tr>
+<tr>
+<td>Neptune Snapshot</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pilot-light">Pilot Light</h3>
+<ul>
+<li>Introduction of data replication between DR Region</li>
+<li>Core infrastructure is in place in DR Region</li>
+<li>Ability to scale out faster</li>
+<li>RPO reduced as asynchronous data replication across regions. </li>
+<li>Servers are switched off and not running</li>
+<li>Cross Region data replications<ul>
+<li>S3 cross-region replication - Automatically replicates objects from source to DR region</li>
+<li>RDS cross-region replicas - Replica DB in a separate region created from snapshots</li>
+<li>Aurora Global Database - low latency reads in multiple regions</li>
+<li>DyanmoDB global tables - multi-region deployment of table without need to crete replica</li>
+<li>DocumentDB global Clusters - single primary region and 5 replicas across regions</li>
+<li>Global Datastore for Amazon ElasticCache for Redis - cross-regional replica cluster and low latency reads</li>
+</ul>
+</li>
+</ul>
 <h3 id="warm-standby">Warm Standby</h3>
 <ul>
 <li>Scaled down always running resources</li>

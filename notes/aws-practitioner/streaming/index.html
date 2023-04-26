@@ -592,7 +592,7 @@
 <ul>
 <li>real-time data collection messaging service</li>
 <li>Maintains a copy of all data in the received order</li>
-<li>Data is stored for 24 hours default, upto 65 days if configured using <code>IncreaseStreamRetentionPeriod</code>.</li>
+<li>Data is stored for 24 hours default, upto 365 days if configured using <code>IncreaseStreamRetentionPeriod</code>.</li>
 <li>Ability to process large data streams in real-time, ability to read and replay records to multiple consumer applications. </li>
 <li>Kinesis Data Stream can encrypt data using KMS as producers put data on the stream.</li>
 <li>Kinesis data stream has <em>put to get latency</em> of less than 1 seconds.</li>
@@ -638,7 +638,6 @@
 <h2 id="amazon-kinesis-video-streams">Amazon Kinesis Video Streams</h2>
 <ul>
 <li>Stream processing binary-encoded data such as video and audio. </li>
-<li></li>
 </ul>
 <h2 id="amazon-kinesis-data-firehose">Amazon Kinesis Data Firehose</h2>
 <ul>
@@ -646,7 +645,7 @@
 <li>Data can be dynamically transformed and scaled automatically to deliver to data store. Can transform to Parquet from JSON. Can use Lambda for transformation.</li>
 <li>No need to develop custom consumers</li>
 <li>Buffers data during delivery, Buffer Size and Buffer Duration can be configured during creation. This buffering makes it near real-time. </li>
-<li>Destinations:</li>
+<li>Destinations:<ul>
 <li>Amazon S3</li>
 <li>Amazon Redshift</li>
 <li>Amazon Elasticsearch</li>
@@ -655,6 +654,8 @@
 <li>DataDog</li>
 <li>MongoDB Cloud</li>
 <li>New Relic</li>
+</ul>
+</li>
 <li>No free tier, charged for usage not provisioned. </li>
 </ul>
 <h2 id="amazon-kinesis-data-analytics">Amazon Kinesis Data Analytics</h2>
