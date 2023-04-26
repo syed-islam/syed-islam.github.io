@@ -373,10 +373,10 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-well-architected-framework-osrpc">
-    AWS Well-Architected Framework (OSRPC)
+<a class="md-nav__link" href="#aws-well-architected-framework-rspco">
+    AWS Well-Architected Framework (RSPCO)
   </a>
-<nav aria-label="AWS Well-Architected Framework (OSRPC)" class="md-nav">
+<nav aria-label="AWS Well-Architected Framework (RSPCO)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#operational-excellence">
@@ -384,13 +384,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#security">
-    Security
+<a class="md-nav__link" href="#reliability">
+    Reliability
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reliability">
-    Reliability
+<a class="md-nav__link" href="#security">
+    Security
   </a>
 </li>
 <li class="md-nav__item">
@@ -465,7 +465,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../short-hand-table/">
+<a class="md-nav__link" href="../summary/">
         Summary
       </a>
 </li>
@@ -563,10 +563,10 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aws-well-architected-framework-osrpc">
-    AWS Well-Architected Framework (OSRPC)
+<a class="md-nav__link" href="#aws-well-architected-framework-rspco">
+    AWS Well-Architected Framework (RSPCO)
   </a>
-<nav aria-label="AWS Well-Architected Framework (OSRPC)" class="md-nav">
+<nav aria-label="AWS Well-Architected Framework (RSPCO)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#operational-excellence">
@@ -574,13 +574,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#security">
-    Security
+<a class="md-nav__link" href="#reliability">
+    Reliability
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reliability">
-    Reliability
+<a class="md-nav__link" href="#security">
+    Security
   </a>
 </li>
 <li class="md-nav__item">
@@ -663,51 +663,23 @@
 They are used by <strong>Amazon CloudFront</strong> and <strong>Lambda@Edge</strong> for cache data and to reduce latency for end-user access by using edge location at CDN. </p>
 <h3 id="regional-edge-cache">Regional Edge Cache</h3>
 <p>Type of Edge Location. These sit between Cloud Front Origin servers and Edge Locations and have larger cache-width.</p>
-<h2 id="aws-well-architected-framework-osrpc">AWS Well-Architected Framework (OSRPC)</h2>
+<h2 id="aws-well-architected-framework-rspco">AWS Well-Architected Framework (RSPCO)</h2>
 <h3 id="operational-excellence">Operational Excellence</h3>
 <p>aims at constant improvement and efficient managing of workloads, as well as gaining operational insights and continuous improvement of processes and procedures to support business value</p>
-<p><strong>Principles</strong>
-1. Operations-as-Code
-2. Frequent and reversible changes
-3. Evolve procedures alongside the workload
-4. Failure prevention
-5. Learning from operational failures</p>
-<h3 id="security">Security</h3>
-<p>describes how to protect data, systems, and components using cloud technologies, how user rights and privileges are correctly managed, and how integrity and conformity of information is maintained.</p>
-<p><strong>Principles</strong>
- 1. Implementation of a strong identity foundation
- 2. Traceability
- 3. Apply security at all levels
- 4. Security by automation
- 5. Data protection
- 6. Access
- 7. Incident preparation</p>
+<p><strong>Principles</strong>:(1) Operations-as-Code (2) Frequent and reversible changes (3) Evolve procedures alongside the workload (4)Failure prevention (5)Learning from operational failures</p>
 <h3 id="reliability">Reliability</h3>
 <p>focuses on the ability of a workload to perform correctly and as intended at the expected time. Including quickly recovery and prevention from failures</p>
-<p><strong>Principles</strong>
- 1. Automatic recovery
- 2. Test recovery procedures
- 3. Horizontal scaling for better availability
- 4. Stop guessing capacity
- 5. Manage changes in automation</p>
+<p><strong>Principles</strong>: (1)Automatic recovery (2) Test recovery procedures (3)Horizontal scaling for better availability (4) Stop guessing capacity (5) Manage changes in automation.</p>
+<h3 id="security">Security</h3>
+<p>describes how to protect data, systems, and components using cloud technologies, how user rights and privileges are correctly managed, and how integrity and conformity of information is maintained.</p>
+<p><strong>Principles</strong>: (1) Implementation of a strong identity foundation (2)Traceability (3) Apply security at all levels  (4) Security by automation
+ (5) Data protection (6) Access (7) Incident preparation</p>
 <h3 id="performance-efficiency">Performance Efficiency</h3>
 <p>Efficient allocation and right-sizing of computing resources by the system requirements and interception of demand changes</p>
-<p><strong>Principles</strong>
- 1. Make use of advanced technologies
- 2. Global in minutes
- 3. Serverless architectures
- 4. Experiment more
- 5. Know the options - make the right choices</p>
+<p><strong>Principles</strong>: (1) Make use of advanced technologies (2) Global in minutes (3) Serverless architectures (4) Experiment more (5) Know the options - make the right choices</p>
 <h3 id="cost-optimization">Cost Optimization</h3>
 <p>Understanding and controlling expenses, avoiding unnecessary costs, and analyzing spend in detail</p>
-<p><strong>Principles</strong></p>
-<ol>
-<li>Implement Cloud Financial Management</li>
-<li>Adopt a consumption model</li>
-<li>Measure overall efficiency</li>
-<li>Stop spending money on data center operations</li>
-<li>Analyze and attribute expenses</li>
-</ol>
+<p><strong>Principles</strong>: (1) Implement Cloud Financial Management (2) Adopt a consumption model (3) Measure overall efficiency (4) Stop spending money on data center operations (5)Analyze and attribute expenses</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
