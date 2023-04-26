@@ -69,7 +69,7 @@ nav:
        - Management : ./notes/aws-practitioner/management.md
        - Billing, Pricing and Support : ./notes/aws-practitioner/billing-pricing-service.md
        - Other Services: ./notes/aws-practitioner/other-services.md
-       - Summary: ./notes/aws-practitioner/short-hand-table.md
+       - Summary: ./notes/aws-practitioner/summary.md
     - AWS Developer Associate :
        - Introduction : ./notes/aws-dva/introduction.md
        

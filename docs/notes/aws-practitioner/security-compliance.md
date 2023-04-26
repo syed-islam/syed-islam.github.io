@@ -228,7 +228,7 @@ Represented as JSON and has at least one statement.
   2. Resource-based Policies
   3. IAM Permission Boundaries
   4. Identity-based policies
-  5. 
 
-
+## AWS Security Hub
+AWS Security Hub is a service that helps customers to improve their security posture on AWS by providing a comprehensive view of security and compliance across their AWS accounts. It aggregates security findings from various AWS services and third-party tools and presents them in a single dashboard. Doing so makes it easier for customers to identify and prioritize security issues and take corrective actions. Moreover, it offers automated compliance checks against industry standards and best practices such as PCI DSS, HIPAA, and CIS AWS Foundations Benchmark. With AWS Security Hub, customers can automate security and compliance checks, eliminate manual processes, and increase the efficiency of their security operations.
 
