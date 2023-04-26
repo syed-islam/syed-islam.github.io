@@ -96,7 +96,7 @@
  * Provisioned IOPS SSD - io1
    * Low latency/high throughput
    * 16000 IOPS of 250 MiB/s of throughput per volume
-#### HD
+#### HDD
  * Throughput optimized HDD (st1)
    * Frequently accesses, large throughput, data streaming, log processing
    * cannot be used as boot volumes

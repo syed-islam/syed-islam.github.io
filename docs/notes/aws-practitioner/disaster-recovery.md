@@ -1,11 +1,11 @@
 # Disaster Recovery
- * back strategies need to be part of the disaster recovery planning
+ * backup strategies need to be part of the disaster recovery planning
  * How to decide RTO / RPO:
-   * Impact on business if app outage is extended?
-   * Cost of loss
-   * Dependencies
-   * Consumers
-   * Regulatory requirements
+     * Impact on business if app outage is extended?
+     * Cost of loss
+     * Dependencies
+     * Consumers
+     * Regulatory requirements
 
 ## RTO
  * Maximum amount of time a service is allowed to be unavailable.
@@ -25,18 +25,19 @@
 ### Backup & Restore
  * RTO is usually 24 hours and RPO is hours.
  
- Point in time recovery options
- |Database | Storage|
- |-------| -------|
- |RDS Snapshot | EBS Snapshot|
- |Aurora Snapshot | EFS Snapshot|
- |DynamoBD Snapshot ||
- |Redshift Snapshot ||
- |DocumentDB Snapshot ||
- |Neptune Snapshot ||
+Point in time recovery options:
+
+|Database | Storage|
+|-------| -------|
+|RDS Snapshot | EBS Snapshot|
+|Aurora Snapshot | EFS Snapshot|
+|DynamoBD Snapshot ||
+|Redshift Snapshot ||
+|DocumentDB Snapshot ||
+|Neptune Snapshot ||
 
 
- ### Pilot Light
+### Pilot Light
   * Introduction of data replication between DR Region
   * Core infrastructure is in place in DR Region
   * Ability to scale out faster
@@ -44,7 +45,7 @@
   * Servers are switched off and not running
   * Cross Region data replications
     * S3 cross-region replication - Automatically replicates objects from source to DR region
-    * RDF cross-region replicas - Replica DB in a separate region created from snapshots
+    * RDS cross-region replicas - Replica DB in a separate region created from snapshots
     * Aurora Global Database - low latency reads in multiple regions
     * DyanmoDB global tables - multi-region deployment of table without need to crete replica
     * DocumentDB global Clusters - single primary region and 5 replicas across regions
@@ -59,5 +60,6 @@
  * Most complex
  * Most Costly
  * Lowest  RTO/RPO.
+
 
 

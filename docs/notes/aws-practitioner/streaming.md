@@ -5,7 +5,7 @@
 ### Properties
  * real-time data collection messaging service
  * Maintains a copy of all data in the received order
- * Data is stored for 24 hours default, upto 65 days if configured using ```IncreaseStreamRetentionPeriod```.
+ * Data is stored for 24 hours default, upto 365 days if configured using ```IncreaseStreamRetentionPeriod```.
  * Ability to process large data streams in real-time, ability to read and replay records to multiple consumer applications. 
  * Kinesis Data Stream can encrypt data using KMS as producers put data on the stream.
  * Kinesis data stream has *put to get latency* of less than 1 seconds.
@@ -45,7 +45,6 @@
 
 ## Amazon Kinesis Video Streams
  * Stream processing binary-encoded data such as video and audio. 
- * 
 
 
 ## Amazon Kinesis Data Firehose
@@ -54,14 +53,14 @@
  * No need to develop custom consumers
  * Buffers data during delivery, Buffer Size and Buffer Duration can be configured during creation. This buffering makes it near real-time. 
  * Destinations:
-   * Amazon S3
-   * Amazon Redshift
-   * Amazon Elasticsearch
-   * Splunk
-   * Generic HTTP endpoints
-   * DataDog
-   * MongoDB Cloud
-   * New Relic
+    * Amazon S3
+    * Amazon Redshift
+    * Amazon Elasticsearch
+    * Splunk
+    * Generic HTTP endpoints
+    * DataDog
+    * MongoDB Cloud
+    * New Relic
  * No free tier, charged for usage not provisioned. 
 
 ## Amazon Kinesis Data Analytics

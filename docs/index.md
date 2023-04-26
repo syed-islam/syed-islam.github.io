@@ -11,7 +11,6 @@ If you would like to get in touch with me, please use one of the following email
 * `syed.islam.10[at]ucl.ac.uk`
 * `syed.islam.ucl[at]gmail.com`
 
-
 ## Work Experience
 
 I previously worked as/at:

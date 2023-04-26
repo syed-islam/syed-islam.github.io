@@ -13,7 +13,7 @@
  * Step functions should be used if more than 12 hours delay is needed. 
 
 ### Standard Queue
- * Standard Queue - **At least delivery** guaranteed. 
+ * Standard Queue - **At least once delivery** guaranteed. 
  * 120K in-flight messages in a standard queue. Short Polling will return error if exceeded, Long polling won't return any errors.
 
 ### FIFO Queues
@@ -81,9 +81,9 @@
 ## Amazon MQ Service
  * Enables migration of existing on-prem queues to Cloud
  * Amazon MQ is AWS managed message broker service for Apache ActiveMQ, and its compliant with:
-   * JMS, 
-   * NMS, 
-   * MQTT and 
-   * WebSockets.
+     * JMS, 
+     * NMS, 
+     * MQTT and 
+     * WebSockets.
  * Amazon MQ also provides message encryption in transit using SSL and at rest using AES 256 encryption.
 

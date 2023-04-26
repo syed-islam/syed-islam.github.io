@@ -19,12 +19,6 @@
 `Cloud Service Models`
 :   Infrastructure as a Service (IaaS), Software as a Service (SaaS) - Gmail, Platform as a Service (PaaS) -
 
-`Dedicated Host`
-:   Choose instance placement, visibility of cores and sockets, meets licensing needs. 
-
-`Dedicated Instance`
-: More costly than shared, uses dedicated hardware without the visibility. 
-
 `High Availability`
 :   Replication across multiple geographical zones. 
 

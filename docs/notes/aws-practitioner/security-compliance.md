@@ -4,11 +4,11 @@
  * Self-service AWS Security Reports
  * View and manage contacts between you and AWS for Account or Organization. 
  * Reports
-   * Audit Compliance Artifacts/Reports, can be shared with IAM users (Auditors).
-   * Audit artifacts validate AWS portion of the service not user
+     * Audit Compliance Artifacts/Reports, can be shared with IAM users (Auditors).
+     * Audit artifacts validate AWS portion of the service not user
  * Agreements
-   * Can be applied to all Accounts in an Organization
-   * NDA needs to be signed before the agreement can be viewed
+     * Can be applied to all Accounts in an Organization
+     * NDA needs to be signed before the agreement can be viewed
 
 ## IAM
 
@@ -67,8 +67,8 @@
 
 ##### Federated Access to Roles
  * Two options:
-   * Web Identity - Large base of external users using Google, Facebook etc. 
-   * SAML2.0 federation - Employees of the firm using existing directory services
+     * Web Identity - Large base of external users using Google, Facebook etc. 
+     * SAML2.0 federation - Employees of the firm using existing directory services
  * Identity Provider Authenticates the user and Service Provider enables access to services once authentication. 
   
 
@@ -137,11 +137,13 @@
  * KMS is region-specific. Each region requires its own instance of KMS. 
 
 ### Components
- There are 4 key components of AWS KSM:
-  1. Customer Master Keys (CMK)
-  2. Data Encryption Keys (DEKs)
-  3. Key Policies
-  4. Grants
+
+There are 4 key components of AWS KMS:
+
+   1. Customer Master Keys (CMK)
+   2. Data Encryption Keys (DEKs)
+   3. Key Policies
+   4. Grants
 
 ### CMK Types
  1. Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.
@@ -188,11 +190,11 @@ Represented as JSON and has at least one statement.
 #### Identity-based policies
  * Policies associated with anything tha depicts and identity
  * Can be of the following variants:
-   * Managed Policies - both are saved in library and can be reused across multiple identities:
-     * AWS Management Policies
-     * Customer Managed Policies
-   * In-line Policies
-     * Embedded directly into the identity and can't easily be replicated to the identity.
+     * Managed Policies - both are saved in library and can be reused across multiple identities:
+        * AWS Management Policies
+        * Customer Managed Policies
+     * In-line Policies
+        * Embedded directly into the identity and can't easily be replicated to the identity.
 
 ##### Creation
  1. Copy existing policy
@@ -203,7 +205,7 @@ Represented as JSON and has at least one statement.
 #### Resource-based policies
  * Policies are attached to resources themselves.
  * Has **principal** attribute to describe who the policy applies to 
- * 
+
 #### Permission Boundaries
  * These policies can be associated with a **role** or **user**.
  * Don't grant permissions but define the maximum permissions that can be granted. Act as guardrail. 
@@ -223,7 +225,7 @@ Represented as JSON and has at least one statement.
     3. Explicit deny will take precedence and will lead to deny
  4. Result of evaluation - Allow/deny
   
- ##### Evaluation Order
+##### Evaluation Order
   1. Organizational SCP
   2. Resource-based Policies
   3. IAM Permission Boundaries

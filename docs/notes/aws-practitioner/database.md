@@ -1,19 +1,14 @@
 ## Database Types
- 1. Relational
-    1. MySQL
-    2. MariaDB
-    3. PostgreSQL
-    4. Aurora
-    5. Oracle
-    6. SQL Server
- 2. Key-Value
- 3. Document
- 4. In-memory
- 5. Graph
- 6. Columnar
- 7. Time Series
- 8. Quantum Ledger
- 9.  Search 
+
+ * Relational - (1) MySQL, (2) MariaDB, (3) PostgreSQL, (4) Aurora, (5) Oracle, (6) SQL Server
+ * Key-Value - (1) DynamoDB
+ * Document - (1) DocumentDB
+ * In-memory - (1) Elasticache (MemcacheD, Redis)
+ * Graph - (1) Neptune
+ * Columnar - (1) KeySpace
+ * Time Series - (1) Timestream
+ * Quantum Ledger - (1) QLDB
+ * Search - (1)  Elastic Search  
 
 ## Types of workloads
 1. OLTP - Online Transaction Processing. Predictable and structured work. 
@@ -82,18 +77,18 @@
      * Reboot with failover
      * Instance class on primary DB is modified. 
  * EBS (scalable storage) used by MySQL, PostgreSQL, MariaDB, Oracle, SQL Server.
-   * SSD Storage (20GB - 64TB [SQLServer 16TB]), Provisioned (8000 IOPS - 80000 IOPS [SQLServer 40000] / 100GB - 64 TB [SQLServer 16TB])
-   * Autoscaling of storage can be enabled on configuration. <10% storage for 5 mins and 6 hours since last scale up. 
+     * SSD Storage (20GB - 64TB [SQLServer 16TB]), Provisioned (8000 IOPS - 80000 IOPS [SQLServer 40000] / 100GB - 64 TB [SQLServer 16TB])
+     * Autoscaling of storage can be enabled on configuration. <10% storage for 5 mins and 6 hours since last scale up. 
  * Aurora - shared cluster storage.
-   * Grows automatically and doesn't need to be configured.
+     * Grows automatically and doesn't need to be configured.
  * Read Replica
-   * Read only traffic. 
-   * Where multi-AZ config is enabled, read replica is created from secondary db.
+     * Read only traffic. 
+     * Where multi-AZ config is enabled, read replica is created from secondary db.
  * Auto Backup
-   * Backup to S3
-   * 0-35 days of retention
-   * Manual backup can be done at any time and backups need to be deleted manually
-   * Encryption can be defined using KMS keys. 
+     * Backup to S3
+     * 0-35 days of retention
+     * Manual backup can be done at any time and backups need to be deleted manually
+     * Encryption can be defined using KMS keys. 
  * Backtrack - Aurora allows backtrack up to 72 hours. Allows you to back in time. Aurora retains transactional log data for the duration of the backtrack. 
 
 
@@ -109,7 +104,7 @@
  * Creation requires DB name and Primary Key at its simplest form.
  * Partition Key and Index can be used
  * 1 Query can use only 1 Index. Query needs to be explicit about what index to use.
- * 
+
 
 ### Secondary Index
  * Global - everywhere in the table
@@ -125,7 +120,7 @@
 
 ### On-Demand
  * Scaled on demand
- * Not as cost-effective as standard.
+ * Not as cost-effective as provisioned.
 
 ### Encryption
  * Default is on
@@ -160,9 +155,9 @@
 ### Structure
 * Cluster has a database and at least one compute node. More than one compute node has a leader node. 
 * Leader node is the gateway to the cluster and creates the execution plans for query. 
-* Compute Nodes can be of two types
-  * RA3 node types - High performance and scalable
-  * Dense node types - High performance with fixed local SSD
+* Compute Nodes can be of two types:
+     * RA3 node types - High performance and scalable
+     * Dense node types - High performance with fixed local SSD
 * Nodes can be between 1-32.
 
 
@@ -180,16 +175,4 @@
 ### Backup
  * Automated snapshots for backups
  * Optionally - Backup cluster to a secondary region.
-
-
-
-
-
-
-
-
-
-
-
-
 

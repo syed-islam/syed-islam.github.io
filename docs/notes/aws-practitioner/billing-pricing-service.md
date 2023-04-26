@@ -19,10 +19,10 @@ AWS is easier to measure the cost.
 ## Pricing Calculator - Estimates
  * Ability to create estimates of cost
  * Steps:
-   * Choose Service
-   * Choose Region
-   * Quick Estimate / Advanced Estimate
-   * Specific information about the services.
+     * Choose Service
+     * Choose Region
+     * Quick Estimate / Advanced Estimate
+     * Specific information about the services.
  * Save and share estimates or create groups of services for estimates.
 
 
@@ -48,10 +48,10 @@ AWS is easier to measure the cost.
 ## AWS Budget
  * Automatic Notification and Actions when set thresholds are hit. 
  * Types:
-   * Cost
-   * Usage
-   * Reservation Budget
-   * Saving Plan Budget
+     * Cost
+     * Usage
+     * Reservation Budget
+     * Saving Plan Budget
  * Actions can be automatic or via workflow approvals
  * Actions be be targeted via IAM policies, SCP policies or directly shut off RDS/EC2. 
 
@@ -68,7 +68,7 @@ AWS is easier to measure the cost.
  * Do regular review of tags.
 
 
-## Amazon Services
+## Amazon Support Services
 
 | | Basic | Developer | Business | Enterprise On-Ramp | Enterprise |
 |-- | -- | --| --| --|-- |
@@ -82,6 +82,7 @@ AWS is easier to measure the cost.
 | API | X | X | Yes | Yes | Yes|
 | 3rd party software support | | Interoperability and troubleshooting |Interoperability and troubleshooting | Interoperability and troubleshooting| Interoperability and troubleshooting |
 |Proactive Programs | |Automation Workflows : ```AWSSupport``` | Infrastructure Event Management (paid), Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | Infrastructure Event Management (one-per-year), Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | Infrastructure Event Management, Proactive reviews workshop and deep-dives, Automation Workflows : ```AWSSupport``` and ```ASPremimumSupport``` | 
+
 
 
 

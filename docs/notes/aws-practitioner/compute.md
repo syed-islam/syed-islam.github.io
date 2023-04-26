@@ -194,23 +194,26 @@ Create a Configuration:
 
 ### Launch Options
 
- * AWS Fargate
+#### AWS Fargate
+
+##### Configuration
    * CPU and Memory required
-   * Networking
+   *  Networking
    * IAM policies
    * Package application into containers
- * EC2
+
+
+Cluster management across EC2 instances. 
+AWS Fargate is an engine used to enable ECS to run containers without having to manage and provision instances and clusters for containers. 
+
+*Docker* is piece of software that allows you to automate the installation and distribution of applications inside Linux Containers. A *Container* holds everything that an application requires to enable it to run from within it's isolated container package. This may include system libraries, code, system tools, run time, etcetera. 
+
+
+#### EC2
    * instance and instance patching
    * more granularity
    * security and compliance controls
 
-#### AWS Fargate
-Cluster management across EC2 instances. 
-AWS Fargate is an engine used to enable ECS to run containers without having to manage and provision instances and clusters for containers. 
-
-**Docker** is piece of software that allows you to automate the installation and distribution of applications inside Linux Containers. 
-
-So what are containers? A **Container** holds everything that an application requires to enable it to run from within it's isolated container package. This may include system libraries, code, system tools, run time, etcetera. 
 
 
 ## ECR
@@ -243,9 +246,9 @@ So what are containers? A **Container** holds everything that an application req
  * AWS takes care of management infrastructure knowns as control plane. Ths is done across multi-AZ for resilience. 
  * User needs to maintain the work nodes. 
  * Control Plane does scheduling, tracking stake of all containers. It is made of:
-   * Number of APIs
-   * Kubelet Process
-   * Kubernetes Master
+     * Number of APIs
+     * Kubelet Process
+     * Kubernetes Master
  * Nodes - Worker machine. On-Demand EC2 instance and includes software to run containers via specific AMI which ensures Docker and Kublet in installed. Provisioned worker nodes connect to an EKS endpoint. 
 
 ### Working with EKS
@@ -280,7 +283,6 @@ So what are containers? A **Container** holds everything that an application req
 
 ### Properties
 * serverless
-* 
 
 ### How does it work
 1. Write code and upload to Lambda. Code can contain other libraries.
@@ -320,10 +322,3 @@ Compute Savings Plans provide the most flexibility and help to reduce your costs
 
 ### EC2 Instance Savings Plans
 EC2 Instance Savings Plans provide the lowest prices, offering savings up to 72% in exchange for commitment to usage of individual instance families in a Region (e.g. M5 usage in N. Virginia). This automatically reduces your cost on the selected instance family in that region regardless of AZ, size, OS or tenancy. EC2 Instance Savings Plans give you the flexibility to change your usage between instances within a family in that region. For example, you can move from c5.xlarge running Windows to c5.2xlarge running Linux and automatically benefit from the Savings Plan prices.
-
-## FAQ
-
-
-## Outstanding Questions
-
-

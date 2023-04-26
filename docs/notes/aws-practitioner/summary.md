@@ -60,6 +60,47 @@
 | AWS Systems Manager Parameter Store | Security |  used to centralize the configuration data of their application. You can store data such as passwords, database strings, AMI IDs, and license codes as parameter values.|
 |Amazon Chime | Other | is a high-quality communications service that transforms online meetings with an easy-to-use app that works seamlessly across all your devices.|
 | AWS Well-Architected Framework |Architecture | RSPCO - Reliability, Security, Performance, Cost Optimization and Operational Excellence|
+|S3 | Storage | S3 Standard, S3 Intelligent Tier, S3 Standard Infrequent-Access, S3 1 Zone Infrequent-Access|
+|S3 Glacier | Storage | Instant Retrieval (ms), Flexible Retrieval (min), Deep Archive (12h)|
+|S3 Data Lifecycle | Storage| One direction, 30 days (except standard) -> 90 days (Glacier) -> 180 days (Deep Archive) |
+|EBS | Storage | SSD (General Purpose - GP2/ Provisioned IOPS - io1), HDD (Throughput Optimized - st1, Cold - sc1) |
+|EFS | Storage | Retrieval (Standard/Infrequent Access), Performance Modes (General Purpose, Max I/O), Throughput Modes (Bursting/Provisioned) |
+|Snow Family | Storage | Snowcone (4Gb/8TB), Snowball Compute (208GB/40TB), Snowball Storage (32GB/80TB), Snow Mobile (100PB) |
+|EC2 | Compute | Instance Type, Instance Family, Purchase Option (on-demand, reserved, scheduled, spot, computer savings plan, instance savings plan, Instance/EBS Storage, Status Check)|
+|ECS | Compute | Launch (Fargate/EC2)|
+|ECR | Compute | Registry, Repository, Repository Policy, Authorization Token|
+|EKS | Compute | Kubernetes, Docker/Rocket, Worker Nodes - Specific AMI, on-demand EC2|
+| Beanstalk | Compute | Application Version, Environment, Environment Tier (Web Server Tier/ Worker Tier), Configuration Template, Application|
+| Lambda | Compute | 15min, 10GB, Components - Application, Event source, Trigger, Downstream Resources, Log Streams|
+| AWS Batch | Compute | Jobs, Job Definitions, Job Queues, Jobs Scheduling, Compute Environments (ECS Managed/Unmanaged)|
+| AWS Lightsail | Compute | VPS, easy deployment of web sites and blogs, fixed monthly cost |
+| RDS | DB | (1) MySQL, (2) MariaDB, (3) PostgreSQL, (4) Aurora, (5) Oracle, (6) SQL Server. Instance Type/Family, EBS Storage with Auto scaling. Single/Multi-AZ. Auto backup. Read Replica  |
+| DynamoDB| DB| Key-Value, 400KB max record size, unlimited scalability, RCU/WCU, Not SQL flexibility|
+| DocumentDB| DB | JSON docs|
+|Elasticache (MemcacheD, Redis) |DB|In-memory cache|
+|Graph|DB| Neptune |
+|KeySpace| DB| Columnar, Casandra |
+|TimeStream|DB| Time Series|
+|QLDB|DB| Quantum Ledger |
+|Redshift | DB| Data Warehouse, Redshift Spectrum, RA3 Node / Dense Node |
+| Elastic Search|DB| Indexes multiple sources as JSON documents and search capability|
+|Aurora |DB| Cluster based growth, backtrack, Global DB, Serverless option|
+| IP Reserved | Network| Network, AWS Routing, AWS DNS, AWS Future, Broadcast |
+|VPC CIDR |Network | from /16 to /28|
+|NACL | Network | subnet, rules in order of number, 20 rules, allow/deny, stateless, stops first match, explicit deny, default - all allow|
+|Security Groups | Network | Only Allow, implicit deny, all evaluated, 50 rules, stateful, default - inbound blocked, outbound allowed|
+| VPN | Network | Customer Gateway - Virtual Private Gateway, IPSec Tunnel.|
+|Direct Connect | Network | AWS Region Access for Public and VPC (Virtual Private Gateway) for Private Resources, Public/Private Virtual Interface on the Router|
+|VPC Peering | Network | 1-2-1 VPC connectivity, Non-Transitive, Non-overlapping CIDR Blocks, Route tables need updating |
+| Transit Gateway | Network | Central hub for multiple VPN and VPC Peering |
+| Route 53 | Network | A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, Alias (S3, CloudFront, ELB, Beanstalk, VPC Interface Endpoint), Routing - simple, Failover, Geo-Location, Geo Proximity, Latency, Multi-value, Weighted. Health check.|
+|Cloud Front | Network | AWS CDN, Web/RMTP, Caching at edge, Static Sites - EC2 / S3, WAF Integration|
+| AWS Global Accelerator | Network | UPD/TCP Traffic via private link, 2 fixed IP Address, Forward to - ELB, EC2, EIP across regions Multi-region, Health check|
+| ELB ... |||
+
+
+
+
 
 
 

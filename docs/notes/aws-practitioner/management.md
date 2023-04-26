@@ -5,14 +5,13 @@
  * Each API requests is captured as an event. 
  * The events are stored in log files within S3.
  * Event Metadata:
-   * Identify of the caller
-   * Request timestamp
-   * Source IP Address
+     * Identify of the caller
+     * Request timestamp
+     * Source IP Address
  * New log files are created every 5 mins. 
  * Can be delivered to a CloudWatch Logs for metric monitoring and alerting via SNS.
  * Global service and supported in all regions.
  * Helps in tracking and compliance requirements. 
-
 
 ## AWS Config
  * Record and capture resource changes in a file called a ```configurationitem```.
@@ -20,7 +19,7 @@
  * Discover compatible resources
  * Stores configuration history
  * Snapshot of current configuration 
- * Notification of changes via SN
+ * Notification of changes via SNS
  * Integration with CloudTrail to check who/what was responsible for change
  * Compliance check
  * Security analysis. Custom rules such as are EBS volumes encrypted. 

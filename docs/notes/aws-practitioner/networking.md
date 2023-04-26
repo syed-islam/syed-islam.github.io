@@ -170,8 +170,8 @@ Reserved addresses with subnet 10.0.1.0/24
  * AWS CDN
  * Uses Edge locations around the world to delivery best performance through cached data close to the user. 
  * Distributions Types:
-   * Web - static / dynamic content, media using http/https, submit data via web forms, live streaming in real-time
-   * RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be **S3 bucket** not EC2.
+     * Web - static / dynamic content, media using http/https, submit data via web forms, live streaming in real-time
+     * RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be **S3 bucket** not EC2.
  * Origin can be EC2 server or S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.
  * If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. 
  * Caching behavior options can be controlled via methods and policies
@@ -183,14 +183,14 @@ Reserved addresses with subnet 10.0.1.0/24
  * Get UDP and TCP traffic from end users to AWS endpoints via AWS infrastructure rather than public network. Optimized path for lowest latency and avoids unhealthy resources
  * Uses 2 fixed IP addresses. Can use own IP or from AWS pool. These are mapped to multiple Global Accelerator endpoints. 
  * Global Accelerator can be multi-region and can forward traffic to:
- *  ELB
- *  EC2
- *  EIP
+    *  ELB
+    *  EC2
+    *  EIP
 *  Creation has 4 steps:
-   *  Create accelerator, give it name and select 2 IP Address.
-   *  Listener - TCP/UDP based and ports
-   *  Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health checks can be done at this stage
-   *  Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.
+    *  Create accelerator, give it name and select 2 IP Address.
+    *  Listener - TCP/UDP based and ports
+    *  Associate listener with Endpoint Group with multiple endpoints which are for specific Region. Traffic dials can be used to weight traffic routing. Helps with Blue/Green deployments. Setup of health  checks can be done at this stage
+    *  Register and associate endpoints for Applications. Each endpoint can also have a weighted traffic routing within the endpoint group.
 *  Client affinity is supported for continued connections.
 
 ## ELB - Elastic Load Balancer
