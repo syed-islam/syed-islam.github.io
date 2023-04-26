@@ -52,14 +52,14 @@
 ## Amazon Cognito
  * Used for managing federated users access to roles. Specifically recommended for Mobile applications. 
 
-## AWS Trusted Advisor (CPSFS)
+## AWS Trusted Advisor (FSCPS)
  Makes recommendations to improve infrastructure use across environment based on known best practices.
 
  Make recommendations in the following areas:
+  * Fault Tolerance - Multi-AZ
+  * Security - weakness/vulnerabilities
   * Cost Optimization - is there unused resources.
   * Performance - where can we take advantage of provisioned capabilities
-  * Security - weakness/vulnerabilities
-  * Fault Tolerance - Multi-AZ
   * Service Limits - 80% limits are highlighted
 
 |       | Basic | Developer | Business | Enterprise | 

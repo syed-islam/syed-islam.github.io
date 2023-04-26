@@ -54,12 +54,12 @@
 |AWS Signer | Other | is a code-signing service to ensure the trust and integrity of your code.|
 |APN Technology Partner | Support  |An AWS Technology Partner company provides software tools and services hosted on or integrated with AWS.|
 |APN Consulting Partner | Support |The Consulting Partner helps an AWS customer in the implementation and management of an AWS cloud deployment.|
-|AWS Trusted Advisor | Architecture | Cost Optimization, Performance, Security, Fault Tolerance, Service Limits|
+|AWS Trusted Advisor | Architecture | FSCPS - Fault Tolerance, Security, Cost Optimization, Performance, Service Limits |
 |AWS Proton | Workflow | is a deployment workflow tool. It is mainly used to standardize infrastructure and automate the deployment of serverless & container-based applications.|
 | AWS License Manager | Security | allows you to manage software licenses from different vendors. |
 | AWS Systems Manager Parameter Store | Security |  used to centralize the configuration data of their application. You can store data such as passwords, database strings, AMI IDs, and license codes as parameter values.|
 |Amazon Chime | Other | is a high-quality communications service that transforms online meetings with an easy-to-use app that works seamlessly across all your devices.|
-| AWS Well-Architected Framework |Architecture | ORSPC - Operational Excellence, Reliability, Security, Performance and Cost Optimization|
+| AWS Well-Architected Framework |Architecture | RSPCO - Reliability, Security, Performance, Cost Optimization and Operational Excellence|
 
 
 
