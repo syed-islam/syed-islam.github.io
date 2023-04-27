@@ -1050,7 +1050,7 @@
 <h3 id="cmk-types">CMK Types</h3>
 <ol>
 <li>Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.</li>
-<li>AWS  - hese are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.</li>
+<li>AWS  - these are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.</li>
 <li>AWS Owned - These are not visible within the KMS console or anywhere within your account, neither do you have the ability to audit and track their usage, they are essentially abstracted from your AWS account.But of course, some services use this key type to encrypt your data within your account.Examples of AWS Owned CMKs include:•The S3 Master key uses SSE-S3 encryption•The default encryption option used on all Amazon DynamoDBtables uses AWS owned keys.</li>
 </ol>
 <h3 id="data-encryption-keys-deks">Data Encryption Keys (DEKs)</h3>
@@ -1092,7 +1092,7 @@
 <li>Policies associated with anything tha depicts and identity</li>
 <li>Can be of the following variants:<ul>
 <li>Managed Policies - both are saved in library and can be reused across multiple identities:<ul>
-<li>AWS Management Policies</li>
+<li>AWS Managed Policies</li>
 <li>Customer Managed Policies</li>
 </ul>
 </li>

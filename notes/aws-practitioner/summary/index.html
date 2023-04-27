@@ -892,7 +892,127 @@
 <td>UPD/TCP Traffic via private link, 2 fixed IP Address, Forward to - ELB, EC2, EIP across regions Multi-region, Health check</td>
 </tr>
 <tr>
-<td>ELB ...</td>
+<td>Elastic Load Balancer (ELB)</td>
+<td>Network</td>
+<td>Internet Facing (DNS, Public IP, Private IP) or Internal (Private IP). Routing via Private IP. Routes to: Lambda, EC2, IP Range or even containers. Listener, Rules, Target Group.</td>
+</tr>
+<tr>
+<td>Application Load Balancer (ALB)</td>
+<td>Network</td>
+<td>HTTP Request level, Advanced Routing, TLS Termination, Target Port, Cross-zone always ON. Health Check - Protocol, Path, threshold, interval, success code.</td>
+</tr>
+<tr>
+<td>Network Load Balancer (NLB)</td>
+<td>Network</td>
+<td>TCP/UDP level, cross-zone off by default. NLB has <strong>static IP</strong> per AZ. TLS termination. Millions of request per second.</td>
+</tr>
+<tr>
+<td>Simple Queue Service (SQS)</td>
+<td>Message</td>
+<td>Queue - Standard [120K, Visibility Timeout (0,30s,12h), ], FIFO [20K], Dead Letter. Delay Queue. Short/Long Polling. Message: 256KB - 2GB (SECL).</td>
+</tr>
+<tr>
+<td>Simple Notification Service (SNS)</td>
+<td>Notification</td>
+<td>Pub/Sub - 1:M. Topic based - 100K Topic and 12M subscribers. 30K/s varies by region. Message (64KB chunks): 256KB - 2GB (SECL).</td>
+</tr>
+<tr>
+<td>Amazon MQ Service</td>
+<td>Message</td>
+<td>On-Prem queue migration to cloud. Apache ActiveMQ broker - JMS, NMS, MQTT and web sockets. Encryption at REST and Transit.</td>
+</tr>
+<tr>
+<td>Amazon Kinesis Data Streams</td>
+<td>Streaming</td>
+<td>Real-time, put to get latency &lt; 1s. Maintains a copy of (immutable and unremovable) data (24h - 365d). Encryption. Shard holds Data Records made of Partition Key, Sequence Number and Actual Data (1MB). 1000 records/second or 1MB/s write, 2MB/s read - per shard. Classic has pull limits and shard read is shared, Enhanced Fan out gets 2MB/s per shard per consumer.</td>
+</tr>
+<tr>
+<td>Kinesis Client Library (KCL)</td>
+<td>Streaming</td>
+<td>Manages record processor using one (DynamoDB) table per processor application per shard. Runs on EC2, Elastic Beanstalk and Data Centre servers. On Demand or Provisioned.</td>
+</tr>
+<tr>
+<td>Amazon Kinesis Vide Streams</td>
+<td>Streaming</td>
+<td>Stream processing binary-encoded data such as video or audio.</td>
+</tr>
+<tr>
+<td>Amazon Kinesis Data Firehose</td>
+<td>Streaming</td>
+<td>Near real-time (buffers for delivery), delivery service - S3, redshift, elastic search, splunk, http endpoint, DataDog, MondoDB, Relic, Lambda Transformation.</td>
+</tr>
+<tr>
+<td>Amazon Kinesis Data Analytics</td>
+<td>Streaming, Analytics</td>
+<td>Apache Flink with Java and Scala for Data Streams. SQL for Firehose.</td>
+</tr>
+<tr>
+<td>AWS Artifact</td>
+<td>Security, Compliance</td>
+<td>Security and Compliance Reports. Agreements with AWS.</td>
+</tr>
+<tr>
+<td>Users</td>
+<td>IAM</td>
+<td>People / Application has ARN</td>
+</tr>
+<tr>
+<td>User Groups</td>
+<td>IAM</td>
+<td>Groups users, users inherit permissions, Default 300 Groups, 10 Groups per user and 10 Policies per Group</td>
+</tr>
+<tr>
+<td>Roles</td>
+<td>IAM</td>
+<td>Assumed by - Trusted users, AWS Services, Application. Federated (Web Identify / SAML2.0) /Cross-Account users (Trusted users need policies on both sides.). Temporary permissions. Services linked roles assumed by AWS Services only.</td>
+</tr>
+<tr>
+<td>Access Analyzer</td>
+<td>IAM, Reporting</td>
+<td>Policies that enable access outside zone of trust</td>
+</tr>
+<tr>
+<td>Credential Report</td>
+<td>IAM, Reporting</td>
+<td>IAM users, credentials, metadata about credentials usage and rotation</td>
+</tr>
+<tr>
+<td>Organizational Activity</td>
+<td>IAM, Reporting</td>
+<td>OU/Account based user activity</td>
+</tr>
+<tr>
+<td>Service Control Policies (SCP)</td>
+<td>IAM</td>
+<td>Permission Boundaries, don't grant permissions, used with Organizations</td>
+</tr>
+<tr>
+<td>AWS Key Management Service (KMS)</td>
+<td>Security</td>
+<td>Region-specific. CMK (Customer Managed, AWS Managed, AWS Owned), DEK, Key Policies, Grants</td>
+</tr>
+<tr>
+<td>Security Token Service (STS)</td>
+<td>Security, IAM</td>
+<td>Request temporary, limited-privilege credentials for IAM users or Federated Users. Best practice to turn of Regions not in use.</td>
+</tr>
+<tr>
+<td>IAM Policy</td>
+<td>IAM</td>
+<td>Version, Statement [SID, Effect, Principal, Action, Condition, IP Address]. AWS Managed, Customer Managed or In-line Policies. Policy order: SCP, Resource-based Policy, IAM Permission Boundaries, IAM Policies</td>
+</tr>
+<tr>
+<td>Disaster Recovery Strategies</td>
+<td>DR</td>
+<td>Backup and Restore (No infra), Pilot Light (Core with no running servers), Warm Standby (minimal implementation), Multi-site (active/active).</td>
+</tr>
+<tr>
+<td>Cross Region Data Replication</td>
+<td>DR</td>
+<td>S3 cross-region replication, RDS cross-region replicas, Aurora Global Database, DyanmoDB global tables, DocumentDB global Clusters, Global Datastore for Amazon ElasticCache for Redis</td>
+</tr>
+<tr>
+<td>Management...</td>
 <td></td>
 <td></td>
 </tr>

@@ -585,11 +585,6 @@
     Server Certificate (SSL/TLS)
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outstanding-question">
-    Outstanding Question
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -917,11 +912,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#server-certificate-ssltls">
     Server Certificate (SSL/TLS)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outstanding-question">
-    Outstanding Question
   </a>
 </li>
 </ul>
@@ -1352,12 +1342,14 @@
 <h2 id="server-certificate-ssltls">Server Certificate (SSL/TLS)</h2>
 <p>HTTPS on ALB requires additional configuration.
 The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. </p>
-<p>Certificate Selection:
- 1. Choose certificate from ACM
- 2. Upload to ACM
- 3. Choose from IAM
- 4. Upload to IAM</p>
-<h2 id="outstanding-question">Outstanding Question</h2>
+<p>NLB also support TCP/TLS certificate based termination. </p>
+<p>Certificate Selection:</p>
+<ol>
+<li>Choose certificate from ACM</li>
+<li>Upload to ACM</li>
+<li>Choose from IAM</li>
+<li>Upload to IAM</li>
+</ol>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
