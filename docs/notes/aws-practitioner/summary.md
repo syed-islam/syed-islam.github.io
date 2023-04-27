@@ -96,15 +96,30 @@
 | Route 53 | Network | A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, Alias (S3, CloudFront, ELB, Beanstalk, VPC Interface Endpoint), Routing - simple, Failover, Geo-Location, Geo Proximity, Latency, Multi-value, Weighted. Health check.|
 |Cloud Front | Network | AWS CDN, Web/RMTP, Caching at edge, Static Sites - EC2 / S3, WAF Integration|
 | AWS Global Accelerator | Network | UPD/TCP Traffic via private link, 2 fixed IP Address, Forward to - ELB, EC2, EIP across regions Multi-region, Health check|
-| ELB ... |||
-
-
-
-
-
-
-
-
-
+| Elastic Load Balancer (ELB) | Network | Internet Facing (DNS, Public IP, Private IP) or Internal (Private IP). Routing via Private IP. Routes to: Lambda, EC2, IP Range or even containers. Listener, Rules, Target Group.|
+| Application Load Balancer (ALB)| Network | HTTP Request level, Advanced Routing, TLS Termination, Target Port, Cross-zone always ON. Health Check - Protocol, Path, threshold, interval, success code.|
+| Network Load Balancer (NLB) | Network | TCP/UDP level, cross-zone off by default. NLB has **static IP** per AZ. TLS termination. Millions of request per second.|
+| Simple Queue Service (SQS) | Message | Queue - Standard [120K, Visibility Timeout (0,30s,12h), ], FIFO [20K], Dead Letter. Delay Queue. Short/Long Polling. Message: 256KB - 2GB (SECL).|
+| Simple Notification Service (SNS)| Notification | Pub/Sub - 1:M. Topic based - 100K Topic and 12M subscribers. 30K/s varies by region. Message (64KB chunks): 256KB - 2GB (SECL).|
+| Amazon MQ Service | Message | On-Prem queue migration to cloud. Apache ActiveMQ broker - JMS, NMS, MQTT and web sockets. Encryption at REST and Transit. |
+| Amazon Kinesis Data Streams | Streaming | Real-time, put to get latency < 1s. Maintains a copy of (immutable and unremovable) data (24h - 365d). Encryption. Shard holds Data Records made of Partition Key, Sequence Number and Actual Data (1MB). 1000 records/second or 1MB/s write, 2MB/s read - per shard. Classic has pull limits and shard read is shared, Enhanced Fan out gets 2MB/s per shard per consumer.|
+| Kinesis Client Library (KCL) | Streaming | Manages record processor using one (DynamoDB) table per processor application per shard. Runs on EC2, Elastic Beanstalk and Data Centre servers. On Demand or Provisioned.|
+| Amazon Kinesis Vide Streams | Streaming | Stream processing binary-encoded data such as video or audio. |
+| Amazon Kinesis Data Firehose | Streaming | Near real-time (buffers for delivery), delivery service - S3, redshift, elastic search, splunk, http endpoint, DataDog, MondoDB, Relic, Lambda Transformation.|
+| Amazon Kinesis Data Analytics | Streaming, Analytics | Apache Flink with Java and Scala for Data Streams. SQL for Firehose.|
+| AWS Artifact | Security, Compliance | Security and Compliance Reports. Agreements with AWS.|
+| Users | IAM | People / Application has ARN|
+| User Groups | IAM | Groups users, users inherit permissions, Default 300 Groups, 10 Groups per user and 10 Policies per Group |
+| Roles | IAM | Assumed by - Trusted users, AWS Services, Application. Federated (Web Identify / SAML2.0) /Cross-Account users (Trusted users need policies on both sides.). Temporary permissions. Services linked roles assumed by AWS Services only. |
+| Access Analyzer | IAM, Reporting | Policies that enable access outside zone of trust|
+| Credential Report | IAM, Reporting | IAM users, credentials, metadata about credentials usage and rotation| 
+| Organizational Activity | IAM, Reporting | OU/Account based user activity |
+| Service Control Policies (SCP)| IAM | Permission Boundaries, don't grant permissions, used with Organizations |
+| AWS Key Management Service (KMS) | Security |Region-specific. CMK (Customer Managed, AWS Managed, AWS Owned), DEK, Key Policies, Grants | 
+| Security Token Service (STS) | Security, IAM | Request temporary, limited-privilege credentials for IAM users or Federated Users. Best practice to turn of Regions not in use. |
+| IAM Policy | IAM | Version, Statement [SID, Effect, Principal, Action, Condition, IP Address]. AWS Managed, Customer Managed or In-line Policies. Policy order: SCP, Resource-based Policy, IAM Permission Boundaries, IAM Policies|
+| Disaster Recovery Strategies | DR | Backup and Restore (No infra), Pilot Light (Core with no running servers), Warm Standby (minimal implementation), Multi-site (active/active).|
+| Cross Region Data Replication | DR | S3 cross-region replication, RDS cross-region replicas, Aurora Global Database, DyanmoDB global tables, DocumentDB global Clusters, Global Datastore for Amazon ElasticCache for Redis|
+|Management...|||
 
 

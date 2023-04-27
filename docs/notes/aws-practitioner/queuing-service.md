@@ -62,10 +62,10 @@
 ### Message Retry
  * Controlled using SNS Delivery Policy
  * Retry Patterns:
-   *  Linear
-   *  Geometric
-   *  Exponential back-off
-   *  maximum and Minimum tries
+     *  Linear
+     *  Geometric
+     *  Exponential back-off
+     *  maximum and Minimum tries
 *  Messages can be sent to Dead Letter Queue which can be delivered.
 
 ### Notification Services:
@@ -85,5 +85,5 @@
      * NMS, 
      * MQTT and 
      * WebSockets.
- * Amazon MQ also provides message encryption in transit using SSL and at rest using AES 256 encryption.
+ * Amazon MQ also provides message encryption in transit using SSL and at REST using AES 256 encryption.
 

@@ -147,7 +147,7 @@ There are 4 key components of AWS KMS:
 
 ### CMK Types
  1. Customer Managed - These keys offer the greatest level of flexibility and control.  You are able to create, disable or delete the key, configure the key policies associated with your key, configure Grants, and also alter and adjust the key rotation periods and view full usage history of the key.These keys can be used by other AWS services that integrate with KMS.Customer managed keys include  an additional charge for creating your customer CMKs.
- 2. AWS  - hese are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.
+ 2. AWS  - these are managed by AWS, however you are still able to view these keys within the Management Console, and also audit and track their usage and view their key policies.However, because they are managed by AWS you are not able to modify them.  These keys are created and used by AWS services that integrate with KMS directly, but they can only be used by the service that creates them.
  3. AWS Owned - These are not visible within the KMS console or anywhere within your account, neither do you have the ability to audit and track their usage, they are essentially abstracted from your AWS account.But of course, some services use this key type to encrypt your data within your account.Examples of AWS Owned CMKs include:•The S3 Master key uses SSE-S3 encryption•The default encryption option used on all Amazon DynamoDBtables uses AWS owned keys.
 
 ### Data Encryption Keys (DEKs)
@@ -191,7 +191,7 @@ Represented as JSON and has at least one statement.
  * Policies associated with anything tha depicts and identity
  * Can be of the following variants:
      * Managed Policies - both are saved in library and can be reused across multiple identities:
-        * AWS Management Policies
+        * AWS Managed Policies
         * Customer Managed Policies
      * In-line Policies
         * Embedded directly into the identity and can't easily be replicated to the identity.

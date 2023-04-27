@@ -304,14 +304,11 @@ Health checks. The ELB associates a health check that is performed against the r
 HTTPS on ALB requires additional configuration.
 The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. 
 
+NLB also support TCP/TLS certificate based termination. 
+
 Certificate Selection:
- 1. Choose certificate from ACM
- 2. Upload to ACM
- 3. Choose from IAM
- 4. Upload to IAM
 
-
-
-
-
-## Outstanding Question
+   1. Choose certificate from ACM
+   2. Upload to ACM
+   3. Choose from IAM
+   4. Upload to IAM
