@@ -121,5 +121,10 @@
 | Disaster Recovery Strategies | DR | Backup and Restore (No infra), Pilot Light (Core with no running servers), Warm Standby (minimal implementation), Multi-site (active/active).|
 | Cross Region Data Replication | DR | S3 cross-region replication, RDS cross-region replicas, Aurora Global Database, DyanmoDB global tables, DocumentDB global Clusters, Global Datastore for Amazon ElasticCache for Redis|
 |Management...|||
-
-
+| Amazon CloudTrail | Security, Compliance | Records every API call. Requests from SDK, CLI and Console are captured. New files every 5 mins and stored in S3. Can be delivered to CloudWatch Logs.|
+| AWS CloudWatch | Security | Global service. CloudWatch Dashboards, CloudWatch Metrics and Anomaly Detection, CloudWatch Alarms, CloudWatch EventBridge, CloudWatch Logs, CloudWatch Insights.|
+| Pricing Calculator | Cost | Estimate costs of AWS services |
+| Cost Explorer | Cost | Analyze usage and cost. Base is free, API is charged. Hourly data is payable. Report generation.|
+| Usage Report (CUR) | Cost | Details of Usage and Cost, CUR files land in S3, integration with Athena and Redshift+QuickShift. Cost allocation tags needs to be enabled |
+| AWS Budgets | Cost | Set budgets and get alarms. Thresholds for max or min usage. Action via workflow or automatic to apply IAM or SCP policies.|
+| Amazon Support Plans | Cost | Basic, Developer, Business, Enterprise On-Ramp, Enterprise.|
