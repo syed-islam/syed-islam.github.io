@@ -171,14 +171,60 @@ Create a Configuration:
  * service-linked role
  * Keep to size or use policy to scale
 
-##### Policy
+
+### Autoscaling Policies
+
  * Minimum and Maximum Size
- * Policy Type
-   * Simple
-     * Increase via Alarm which has metric of CPU Utilization add single instance
-     * Decrease via Alarm which has metric for CPU utilization remove single instance
-     * Cooldown - default 300s
-     * Health Check Grace - default 300s
+ * Cooldown - default 300s
+ * Health Check Grace - default 300s
+
+ 1. Manual Scaling
+ 2. Schedule Scaling
+ 3. Dynamic Scaling
+ 4. Predictive Scaling 
+
+
+#### Manual Policy
+ * When there is a known reason to adjust the group size up - for example known campaign with known user surge
+ * When there is a known reason to adjust the group size down - for example over resource of budgeting. 
+
+
+#### Dynamic Scaling
+##### Step Scaling
+ * Adding or removing instances based on metric tracking. 
+   * Lower Bound - 30% CPU Load - Remove instance
+   * Upper Bound - 80% CPU Load - Add Instance
+ * Cooldown Policy - Period where autoscaling is suspended allowing previous scaling activity to take effect. 
+ * Threshold Trigger points are based on CloudWatch Alarms that Autoscaling can listen to. Multiple Triggers can be set with various levels of impact such as 50% (add 1), 60% (add 3), 90% (add 6)
+ * While adding using step scaling, Autoscaling accounts for ongoing scaling events and doesn't add on top but accumulates
+ * Scale up aggressively, scale down slowly (have a large cooldown policy). 
+ * We are in-charge of when and how scaling happens. 
+
+##### Target Tracking
+ * Put a target on the metric and all the alarms and steps are setup automatically for the system to keep track of the metric and try to hit the target.
+ * Works less well with smaller ASG size and the granularity/impact of each change is large. Better for large ASG sizes. 
+ * Do not delete any cloudwatch alarms setup by Target Tracking Policy. The alarms will be automatically remove if the policy is removed. 
+
+#### Predictive Scaling
+ * Machine learning to identify patterns of loads and the ASG is scaled out according to prediction and scaled in when load decreases. 
+ * Needs data to run the model - at least 24 hours of historical data. It will look upto 14 days back.
+ * Good for patterns that repeat on some schedule - batch, end of day checking of things etc. 
+ * Forecast only mode means it will only show predictions and graphs the predicted performance for review. Enabling scaling will enable the system to do scaling. 
+ * The granularity of the predicted scaling is every hour - i.e. the autoscaling happen every hour and not at more granularity than that.
+ * Predictive scaling can be combined with Dynamic Auto Scaling. 
+
+
+#### Scheduled Scaling
+ * Scale in and out at fixed time
+ * Batch processing using spot instances late night
+ * Turn off Dev/Test after hours at night. 
+ * Again can be combined with dynamic scaling.
+
+
+
+
+
+
 
 !!! note
     Associate ASG directly to the Classic Load Balancer or to a Target Group from its configuration. ALB / NLB can then forward traffic to the target group and would automatically pickup all the EC2 instances in the ASG for load balancing. 
@@ -269,7 +315,7 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
  
  Elastic Beanstalk is able to operate with a variety of different platforms and programming languages, making it a very flexible service for your DevOps teams. There is no cost associated with Elastic Beanstalk, however, any resources that are created on your application's behalf, such as EC2 instances, you will be charged for as per the standard pricing policies at the time of deployment. 
 
-#### Components
+### Components
 
   * An **application version** is a very specific reference to a section of deployable code. The application version will point typically to S3, simple storage service to where the deployable code may reside. 
   * An **environment** refers to an application version that has been deployed on AWS resources.
@@ -279,6 +325,13 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
   * The **platform** is a culmination of components in which you can build your application upon using Elastic Beanstalk
   * **Applications**. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.
 
+### Compatibility
+| | | |
+|--|--|--|
+| Node.js | PHP | Python |
+| Single Container Docker | Java SE | Go |
+| Multi Container Docker | Java with Tomcat | Packer Builder 
+| Preconfigured Docker|.NET on Windows Server IIS | Ruby| 
 
 ## Lambda
 
