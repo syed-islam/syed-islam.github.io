@@ -128,3 +128,4 @@
 | Usage Report (CUR) | Cost | Details of Usage and Cost, CUR files land in S3, integration with Athena and Redshift+QuickShift. Cost allocation tags needs to be enabled |
 | AWS Budgets | Cost | Set budgets and get alarms. Thresholds for max or min usage. Action via workflow or automatic to apply IAM or SCP policies.|
 | Amazon Support Plans | Cost | Basic, Developer, Business, Enterprise On-Ramp, Enterprise.|
+| Severless Application Model (SAM) | Compute ||

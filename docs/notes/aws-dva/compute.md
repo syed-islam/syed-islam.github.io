@@ -540,3 +540,16 @@ Compute Savings Plans provide the most flexibility and help to reduce your costs
 
 ### EC2 Instance Savings Plans
 EC2 Instance Savings Plans provide the lowest prices, offering savings up to 72% in exchange for commitment to usage of individual instance families in a Region (e.g. M5 usage in N. Virginia). This automatically reduces your cost on the selected instance family in that region regardless of AZ, size, OS or tenancy. EC2 Instance Savings Plans give you the flexibility to change your usage between instances within a family in that region. For example, you can move from c5.xlarge running Windows to c5.2xlarge running Linux and automatically benefit from the Savings Plan prices.
+
+
+
+## AS Serverless Application Model (SAM)
+SAM is an open-source framework for building serverless applications in AWS. You can use any programming language that has a runtime currently supported by AWS Lambda. SAM provides a simplified way to define and deploy serverless resources, including functions, APIs, and databases using YAML templates. During the deployment process, SAM will transform these templates into CloudFormation. And from there, the CloudFormation service will provision the resources for your serverless applications.
+
+SAM also includes a command-line interface, the SAM CLI, which provides an environment that allows you to build and test your SAM applications locally, including Lambda, DynamoDB, and API Gateway. You can even debug your Lambda functions locally if they’re written in Node.js, Java, Python, or Go.
+
+
+### Deployment Steps
+ 1. The **sam build** command is used to build your application locally and transform your YAML SAM template into a CloudFormation template. 
+ 2. The **sam package** command will take your CloudFormation template and application code, zip it, and upload it to S3. 
+ 3. The **sam deploy** command will create and execute a CloudFormation change set, allowing you to deploy your application.
