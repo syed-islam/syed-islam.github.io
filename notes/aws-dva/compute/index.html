@@ -715,6 +715,83 @@
     Compatibility
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-tiers">
+    Environment Tiers
+  </a>
+<nav aria-label="Environment Tiers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web-server-tier">
+    Web Server Tier
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#worker-tier">
+    Worker Tier
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-option-of-elastic-beanstalk">
+    Deployment Option of Elastic Beanstalk
+  </a>
+<nav aria-label="Deployment Option of Elastic Beanstalk" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#all-at-once-default">
+    All at once (Default)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rolling">
+    Rolling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rolling-with-additional-batch">
+    Rolling with additional batch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#immutable">
+    Immutable
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring-and-health-checks">
+    Monitoring and Health checks
+  </a>
+<nav aria-label="Monitoring and Health checks" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status-checks_1">
+    Status Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-checks">
+    Other Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-health-reporting">
+    Basic Health Reporting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enhanced-health-reporting">
+    Enhanced Health Reporting
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1124,6 +1201,83 @@
     Compatibility
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-tiers">
+    Environment Tiers
+  </a>
+<nav aria-label="Environment Tiers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web-server-tier">
+    Web Server Tier
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#worker-tier">
+    Worker Tier
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-option-of-elastic-beanstalk">
+    Deployment Option of Elastic Beanstalk
+  </a>
+<nav aria-label="Deployment Option of Elastic Beanstalk" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#all-at-once-default">
+    All at once (Default)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rolling">
+    Rolling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rolling-with-additional-batch">
+    Rolling with additional batch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#immutable">
+    Immutable
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring-and-health-checks">
+    Monitoring and Health checks
+  </a>
+<nav aria-label="Monitoring and Health checks" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status-checks_1">
+    Status Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-checks">
+    Other Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-health-reporting">
+    Basic Health Reporting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enhanced-health-reporting">
+    Enhanced Health Reporting
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1519,12 +1673,12 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 <h3 id="components_1">Components</h3>
 <ul>
 <li>An <strong>application version</strong> is a very specific reference to a section of deployable code. The application version will point typically to S3, simple storage service to where the deployable code may reside. </li>
-<li>An <strong>environment</strong> refers to an application version that has been deployed on AWS resources.</li>
+<li>An <strong>environment</strong> refers to an application version that has been deployed on AWS resources. This comprises of all the infrastructure provisioned by Elastic Beanstalk along with the code. </li>
 <li>An <strong>environment configuration</strong> is a collection of parameters and settings that dictate how an environment will have its resources provisioned by Elastic Beanstalk and how these resources will behave.</li>
 <li>The <strong>environment tier</strong>. This component reflects on how Elastic Beanstalk provisions resources based on what the application is designed to do. You can deploy your application across one of two different environment tiers, either the <strong><em>web server tier</em></strong> or the <strong><em>worker tier</em></strong>. The web server environment is typically used for standard web applications that operate and serve requests over HTTP port 80. This tier will typically use service and features such as Route 53, Elastic Load Balancing, Auto Scaling, EC2, and Security Groups. The worker environment is slightly different and are used by applications that will have a back-end processing task that will interact with AWS SQS, the Simple Queue Service. This tier typically uses the following AWS resources in this environment, an SQS Queue, an IAM Service Role, Auto Scaling, and EC2. </li>
 <li>The <strong>configuration template</strong>. This is the template that provides the baseline for creating a new, unique environment configuration. </li>
-<li>The <strong>platform</strong> is a culmination of components in which you can build your application upon using Elastic Beanstalk</li>
-<li><strong>Applications</strong>. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.</li>
+<li>The <strong>platform</strong> is a culmination of components in which you can build your application upon using Elastic Beanstalk. This is everything that may be used. </li>
+<li><strong>Application</strong>. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.</li>
 </ul>
 <h3 id="compatibility">Compatibility</h3>
 <table>
@@ -1558,6 +1712,85 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 </tr>
 </tbody>
 </table>
+<h3 id="environment-tiers">Environment Tiers</h3>
+<ul>
+<li>Setting up configuration template for the application requires selection.</li>
+<li>Potentially both these can be used together decoupled by a SQS to transfer messages between the environments. </li>
+<li>Additional customization can be done via <code>Elastic Beanstalk Configuration</code> files within the application source code written in json or yaml. Saved with <code>.config</code> extension inside <code>.ebextensions</code> folder inside source code. </li>
+</ul>
+<h4 id="web-server-tier">Web Server Tier</h4>
+<p>Typically uses the following components:
+ * Route53 - handles the CNAME record and alias for using the DNS name with a ELB
+ * ELB - Should have at least one ELB for load balancing
+ * EC2 Autoscaling Group - Handles scale-in and scale-out
+ * EC2 Instances - Part of the ASG that handles the requests. <strong>Host Manager</strong> is installed enabling the following:
+   *   aid in the deployment of your application, 
+   *   collates different metrics and different events from the EC2 instance which can then be reviewed from within the console or via the AWS CLI or API, 
+   *   generates instance-level events, it monitors both the application log files and the application server itself. 
+   *   It will also patch instance components, 
+   *   it will manage the log files, allowing them to be published at S3. 
+ * Security Group - Provides instance protection for EC2. Will by default allow HTTP traffic/ port 80. </p>
+<h4 id="worker-tier">Worker Tier</h4>
+<p>Back-end processing tasks usually dealing with a SQS. Typical components:
+  * SQS - This will be created if one doesn't exist that is configured
+  * IAM Service Role - For the EC2 instances to be able to access and interact with the SQS
+  * EC2 Autoscaling Group - Handles scale-in and scale-out
+  * EC2 Instances - Does the work of pulling data from SQS. <strong>Daemon</strong> installed on EC2 to pull data from SQS and send data to application.</p>
+<h3 id="deployment-option-of-elastic-beanstalk">Deployment Option of Elastic Beanstalk</h3>
+<h4 id="all-at-once-default">All at once (Default)</h4>
+<ul>
+<li>Default</li>
+<li>Rolls out all the resource at the same time. May disrupt if the existing is already in use. </li>
+</ul>
+<h4 id="rolling">Rolling</h4>
+<ul>
+<li>Minimizes disruption to existing usage</li>
+<li>Deploy application and batches and move forward as batches succeed</li>
+<li>Can serve request while the gradual roll out happens. </li>
+</ul>
+<h4 id="rolling-with-additional-batch">Rolling with additional batch</h4>
+<ul>
+<li>Application availability is completely minimized by using additional batches of resources and replaces one batch at a time to reduce the impact on usage</li>
+</ul>
+<h4 id="immutable">Immutable</h4>
+<ul>
+<li>A completely second environment is created separately </li>
+<li>Doubles the environment until the new environment is setup and ready to serve traffic</li>
+<li>Destroys the old environment once all health checks passed. </li>
+</ul>
+<h3 id="monitoring-and-health-checks">Monitoring and Health checks</h3>
+<ul>
+<li>Cloudwatch metrics at 5 min intervals as done by default in other approaches.</li>
+<li>Health check is not determined based on these metrics</li>
+</ul>
+<h4 id="status-checks_1">Status Checks</h4>
+<ul>
+<li>If <strong>ELB</strong> exists within the environment, it sends request to EC2 every 10s for health check</li>
+<li>If no ELB, then <strong>EC2 Instance Status Check</strong> is used determine the health</li>
+</ul>
+<h4 id="other-checks">Other Checks</h4>
+<ul>
+<li>High level check of the environment are also done automatically.  </li>
+<li><strong>Web Tier</strong> - ASG has at least one healthy EC2, Correct settings in Route53 (CNAME redirect to correct ELB), Security Group allows port 80 inbound</li>
+<li><strong>Worker Tier</strong> - SQS being polled every 3 mins at minimum. </li>
+</ul>
+<h4 id="basic-health-reporting">Basic Health Reporting</h4>
+<ul>
+<li>Gray - Update in progress</li>
+<li>Green - Environment passed recent health check and at least one instance available</li>
+<li>Yellow - Environment failed one or more health check, some requests failing</li>
+<li>Red - Environment failed three of more health check, unavailable and constantly failing.</li>
+</ul>
+<h4 id="enhanced-health-reporting">Enhanced Health Reporting</h4>
+<ul>
+<li>Ok - Passed all health checks</li>
+<li>Warning - extended time to progress and some failures</li>
+<li>Degraded - high number of failures</li>
+<li>Severe - excessive number of failures</li>
+<li>Pending - operations in progress</li>
+<li>Unknown - insufficient data</li>
+<li>Suspended - Not monitored</li>
+</ul>
 <h2 id="lambda">Lambda</h2>
 <h3 id="properties">Properties</h3>
 <ul>
