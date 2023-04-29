@@ -812,9 +812,71 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#lambda-function">
+    Lambda Function:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programming-langugesruntime">
+    Programming Languges/Runtime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invocation">
+    Invocation
+  </a>
+<nav aria-label="Invocation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invocation-models">
+    Invocation Models
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#components_2">
     Components
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring">
+    Monitoring
+  </a>
+<nav aria-label="Monitoring" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-metrics">
+    Types of Metrics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cost">
+    Cost
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#code-specifics">
+    Code Specifics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration_1">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-package">
+    Deployment Package
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1298,9 +1360,71 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#lambda-function">
+    Lambda Function:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programming-langugesruntime">
+    Programming Languges/Runtime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invocation">
+    Invocation
+  </a>
+<nav aria-label="Invocation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invocation-models">
+    Invocation Models
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#components_2">
     Components
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoring">
+    Monitoring
+  </a>
+<nav aria-label="Monitoring" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-metrics">
+    Types of Metrics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cost">
+    Cost
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#code-specifics">
+    Code Specifics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration_1">
+    Configuration
+  </a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-package">
+    Deployment Package
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1791,6 +1915,7 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 <li>Unknown - insufficient data</li>
 <li>Suspended - Not monitored</li>
 </ul>
+<p><code>Health Agent</code> installed in the AMIs to get deeper level of data from the instances and allows additional metrics. Additional metrics ca be sent to CloudWatch as custom metrics but incurs cost. Agent is a Daemon that gets more deeper data and more frequently (10s).</p>
 <h2 id="lambda">Lambda</h2>
 <h3 id="properties">Properties</h3>
 <ul>
@@ -1803,6 +1928,49 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 <li>Computer power is ascertained and lambda code executes</li>
 <li>sub ms billing by aws. </li>
 </ol>
+<h3 id="lambda-function">Lambda Function:</h3>
+<ul>
+<li>Code</li>
+<li>Permissions</li>
+<li>Environment Variables</li>
+<li>CPU/Memory. Choose Memory --&gt; Proportional CPU/Network/DisIO allocated. 128MB - 10240MB.</li>
+</ul>
+<h3 id="programming-langugesruntime">Programming Languges/Runtime</h3>
+<ul>
+<li>Java</li>
+<li>Go</li>
+<li>Powershell</li>
+<li>Node.js</li>
+<li>C#</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Custom Runtime feature</li>
+</ul>
+<h3 id="invocation">Invocation</h3>
+<ul>
+<li>Directly through AWS Console, AWS SDK, AWS Toolkits, AWS CLI</li>
+<li>Function URL</li>
+<li>Triggers based on other AWS Service events as source. Even scheduled events. </li>
+</ul>
+<h4 id="invocation-models">Invocation Models</h4>
+<ul>
+<li><strong>Synchronous</strong> - Request/Response Model. Trigger responsible for retry if the Lambda invocation fails.</li>
+<li><strong>Asynchronous</strong> - Parameter during invocation - <code>invocation-type Event</code>. S3 even invocation is an example. No response is sent back without additional business logic. Function handles retries and has a queue for requests. Failed events can be sent to <ul>
+<li>Dead Letter Queue - Received only the even content</li>
+<li>Lambda Destination Services - Receives request/response context and payload. </li>
+</ul>
+</li>
+<li><strong>Stream (Poll-based Model)</strong> - Lambda service runs a poller on our behalf. Event source mapping is needed to process items from Stream or Queue. Event source mapping needs to be done to link to the Lambda function. Can be done using CLI or SDK.  <code>aws lambda create-event-source-mapping --function name my-function --batch-size 500 --maximum-batching-window-in-seconds 5 --starting-position LATEST --event-source-arn arn:aws:danamodb:us-east-2:....</code> Integration of:<ul>
+<li>DynamoDB Streams</li>
+<li>Kinesis Streams</li>
+<li>Amazon SQS</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">invocation by AWS Services</p>
+<p>When invoked by AWS Services, the service decides on the invocation model. This can't be configured.</p>
+</div>
 <h3 id="components_2">Components</h3>
 <ul>
 <li><strong>Lambda application</strong>. Lambda function. The Lambda function is compiled of your own code that you want Lambda to invoke as per defined triggers. </li>
@@ -1810,6 +1978,57 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 <li><strong>The Trigger</strong> is essentially an operation from an event source that causes the function to invoke. So essentially triggering that function. For example, an Amazon S3 put request could be used as a trigger. </li>
 <li><strong>Downstream Resources</strong>. These are the resources that are required during the execution of your Lambda function. For example, your function might call upon accessing a specific SNS topic, or a particular SQS queue. So they are not used as the source of the trigger, but instead they are the resources to be used to execute the code within the function upon invocation.</li>
 <li><strong>Log streams</strong>. In an effort to help you identify issues and troubleshoot issues with your Lambda function, you can add logging statements to help you identify if your code is operating as expected into a log stream. </li>
+</ul>
+<h3 id="monitoring">Monitoring</h3>
+<ul>
+<li>Automatic monitoring of logs and metrics</li>
+<li>Write custom logging statements to be included into the logs</li>
+<li>Logs are part of the log streams in CloudWatch</li>
+<li>Metrics are also sent to CloudWatch</li>
+</ul>
+<h4 id="types-of-metrics">Types of Metrics</h4>
+<ul>
+<li>Invocation metrics - Successful / failed invocations</li>
+<li>Performance Metrics - Duration, Iterator Age for stream (ms) - How long Lambda too to reach a batch of records since last written to stream.</li>
+<li>Concurrency Metrics - Concurrent execution counts</li>
+</ul>
+<p>In CloudWatch  each lambda function gets a Log Group. Log Streams in the Log Groups get the logs and will also include custom logging statements. </p>
+<h3 id="cost">Cost</h3>
+<ul>
+<li>Amount of requests sent to functions</li>
+<li>Charge based on the duration of the function run (nearest ms)</li>
+<li>Charge based on provisioned memory </li>
+</ul>
+<h3 id="code-specifics">Code Specifics</h3>
+<ul>
+<li><code>boto3</code> Python SDK library</li>
+<li><code>def lambda_handler (event, context)</code> expected lambda entry point</li>
+<li><code>`lambda_function</code> expected file name.</li>
+<li>Both the file name and the function handler can be updated in the runtime configuration</li>
+</ul>
+<h3 id="configuration_1">Configuration</h3>
+<ul>
+<li>Both the file name and the function handler can be updated in the runtime configuration</li>
+<li>Memory settings</li>
+<li>Ephemeral Storage </li>
+<li>Timeout storage</li>
+<li>IAM Roles (need access to CloudWatch logs as well)</li>
+<li>Add Resource-based policies</li>
+<li>Environmental Variables - Key, Value pairs. </li>
+<li>VPC - by default run in VPC configured by AWS but can be run in our own VPC.</li>
+<li>Subnets - Assigned to private/public subnets.</li>
+<li>Concurrency - reserved (max number of instances, keeps this in reserve - can't be used by other functions - free) / provisioned (cold start initialization, initialized and warm - cost associated)</li>
+<li></li>
+</ul>
+<h4 id="deployment-package">Deployment Package</h4>
+<ul>
+<li>Container images</li>
+<li>zip file archives
+Options on console:</li>
+<li>Author from scratch </li>
+<li>Use Blueprint</li>
+<li>Serverless App Repository from ThirdPart</li>
+<li>Container Image</li>
 </ul>
 <h2 id="aws-batch">AWS Batch</h2>
 <p>Batch computing is primarily used in specialist use cases which require a vast amount of compute power across a cluster of compute resources to complete batch processing executing a series of jobs or tasks. </p>
