@@ -318,12 +318,12 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 ### Components
 
   * An **application version** is a very specific reference to a section of deployable code. The application version will point typically to S3, simple storage service to where the deployable code may reside. 
-  * An **environment** refers to an application version that has been deployed on AWS resources.
+  * An **environment** refers to an application version that has been deployed on AWS resources. This comprises of all the infrastructure provisioned by Elastic Beanstalk along with the code. 
   * An **environment configuration** is a collection of parameters and settings that dictate how an environment will have its resources provisioned by Elastic Beanstalk and how these resources will behave.
   * The **environment tier**. This component reflects on how Elastic Beanstalk provisions resources based on what the application is designed to do. You can deploy your application across one of two different environment tiers, either the ***web server tier*** or the ***worker tier***. The web server environment is typically used for standard web applications that operate and serve requests over HTTP port 80. This tier will typically use service and features such as Route 53, Elastic Load Balancing, Auto Scaling, EC2, and Security Groups. The worker environment is slightly different and are used by applications that will have a back-end processing task that will interact with AWS SQS, the Simple Queue Service. This tier typically uses the following AWS resources in this environment, an SQS Queue, an IAM Service Role, Auto Scaling, and EC2. 
   * The **configuration template**. This is the template that provides the baseline for creating a new, unique environment configuration. 
-  * The **platform** is a culmination of components in which you can build your application upon using Elastic Beanstalk
-  * **Applications**. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.
+  * The **platform** is a culmination of components in which you can build your application upon using Elastic Beanstalk. This is everything that may be used. 
+  * **Application**. Within Elastic Beanstalk, an application is a collection of different elements, such as environments, environment configurations, and application versions.
 
 ### Compatibility
 | | | |
@@ -332,6 +332,90 @@ AWS Fargate is an engine used to enable ECS to run containers without having to 
 | Single Container Docker | Java SE | Go |
 | Multi Container Docker | Java with Tomcat | Packer Builder 
 | Preconfigured Docker|.NET on Windows Server IIS | Ruby| 
+
+
+### Environment Tiers
+ * Setting up configuration template for the application requires selection.
+ * Potentially both these can be used together decoupled by a SQS to transfer messages between the environments. 
+ * Additional customization can be done via ```Elastic Beanstalk Configuration``` files within the application source code written in json or yaml. Saved with ```.config``` extension inside ```.ebextensions``` folder inside source code. 
+
+#### Web Server Tier
+Typically uses the following components:
+ * Route53 - handles the CNAME record and alias for using the DNS name with a ELB
+ * ELB - Should have at least one ELB for load balancing
+ * EC2 Autoscaling Group - Handles scale-in and scale-out
+ * EC2 Instances - Part of the ASG that handles the requests. **Host Manager** is installed enabling the following:
+   *   aid in the deployment of your application, 
+   *   collates different metrics and different events from the EC2 instance which can then be reviewed from within the console or via the AWS CLI or API, 
+   *   generates instance-level events, it monitors both the application log files and the application server itself. 
+   *   It will also patch instance components, 
+   *   it will manage the log files, allowing them to be published at S3. 
+ * Security Group - Provides instance protection for EC2. Will by default allow HTTP traffic/ port 80. 
+
+#### Worker Tier
+Back-end processing tasks usually dealing with a SQS. Typical components:
+  * SQS - This will be created if one doesn't exist that is configured
+  * IAM Service Role - For the EC2 instances to be able to access and interact with the SQS
+  * EC2 Autoscaling Group - Handles scale-in and scale-out
+  * EC2 Instances - Does the work of pulling data from SQS. **Daemon** installed on EC2 to pull data from SQS and send data to application.
+
+
+
+### Deployment Option of Elastic Beanstalk
+
+#### All at once (Default)
+ * Default
+ * Rolls out all the resource at the same time. May disrupt if the existing is already in use. 
+  
+#### Rolling
+ * Minimizes disruption to existing usage
+ * Deploy application and batches and move forward as batches succeed
+ * Can serve request while the gradual roll out happens. 
+
+
+#### Rolling with additional batch
+ * Application availability is completely minimized by using additional batches of resources and replaces one batch at a time to reduce the impact on usage
+
+#### Immutable
+ * A completely second environment is created separately 
+ * Doubles the environment until the new environment is setup and ready to serve traffic
+ * Destroys the old environment once all health checks passed. 
+
+
+### Monitoring and Health checks
+ * Cloudwatch metrics at 5 min intervals as done by default in other approaches.
+ * Health check is not determined based on these metrics
+
+
+#### Status Checks
+ * If **ELB** exists within the environment, it sends request to EC2 every 10s for health check
+ * If no ELB, then **EC2 Instance Status Check** is used determine the health
+
+#### Other Checks
+ * High level check of the environment are also done automatically.  
+ * **Web Tier** - ASG has at least one healthy EC2, Correct settings in Route53 (CNAME redirect to correct ELB), Security Group allows port 80 inbound
+ * **Worker Tier** - SQS being polled every 3 mins at minimum. 
+
+#### Basic Health Reporting
+ * Gray - Update in progress
+ * Green - Environment passed recent health check and at least one instance available
+ * Yellow - Environment failed one or more health check, some requests failing
+ * Red - Environment failed three of more health check, unavailable and constantly failing.
+
+
+
+#### Enhanced Health Reporting
+ * Ok - Passed all health checks
+ * Warning - extended time to progress and some failures
+ * Degraded - high number of failures
+ * Severe - excessive number of failures
+ * Pending - operations in progress
+ * Unknown - insufficient data
+ * Suspended - Not monitored
+
+
+
+
 
 ## Lambda
 
