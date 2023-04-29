@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../compute/" rel="prev"/>
-<link href="../database/" rel="next"/>
+<link href="../security-compliance/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Storage - Syed's Home</title>
@@ -125,7 +125,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../aws-dva/introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
         Study Notes
       </a>
 </li>
@@ -287,71 +287,21 @@
           Study Notes
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
           AWS Developer Associate
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_1">
 <span class="md-nav__icon md-icon"></span>
           AWS Developer Associate
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/introduction/">
-        Introduction
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/compute/">
-        Compute
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/storage/">
-        Storage
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/security-compliance/">
-        Security and Compliance
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/other-services/">
-        Other Services
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-summary/summary/">
-        Summary
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-          AWS Practitioner
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_2">
-<span class="md-nav__icon md-icon"></span>
-          AWS Practitioner
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
 <a class="md-nav__link" href="../introduction/">
         Introduction
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../domains/">
-        Domains
       </a>
 </li>
 <li class="md-nav__item">
@@ -401,13 +351,22 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#server-access-logging">
-    Server Access Logging
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#object-level-logging">
     Object-level logging
+  </a>
+<nav aria-label="Object-level logging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enabling">
+    Enabling
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-transfer">
+    Data Transfer
   </a>
 </li>
 <li class="md-nav__item">
@@ -417,17 +376,22 @@
 <nav aria-label="Encryption" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#bucket-level-encryption">
-    Bucket-level Encryption
+<a class="md-nav__link" href="#at-rest">
+    At Rest
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#folder-level-encryption">
-    Folder level Encryption
+<a class="md-nav__link" href="#in-transit">
+    In Transit
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-security">
+    S3 Security
+  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage-classes">
@@ -435,6 +399,11 @@
   </a>
 <nav aria-label="Storage Classes" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-int">
+    S3 INT
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#s3-glacier">
     S3 Glacier
@@ -560,47 +529,97 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database/">
-        Database
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../networking/">
-        Networking
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../queuing-service/">
-        Queuing Service
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../streaming/">
-        Streaming
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../security-compliance/">
         Security and Compliance
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../disaster-recovery/">
+<a class="md-nav__link" href="../other-services/">
+        Other Services
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-summary/summary/">
+        Summary
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          AWS Practitioner
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          AWS Practitioner
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/domains/">
+        Domains
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/compute/">
+        Compute
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/storage/">
+        Storage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/database/">
+        Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/networking/">
+        Networking
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/queuing-service/">
+        Queuing Service
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/streaming/">
+        Streaming
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/security-compliance/">
+        Security and Compliance
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/disaster-recovery/">
         Disaster Recovery
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../management/">
+<a class="md-nav__link" href="../../aws-practitioner/management/">
         Management
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../billing-pricing-service/">
+<a class="md-nav__link" href="../../aws-practitioner/billing-pricing-service/">
         Billing, Pricing and Support
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../other-services/">
+<a class="md-nav__link" href="../../aws-practitioner/other-services/">
         Other Services
       </a>
 </li>
@@ -656,13 +675,22 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#server-access-logging">
-    Server Access Logging
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#object-level-logging">
     Object-level logging
+  </a>
+<nav aria-label="Object-level logging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enabling">
+    Enabling
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-transfer">
+    Data Transfer
   </a>
 </li>
 <li class="md-nav__item">
@@ -672,17 +700,22 @@
 <nav aria-label="Encryption" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#bucket-level-encryption">
-    Bucket-level Encryption
+<a class="md-nav__link" href="#at-rest">
+    At Rest
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#folder-level-encryption">
-    Folder level Encryption
+<a class="md-nav__link" href="#in-transit">
+    In Transit
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-security">
+    S3 Security
+  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage-classes">
@@ -690,6 +723,11 @@
   </a>
 <nav aria-label="Storage Classes" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-int">
+    S3 INT
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#s3-glacier">
     S3 Glacier
@@ -836,7 +874,6 @@
 <li>Unique Object key identifies a files in a bucket. Unique Key: Bucket + folder + file.</li>
 <li>Also, get a URL which is fully qualified</li>
 <li>Can create virtual folders for easy management</li>
-<li></li>
 </ul>
 <h3 id="spec">Spec</h3>
 <ul>
@@ -846,23 +883,74 @@
 <h3 id="versioning">Versioning</h3>
 <ul>
 <li>Keeps all versions of the objects in the same bucket. </li>
-<li></li>
+<li>Versioning is <strong>not</strong> on by default</li>
+<li>Once turned on, it can't be turned off but can be suspended. </li>
+<li>Bucket level setting that turns versioning for all objects in the bucket. </li>
+<li>Can be enabled during creation of a bucket or on an existing bucket. </li>
+<li>By default older versions of an object are not shown but are there to inspect. </li>
+<li>Every new version of an object gets a version id</li>
+<li>When versioning is turned on - version id of an object will be null unless a change of the object takes place.</li>
+<li>Using versioning will incur costs as all versions are saved in full and storage used has costs in s3</li>
+<li>When an object is deleted after versioning is turned on, a delete marker is put on the latest version of the object and all previous versions of the file are also retained. </li>
+<li>It is possible to delete specific versions of an object along with the version tagged with the delete marker. </li>
 </ul>
-<h3 id="server-access-logging">Server Access Logging</h3>
-<ul>
-<li>Logs for access to bucket. </li>
-</ul>
+<p>### Server Access Logging
+ * Logs for access to bucket. 
+ * Not guaranteed and are done on a best effort basis.
+ * No guarantees of set period in which the logs will be available. 
+ * The logs are stored in a target bucket that you need to configure - can use an optional prefix to be added to the log file name to make it easy to manage.
+ * <code>log delivery group</code> permissions need to be added for the logging to work. Setting up from Consoles sets this up automatically. SDK or CLI needs to be setup explicitly. This is done via a <strong>ACL not bucket policies.</strong>
+ * Access logs will only be delivered to target bucket if the target bucket is using <code>SSE-S3</code> encryption. <strong>KMS not supported</strong>. </p>
 <h3 id="object-level-logging">Object-level logging</h3>
 <ul>
-<li>Object-level API activity.</li>
+<li>Object-level API activity. This is more closely related to CloudTrail.</li>
+</ul>
+<h4 id="enabling">Enabling</h4>
+<ul>
+<li>For all or some of the buckets - this can be configured from the AWS CloudTrail Console. </li>
+<li>Can be configured from the bucket configurations and will need to select CloudTrail Trail for the events to be captured. Also the type of events: Read/Write can be selected. </li>
+</ul>
+<h3 id="data-transfer">Data Transfer</h3>
+<ul>
+<li>Transfer Acceleration can speed up the delivery of data to and from S3. </li>
+<li>It uses the edge location by Amazon CloudFront. </li>
+<li>Transfer Acceleration can be enabled at the Bucket Level</li>
+<li>Data Transfer uses internal high-speed connectivity to achieve higher bandwidth. </li>
+<li>Transfer Acceleration has cost per GB depending of the Edge Location used. Outwards data transfer has a higher charge compared to the usual outward transfer charge. </li>
+<li>Specific endpoint is provided by AWS for the accelerated transfer. Bucket names but be DNS compliant and can't contain any dots. </li>
+<li>Can be enabled or suspended. </li>
+<li>Does not support - Get Service (list buckets), Put Bucket (create bucket), Delete Bucket, Cross region copies using Put Object (Copy)</li>
 </ul>
 <h3 id="encryption">Encryption</h3>
-<h4 id="bucket-level-encryption">Bucket-level Encryption</h4>
-<h4 id="folder-level-encryption">Folder level Encryption</h4>
+<h4 id="at-rest">At Rest</h4>
+<p>Can be done at the following level:
+ * Bucket-level Encryption
+ * Folder level Encryption</p>
+<h4 id="in-transit">In Transit</h4>
+<p>Via SSL/TLS</p>
+<h3 id="s3-security">S3 Security</h3>
+<p>This can be done in two ways:
+ * IAM Policies (Will define the resource - bucket)
+ * Resource-based Policies:
+   * Access Control Lists:
+     * Access to buckets and objects
+     * Not same structure as those of json based policy definitions
+     * No explicit deny is possible. 
+     * Bucket Level ACL:
+       * Fixed permissions (List, Write, Read ACL, Write ACL) for Bucket Owner, Everyone (public - authenticated/unauthenticated. Also requires for the object/bucket to be public), Authenticated Users Groups (IAM users form any AWS Account), S3 Log Delivery Group (For Server Access Log Delivery). 
+     * Object Level ACL:
+       * Options for Owner, Public and Everyone. 
+       * Permissions: Read Object, Read Object Permissions, Write Object Permissions.
+   * Bucket Policies (Possible to directly give access to cross-account users. Cross-account users will need delegated access to the same bucket.): 
+     * Written in JSON
+     * No default policy exists when creating a bucket
+     * <strong>'Principal'</strong>  must be defined to identify the user/group/role that the policy applies to. 
+     * Can be up to <strong>20kb</strong> in size. This is greater than IAM Policies (User - 2kb, group - 5kb, roles - 10kb)</p>
 <h3 id="storage-classes">Storage Classes</h3>
 <table>
 <thead>
 <tr>
+<th>Property</th>
 <th>S3 Standard</th>
 <th>S3 INT</th>
 <th>S3 S-IA</th>
@@ -875,45 +963,59 @@
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td></td>
 </tr>
 <tr>
 <td>Low Latency</td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td></td>
 </tr>
 <tr>
 <td>Frequent access to data</td>
 <td>Unknown (Frequent (30 days) + Infrequent)</td>
 <td>Infrequent</td>
 <td>Infrequent</td>
+<td></td>
 </tr>
 <tr>
 <td>Durability Eleven 9s</td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td>Eleven 9s across single AZ</td>
+<td></td>
 </tr>
 <tr>
 <td>Availability 99.99%</td>
 <td>99.9%</td>
 <td>99.9%</td>
-<td>9 9.5%</td>
+<td>99.5%</td>
+<td></td>
 </tr>
 <tr>
 <td>SSL/TLS</td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td></td>
 </tr>
 <tr>
 <td>Lifecycle rules</td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
 <td><img alt="✅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" title=":white_check_mark:"/></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<h4 id="s3-int">S3 INT</h4>
+<ul>
+<li>Has Frequent Access and Infrequent Access</li>
+<li>Moves automatically between the tiers. Move to infrequent if object not accessed for 30 days and frequent once object is accessed. </li>
+<li>Frequent is more expensive that infrequent</li>
+<li>Per object monitoring fess in Intelligent Tier plus storage costs.</li>
+</ul>
 <h4 id="s3-glacier">S3 Glacier</h4>
 <ul>
 <li>11 9s durability</li>
