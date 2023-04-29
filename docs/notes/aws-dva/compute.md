@@ -402,8 +402,6 @@ Back-end processing tasks usually dealing with a SQS. Typical components:
  * Yellow - Environment failed one or more health check, some requests failing
  * Red - Environment failed three of more health check, unavailable and constantly failing.
 
-
-
 #### Enhanced Health Reporting
  * Ok - Passed all health checks
  * Warning - extended time to progress and some failures
@@ -413,9 +411,7 @@ Back-end processing tasks usually dealing with a SQS. Typical components:
  * Unknown - insufficient data
  * Suspended - Not monitored
 
-
-
-
+```Health Agent``` installed in the AMIs to get deeper level of data from the instances and allows additional metrics. Additional metrics ca be sent to CloudWatch as custom metrics but incurs cost. Agent is a Daemon that gets more deeper data and more frequently (10s).
 
 ## Lambda
 
@@ -428,12 +424,96 @@ Back-end processing tasks usually dealing with a SQS. Typical components:
 3. Computer power is ascertained and lambda code executes
 4. sub ms billing by aws. 
 
+### Lambda Function:
+ * Code
+ * Permissions
+ * Environment Variables
+ * CPU/Memory. Choose Memory --> Proportional CPU/Network/DisIO allocated. 128MB - 10240MB.
+
+### Programming Languges/Runtime
+ * Java
+ * Go
+ * Powershell
+ * Node.js
+ * C#
+ * Python
+ * Ruby
+ * Custom Runtime feature
+
+### Invocation
+ * Directly through AWS Console, AWS SDK, AWS Toolkits, AWS CLI
+ * Function URL
+ * Triggers based on other AWS Service events as source. Even scheduled events. 
+
+#### Invocation Models
+ * **Synchronous** - Request/Response Model. Trigger responsible for retry if the Lambda invocation fails.
+ * **Asynchronous** - Parameter during invocation - ```invocation-type Event```. S3 even invocation is an example. No response is sent back without additional business logic. Function handles retries and has a queue for requests. Failed events can be sent to 
+    * Dead Letter Queue - Received only the even content
+    * Lambda Destination Services - Receives request/response context and payload. 
+  * **Stream (Poll-based Model)** - Lambda service runs a poller on our behalf. Event source mapping is needed to process items from Stream or Queue. Event source mapping needs to be done to link to the Lambda function. Can be done using CLI or SDK.  ``` aws lambda create-event-source-mapping --function name my-function --batch-size 500 --maximum-batching-window-in-seconds 5 --starting-position LATEST --event-source-arn arn:aws:danamodb:us-east-2:....``` Integration of:
+    * DynamoDB Streams
+    * Kinesis Streams
+    * Amazon SQS
+     
+!!! note "invocation by AWS Services"
+    When invoked by AWS Services, the service decides on the invocation model. This can't be configured.
+ 
 ### Components
   *  **Lambda application**. Lambda function. The Lambda function is compiled of your own code that you want Lambda to invoke as per defined triggers. 
   *  **Event source**. Event sources are AWS services that can be used to trigger your Lambda functions, or put another way, they produce the events that your Lambda function essentially responds to by invoking it. 
   *  **The Trigger** is essentially an operation from an event source that causes the function to invoke. So essentially triggering that function. For example, an Amazon S3 put request could be used as a trigger. 
   *  **Downstream Resources**. These are the resources that are required during the execution of your Lambda function. For example, your function might call upon accessing a specific SNS topic, or a particular SQS queue. So they are not used as the source of the trigger, but instead they are the resources to be used to execute the code within the function upon invocation.
   *  **Log streams**. In an effort to help you identify issues and troubleshoot issues with your Lambda function, you can add logging statements to help you identify if your code is operating as expected into a log stream. 
+
+### Monitoring
+ * Automatic monitoring of logs and metrics
+ * Write custom logging statements to be included into the logs
+ * Logs are part of the log streams in CloudWatch
+ * Metrics are also sent to CloudWatch
+
+#### Types of Metrics
+  * Invocation metrics - Successful / failed invocations
+  * Performance Metrics - Duration, Iterator Age for stream (ms) - How long Lambda too to reach a batch of records since last written to stream.
+  * Concurrency Metrics - Concurrent execution counts
+ 
+In CloudWatch  each lambda function gets a Log Group. Log Streams in the Log Groups get the logs and will also include custom logging statements. 
+
+### Cost
+ * Amount of requests sent to functions
+ * Charge based on the duration of the function run (nearest ms)
+ * Charge based on provisioned memory 
+
+### Code Specifics
+ * ```boto3``` Python SDK library
+ * ```def lambda_handler (event, context)``` expected lambda entry point
+ * ```lambda_function`` expected file name.
+ * Both the file name and the function handler can be updated in the runtime configuration
+
+### Configuration
+ * Both the file name and the function handler can be updated in the runtime configuration
+ * Memory settings
+ * Ephemeral Storage 
+ * Timeout storage
+ * IAM Roles (need access to CloudWatch logs as well)
+ * Add Resource-based policies
+ * Environmental Variables - Key, Value pairs. 
+ * VPC - by default run in VPC configured by AWS but can be run in our own VPC.
+ * Subnets - Assigned to private/public subnets.
+ * Concurrency - reserved (max number of instances, keeps this in reserve - can't be used by other functions - free) / provisioned (cold start initialization, initialized and warm - cost associated)
+ * 
+ 
+
+#### Deployment Package
+ * Container images
+ * zip file archives
+Options on console:
+ * Author from scratch 
+ * Use Blueprint
+ * Serverless App Repository from ThirdPart
+ * Container Image
+
+
+
 
 
 ## AWS Batch
