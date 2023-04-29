@@ -55,6 +55,13 @@ nav:
     - UEL Awards Event : ./awards/event-videos-photo.md
     - Badges : ./awards/badges.md
   - Study Notes :
+    - AWS Developer Associate :
+       - Introduction : ./notes/aws-dva/introduction.md
+       - Compute : ./notes/aws-dva/compute.md
+       - Storage: ./notes/aws-dva/storage.md
+       - Security and Compliance : ./notes/aws-dva/security-compliance.md
+       - Other Services: ./notes/aws-dva/other-services.md
+       - Summary: ./notes/aws-summary/summary.md
     - AWS Practitioner :
        - Introduction : ./notes/aws-practitioner/introduction.md
        - Domains : ./notes/aws-practitioner/domains.md
@@ -70,11 +77,6 @@ nav:
        - Billing, Pricing and Support : ./notes/aws-practitioner/billing-pricing-service.md
        - Other Services: ./notes/aws-practitioner/other-services.md
        - Summary: ./notes/aws-summary/summary.md
-    - AWS Developer Associate :
-       - Introduction : ./notes/aws-dva/introduction.md
-       - Compute : ./notes/aws-dva/compute.md
-       - Summary: ./notes/aws-summary/summary.md
-       - Other Services: ./notes/aws-dva/other-services.md
 
        
     

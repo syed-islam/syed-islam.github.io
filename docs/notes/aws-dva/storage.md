@@ -16,7 +16,7 @@
  * Unique Object key identifies a files in a bucket. Unique Key: Bucket + folder + file.
  * Also, get a URL which is fully qualified
  * Can create virtual folders for easy management
- * 
+  
 
 ### Spec
  * Durability - 11 9s
@@ -25,28 +25,89 @@
 
 ### Versioning
  * Keeps all versions of the objects in the same bucket. 
- * 
-### Server Access Logging
+ * Versioning is **not** on by default
+ * Once turned on, it can't be turned off but can be suspended. 
+ * Bucket level setting that turns versioning for all objects in the bucket. 
+ * Can be enabled during creation of a bucket or on an existing bucket. 
+ * By default older versions of an object are not shown but are there to inspect. 
+ * Every new version of an object gets a version id
+ * When versioning is turned on - version id of an object will be null unless a change of the object takes place.
+ * Using versioning will incur costs as all versions are saved in full and storage used has costs in s3
+ * When an object is deleted after versioning is turned on, a delete marker is put on the latest version of the object and all previous versions of the file are also retained. 
+ * It is possible to delete specific versions of an object along with the version tagged with the delete marker. 
+
+ ### Server Access Logging
  * Logs for access to bucket. 
+ * Not guaranteed and are done on a best effort basis.
+ * No guarantees of set period in which the logs will be available. 
+ * The logs are stored in a target bucket that you need to configure - can use an optional prefix to be added to the log file name to make it easy to manage.
+ * ```log delivery group``` permissions need to be added for the logging to work. Setting up from Consoles sets this up automatically. SDK or CLI needs to be setup explicitly. This is done via a **ACL not bucket policies.**
+ * Access logs will only be delivered to target bucket if the target bucket is using ```SSE-S3``` encryption. **KMS not supported**. 
 
 ### Object-level logging
- * Object-level API activity.
+ * Object-level API activity. This is more closely related to CloudTrail.
+
+#### Enabling
+ * For all or some of the buckets - this can be configured from the AWS CloudTrail Console. 
+ * Can be configured from the bucket configurations and will need to select CloudTrail Trail for the events to be captured. Also the type of events: Read/Write can be selected. 
+
+### Data Transfer
+ * Transfer Acceleration can speed up the delivery of data to and from S3. 
+ * It uses the edge location by Amazon CloudFront. 
+ * Transfer Acceleration can be enabled at the Bucket Level
+ * Data Transfer uses internal high-speed connectivity to achieve higher bandwidth. 
+ * Transfer Acceleration has cost per GB depending of the Edge Location used. Outwards data transfer has a higher charge compared to the usual outward transfer charge. 
+ * Specific endpoint is provided by AWS for the accelerated transfer. Bucket names but be DNS compliant and can't contain any dots. 
+ * Can be enabled or suspended. 
+ * Does not support - Get Service (list buckets), Put Bucket (create bucket), Delete Bucket, Cross region copies using Put Object (Copy)
+
 
 ### Encryption
-#### Bucket-level Encryption
-#### Folder level Encryption
+#### At Rest
+Can be done at the following level:
+ * Bucket-level Encryption
+ * Folder level Encryption
 
+#### In Transit 
+Via SSL/TLS
+
+
+### S3 Security
+This can be done in two ways:
+ * IAM Policies (Will define the resource - bucket)
+ * Resource-based Policies:
+   * Access Control Lists:
+     * Access to buckets and objects
+     * Not same structure as those of json based policy definitions
+     * No explicit deny is possible. 
+     * Bucket Level ACL:
+       * Fixed permissions (List, Write, Read ACL, Write ACL) for Bucket Owner, Everyone (public - authenticated/unauthenticated. Also requires for the object/bucket to be public), Authenticated Users Groups (IAM users form any AWS Account), S3 Log Delivery Group (For Server Access Log Delivery). 
+     * Object Level ACL:
+       * Options for Owner, Public and Everyone. 
+       * Permissions: Read Object, Read Object Permissions, Write Object Permissions.
+   * Bucket Policies (Possible to directly give access to cross-account users. Cross-account users will need delegated access to the same bucket.): 
+     * Written in JSON
+     * No default policy exists when creating a bucket
+     * **'Principal'**  must be defined to identify the user/group/role that the policy applies to. 
+     * Can be up to **20kb** in size. This is greater than IAM Policies (User - 2kb, group - 5kb, roles - 10kb)
 
 ### Storage Classes
-| S3 Standard | S3 INT | S3 S-IA | S3 Z-IA | 
-| ------------ | ----------- | ------------ | --------------- |
+|Property| S3 Standard | S3 INT | S3 S-IA | S3 Z-IA | 
+|--| ------------ | ----------- | ------------ | --------------- |
 | High throughput | :white_check_mark:  | :white_check_mark:  | :white_check_mark: |
 | Low Latency | :white_check_mark:  |:white_check_mark:   |:white_check_mark:  |
 | Frequent access to data| Unknown (Frequent (30 days) + Infrequent) | Infrequent | Infrequent |
 | Durability Eleven 9s|:white_check_mark:   | :white_check_mark: | Eleven 9s across single AZ |
-| Availability 99.99%  | 99.9% | 99.9% |9 9.5% |
+| Availability 99.99%  | 99.9% | 99.9% |99.5% |
 | SSL/TLS | :white_check_mark: | :white_check_mark: | :white_check_mark:|
 |Lifecycle rules |:white_check_mark:  | :white_check_mark: | :white_check_mark:|
+
+#### S3 INT 
+ * Has Frequent Access and Infrequent Access
+ * Moves automatically between the tiers. Move to infrequent if object not accessed for 30 days and frequent once object is accessed. 
+ * Frequent is more expensive that infrequent
+ * Per object monitoring fess in Intelligent Tier plus storage costs.
+
 
 #### S3 Glacier
  * 11 9s durability
