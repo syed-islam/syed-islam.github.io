@@ -68,6 +68,16 @@ Can be done at the following level:
  * Bucket-level Encryption
  * Folder level Encryption
 
+
+| Scheme | Description |
+| ---- | ------|
+|SSE-S3| Server-side encryption with S3 managed keys, SSE-S3. This option requires minimal configuration and all management of encryption keys used are managed by AWS. All you need to do is to upload your data and S3 will handle all other aspects. |
+|SSE-KMS|Server-side encryption with KMS managed keys, SSE-KMS. This method allows S3 to use the key management service to generate your data encryption keys. KMS gives you a far greater flexibility of how your keys are managed. For example, you are able to disable, rotate, and apply access controls to the CMK, and audit it against their usage using AWS CloudTrail. |
+|SSE-C|Server-side encryption with customer provided keys, SSE-C. This option gives you the opportunity to provide your own master key that you may already be using outside of AWS. Your customer-provided key would then be sent with your data to S3, where S3 would then perform the encryption for you. |
+| CSE-KMS| Client-side encryption with KMS, CSE-KMS. Similarly to SSE-KMS, this also uses the key management service to generate your data encryption keys. However, this time KMS is called upon via the client not S3. The encryption then takes place client-side and the encrypted data is then sent to S3 to be stored. |
+|CSE-C|Client-side encryption with customer provided keys, CSE-C. Using this mechanism, you are able to utilize your own provided keys and use an AWS-SDK client to encrypt your data before sending it to S3 for storage. |
+
+
 #### In Transit 
 Via SSL/TLS
 
@@ -90,6 +100,36 @@ This can be done in two ways:
      * No default policy exists when creating a bucket
      * **'Principal'**  must be defined to identify the user/group/role that the policy applies to. 
      * Can be up to **20kb** in size. This is greater than IAM Policies (User - 2kb, group - 5kb, roles - 10kb)
+
+### Cross Origin Resource Sharing (CORS) with S3
+ * CORS allows specific resources on a webpage to be requested from a different domain than its own.
+ * This is done via policies inside the CORS configuration of the bucket and is used for matching
+
+#### Policy Syntax
+    [
+      {
+        "AllowedHeaders":[
+          "*"
+        ],
+        "AllowedMethods":[
+          "PUT",
+          "POST",
+          "DELETE"
+        ],
+        "AllowedOrigns":[
+          "http://www.syedislam.com"
+        ],
+        "ExposedHeaders":[]
+      }    
+    ]
+
+Rule Math happens when:
+ * ```AllowedOrigns``` == Requesters Origin
+ * ```AllowedMethods``` == Request Method
+ * ```AllowedHeaders``` == ```Access-Control-Request-Header```
+
+The ```ExposeHeader``` element in the policy is used to define a header in the response that is allowed to be made by customer applications. 
+
 
 ### Storage Classes
 |Property| S3 Standard | S3 INT | S3 S-IA | S3 Z-IA | 
