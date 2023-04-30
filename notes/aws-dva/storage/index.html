@@ -394,6 +394,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#cross-origin-resource-sharing-cors-with-s3">
+    Cross Origin Resource Sharing (CORS) with S3
+  </a>
+<nav aria-label="Cross Origin Resource Sharing (CORS) with S3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-syntax">
+    Policy Syntax
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#storage-classes">
     Storage Classes
   </a>
@@ -718,6 +732,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#cross-origin-resource-sharing-cors-with-s3">
+    Cross Origin Resource Sharing (CORS) with S3
+  </a>
+<nav aria-label="Cross Origin Resource Sharing (CORS) with S3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-syntax">
+    Policy Syntax
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#storage-classes">
     Storage Classes
   </a>
@@ -926,6 +954,36 @@
 <p>Can be done at the following level:
  * Bucket-level Encryption
  * Folder level Encryption</p>
+<table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSE-S3</td>
+<td>Server-side encryption with S3 managed keys, SSE-S3. This option requires minimal configuration and all management of encryption keys used are managed by AWS. All you need to do is to upload your data and S3 will handle all other aspects.</td>
+</tr>
+<tr>
+<td>SSE-KMS</td>
+<td>Server-side encryption with KMS managed keys, SSE-KMS. This method allows S3 to use the key management service to generate your data encryption keys. KMS gives you a far greater flexibility of how your keys are managed. For example, you are able to disable, rotate, and apply access controls to the CMK, and audit it against their usage using AWS CloudTrail.</td>
+</tr>
+<tr>
+<td>SSE-C</td>
+<td>Server-side encryption with customer provided keys, SSE-C. This option gives you the opportunity to provide your own master key that you may already be using outside of AWS. Your customer-provided key would then be sent with your data to S3, where S3 would then perform the encryption for you.</td>
+</tr>
+<tr>
+<td>CSE-KMS</td>
+<td>Client-side encryption with KMS, CSE-KMS. Similarly to SSE-KMS, this also uses the key management service to generate your data encryption keys. However, this time KMS is called upon via the client not S3. The encryption then takes place client-side and the encrypted data is then sent to S3 to be stored.</td>
+</tr>
+<tr>
+<td>CSE-C</td>
+<td>Client-side encryption with customer provided keys, CSE-C. Using this mechanism, you are able to utilize your own provided keys and use an AWS-SDK client to encrypt your data before sending it to S3 for storage.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="in-transit">In Transit</h4>
 <p>Via SSL/TLS</p>
 <h3 id="s3-security">S3 Security</h3>
@@ -946,6 +1004,34 @@
      * No default policy exists when creating a bucket
      * <strong>'Principal'</strong>  must be defined to identify the user/group/role that the policy applies to. 
      * Can be up to <strong>20kb</strong> in size. This is greater than IAM Policies (User - 2kb, group - 5kb, roles - 10kb)</p>
+<h3 id="cross-origin-resource-sharing-cors-with-s3">Cross Origin Resource Sharing (CORS) with S3</h3>
+<ul>
+<li>CORS allows specific resources on a webpage to be requested from a different domain than its own.</li>
+<li>This is done via policies inside the CORS configuration of the bucket and is used for matching</li>
+</ul>
+<h4 id="policy-syntax">Policy Syntax</h4>
+<pre><code>[
+  {
+    "AllowedHeaders":[
+      "*"
+    ],
+    "AllowedMethods":[
+      "PUT",
+      "POST",
+      "DELETE"
+    ],
+    "AllowedOrigns":[
+      "http://www.syedislam.com"
+    ],
+    "ExposedHeaders":[]
+  }    
+]
+</code></pre>
+<p>Rule Math happens when:
+ * <code>AllowedOrigns</code> == Requesters Origin
+ * <code>AllowedMethods</code> == Request Method
+ * <code>AllowedHeaders</code> == <code>Access-Control-Request-Header</code></p>
+<p>The <code>ExposeHeader</code> element in the policy is used to define a header in the response that is allowed to be made by customer applications. </p>
 <h3 id="storage-classes">Storage Classes</h3>
 <table>
 <thead>
