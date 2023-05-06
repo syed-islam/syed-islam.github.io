@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../database/" rel="prev"/>
-<link href="../queuing-service/" rel="next"/>
+<link href="../security-compliance/" rel="prev"/>
+<link href="../other-services/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Networking - Syed's Home</title>
@@ -125,7 +125,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../aws-dva/introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
         Study Notes
       </a>
 </li>
@@ -287,76 +287,21 @@
           Study Notes
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
           AWS Developer Associate
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_1">
 <span class="md-nav__icon md-icon"></span>
           AWS Developer Associate
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/introduction/">
-        Introduction
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/compute/">
-        Compute
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/storage/">
-        Storage
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/security-compliance/">
-        Security and Compliance
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/networking/">
-        Networking
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-dva/other-services/">
-        Other Services
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../aws-summary/summary/">
-        Summary
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-          AWS Practitioner
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_2">
-<span class="md-nav__icon md-icon"></span>
-          AWS Practitioner
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
 <a class="md-nav__link" href="../introduction/">
         Introduction
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../domains/">
-        Domains
       </a>
 </li>
 <li class="md-nav__item">
@@ -370,8 +315,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database/">
-        Database
+<a class="md-nav__link" href="../security-compliance/">
+        Security and Compliance
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -538,6 +483,59 @@
 <a class="md-nav__link" href="#cloudfront">
     CloudFront
   </a>
+<nav aria-label="CloudFront" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic-content">
+    Dynamic Content
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static-content">
+    Static Content
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-options">
+    Configuration Options
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caching-layers">
+    Caching Layers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    Security
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integrations">
+    Integrations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#patterns">
+    Patterns
+  </a>
+<nav aria-label="Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alb-and-ec2">
+    ALB and EC2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-content-delivery">
+    S3 Content Delivery
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aws-global-accelerator">
@@ -639,37 +637,92 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../queuing-service/">
+<a class="md-nav__link" href="../other-services/">
+        Other Services
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-summary/summary/">
+        Summary
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          AWS Practitioner
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          AWS Practitioner
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/domains/">
+        Domains
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/compute/">
+        Compute
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/storage/">
+        Storage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/database/">
+        Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/networking/">
+        Networking
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aws-practitioner/queuing-service/">
         Queuing Service
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../streaming/">
+<a class="md-nav__link" href="../../aws-practitioner/streaming/">
         Streaming
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../security-compliance/">
+<a class="md-nav__link" href="../../aws-practitioner/security-compliance/">
         Security and Compliance
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../disaster-recovery/">
+<a class="md-nav__link" href="../../aws-practitioner/disaster-recovery/">
         Disaster Recovery
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../management/">
+<a class="md-nav__link" href="../../aws-practitioner/management/">
         Management
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../billing-pricing-service/">
+<a class="md-nav__link" href="../../aws-practitioner/billing-pricing-service/">
         Billing, Pricing and Support
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../other-services/">
+<a class="md-nav__link" href="../../aws-practitioner/other-services/">
         Other Services
       </a>
 </li>
@@ -847,6 +900,59 @@
 <a class="md-nav__link" href="#cloudfront">
     CloudFront
   </a>
+<nav aria-label="CloudFront" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic-content">
+    Dynamic Content
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static-content">
+    Static Content
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-options">
+    Configuration Options
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caching-layers">
+    Caching Layers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+    Security
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integrations">
+    Integrations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#patterns">
+    Patterns
+  </a>
+<nav aria-label="Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alb-and-ec2">
+    ALB and EC2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#s3-content-delivery">
+    S3 Content Delivery
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aws-global-accelerator">
@@ -1240,13 +1346,78 @@
 <li>RTMP Distribution - Adobe Flash Media distribution. User can start watching video before file downloads. Source can only be <strong>S3 bucket</strong> not EC2.</li>
 </ul>
 </li>
-<li>Origin can be EC2 server or S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.</li>
-<li>If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. </li>
 <li>Caching behavior options can be controlled via methods and policies</li>
 <li>Can select Regions where edge location distributions will be places/used.</li>
 <li>WAF access control list can be placed on distribution</li>
 <li>Implementation of additional encryption can be setup with SSL Certificates</li>
+<li>Pay as you use for the service.</li>
+<li>CloudFront can work with any <strong>public</strong> endpoint - AWS or Non-AWS.</li>
 </ul>
+<h3 id="dynamic-content">Dynamic Content</h3>
+<ul>
+<li>Origin can be EC2 server or Lambda functions</li>
+</ul>
+<h3 id="static-content">Static Content</h3>
+<ul>
+<li>Origin can be S3 Bucket. If S3 is static hosting website, must put point to the static site endpoint.</li>
+<li>If S3 is used - Origin Access Identity (OAI) can be used to restrict access stopping direct access of S3 without cloudfront. </li>
+</ul>
+<h3 id="configuration-options">Configuration Options</h3>
+<ul>
+<li>Distributions</li>
+<li>Origin Domain - Can be S3 or ALB which points to compute resources.</li>
+<li>HTTP/HTTPS protocol</li>
+<li>Cache time to Live (TTLs)</li>
+<li>Custom Headers </li>
+<li>Price class - All Locations, NA + EU, NA + EU + Asia + Middle East + Africa</li>
+<li>AWS WAF web ACL Associations</li>
+<li>Alternate domain names</li>
+<li>Custom SSL</li>
+<li>Standard logging</li>
+<li>IP6 support</li>
+</ul>
+<h3 id="caching-layers">Caching Layers</h3>
+<ol>
+<li>Cloudfront Distributions - Edge Locations </li>
+<li>Regional Edge Caches</li>
+<li>AWS Origin Shield - This is <strong>not</strong> enabled by default. Allows for consolidated requests.</li>
+</ol>
+<h3 id="security">Security</h3>
+<ul>
+<li>SSD - encrypted at rest</li>
+<li>user restrictions - Signed URLs and cookies</li>
+<li>WAF protection via Web ACL</li>
+<li>Geo restrictions to restrict users from certain locations.</li>
+</ul>
+<h3 id="integrations">Integrations</h3>
+<ul>
+<li>IAM - Admin access</li>
+<li>CloudWatch Alarms - monitoring</li>
+<li>CloudTrail Logs </li>
+<li>CloudFront Logs - Standard and Real-time. </li>
+</ul>
+<h3 id="patterns">Patterns</h3>
+<h4 id="alb-and-ec2">ALB and EC2</h4>
+<ul>
+<li>Route53 - Alias to CloudFront Distribution DNS</li>
+<li>CloudFront Distribution - Add custom header to security communication to ALB. On CloudFront also needs to configure <code>Origin Protocol Policy</code> to HTTPS to secure communication to ALB ensuring that the custom header is kept secret. <strong><em>Rotation</em></strong> of custom header should be done of the custom header. </li>
+<li>ALB - Setup Secure Listener and its rule to only forward to target group if the custom header from CloudFront Distribution is present in request. </li>
+<li>EC2 - No change</li>
+</ul>
+<h4 id="s3-content-delivery">S3 Content Delivery</h4>
+<ul>
+<li>Route 53 - Use Alias with CloudFront Distribution name to forward traffic to CloudFront. </li>
+<li>CloudFront Distribution - Create Origin Access Identify (OAI) and associate with distribution. SSL certificate via ACM to enforce HTTPS.</li>
+<li>S3 - S3 bucket policy. Only accepts requests from OAI ARN. Block Public Access. This can be automatically done from the CloudFront Distribution OAI Configuration screen. </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CloudFront only works with ACM certificates from the North Virginia Region. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>S3 only works with HTTP. </p>
+</div>
 <h2 id="aws-global-accelerator">AWS Global Accelerator</h2>
 <ul>
 <li>Get UDP and TCP traffic from end users to AWS endpoints via AWS infrastructure rather than public network. Optimized path for lowest latency and avoids unhealthy resources</li>
