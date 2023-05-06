@@ -1,5 +1,8 @@
 # Networking
 
+!!! danger "Incomplete"
+    In progress.
+
 ## IP Ranges
 Reserved addresses with subnet 10.0.1.0/24
 
@@ -133,6 +136,13 @@ Reserved addresses with subnet 10.0.1.0/24
  * Hosted zone - how to route traffic for a particular domain
    * Public zone - how is traffic routed on the public internet
    * Private zone - how is traffic routed inside AWS.
+
+### Components
+ * Routing Policies
+ * Traffic Flow
+ * Application Recovery Controller
+ * Route 53 Resolver
+ * Route 53 Resolver DNS Firewall
   
 ### Record Types
 |Record Type | Description|
@@ -141,13 +151,13 @@ Reserved addresses with subnet 10.0.1.0/24
 |AAAA| Route traffic to a resource using IP6|
 |CAA| Certificate authority for domain and subdomains|
 |CNAME|Used as an Alias of one name to another. Does **not** work for APEX.
-|MX| Mail Server|
+|MX| Mail Server. Multiple records with priority numbers are used.|
 |NAPTR | Name Authority Pointer|
 |NS| Named server for hosted zone|
 |PTR| Map IP to domain name |
+|SOA|Start of Authority Records|
 
-**Alias** is a route 53 specific extension to DNS. Routes traffic to:
-
+**Alias** is a route 53 specific extension to DNS. It can be used to map **Apex** domains which is not possible to do with CNAME. Routes traffic to:
  * S3 buckets
  * ELBs
  * Elastic Beanstalk
@@ -158,13 +168,62 @@ Reserved addresses with subnet 10.0.1.0/24
 ### Routing Policies
 | Routing Policy | Description |
 | -------------- | ------------|
-| Simple | Default, no health check, single resource.|
-| Failover | Route to different policy based on health checks, active passive failover|
+| Simple | Default, no health check, single resource. Random if multiple available.|
+| Failover | Route to different policy based on health checks, active passive failover. Primary and Secondary defined and must have health check defined.|
 |Geo-Location | Geographic location/origin of traffic |
-|Geo Proximity | Based on both users and resource location. Bias allows to adjust scope of resource and controls routing of traffic. |
+|Geo Proximity | Based on both users and resource location. Bias (-99 to 99) allows to adjust scope of resource and controls routing of traffic. Needs to be created using Route 53 Traffic Flow to create policy.|
 | Latency | Routing based on lowest latency |
 | Multi-value | Returns up to 8 records at once |
-| Weighted Routing Policy | Distributes traffic according to weights | 
+| Weighted | Distributes traffic according to weights. 0 means record never returned. | 
+
+### Health Check
+ * Endpoints are defined for health check
+ * Sends request every 30s by default. Can also be done very 10s.
+ * Health Checks can depend on other Health Checks and the cumulative value can be checked against defined threshold
+ * Health check can be based on CloudWatch Alarm status.
+ * Health checks are performed by regional health checkers
+   * By IP or Domain Name
+   * HTTP / HTTPS
+   * HTTP protocol can look at particular response within the first 520 bytes of the response.
+   * Notification when health checks fails can be setup. 
+
+### Route 53 Traffic Flow
+Traffic flow simplifies the process of creating and maintaining records in large and complex configurations. This is useful when you have a group of resources that perform the same operation, such as a fleet of web servers for the same domain.  
+
+The traffic flow visual editor lets you create complex sets of records and see the relationships among them. You can combine multiple routing policies and health checks in a single configuration. Each configuration is called a traffic policy and it’s automatically versioned so you don’t have to start all over again when your configuration changes. Old versions of traffic policies continue to be available until you delete them. 
+
+A traffic policy can define hundreds of records. Traffic flow creates all those records automatically when you create a policy record.  You create policy records to associate traffic policies with a domain or subdomain name records.  The traffic policy record appears in the list of records for the hosted zone. You can use the same traffic policy to create records in multiple public-hosted zones.  This is useful when you’re using the same hosts for multiple domains.  
+
+Please note that the Geo-proximity routing policy is available only if you use traffic flow.
+
+### Route 53 Resolver
+The Route 53 resolver is the DNS service for VPCs that integrates with your data center. Connectivity needs to be established between data center DNS and AWS using a Direct Connect (DX) or a Virtual Private Network (VPN) connection.    
+
+Endpoints for DNS queries into and out of VPC are configured through IP address assignment in each subnet needing the Route 53 Resolver. Inbound queries allow DNS queries that originate in your data center to resolve AWS-hosted domains.  Outbound DNS queries are enabled using conditional forwarding rules. Domains hosted in your data center can be configured as forwarding rules in Route 53 resolver.  
+
+### Route 53 Resolver DNS firewall
+Finally, the Route 53 Resolver DNS firewall is a managed firewall service for DNS queries that start in your VPCs.  Firewall rule group to define how Route 53 Resolver DNS firewall inspects and filters traffic coming from VPC.  Each rule consists of a domain list to inspect in DNS queries and an action to take when a query results in a match.  Actions can be:
+ * A matching query to go through
+ * Allow it to go through with an alert 
+ * Block it and respond with a default or a custom response.  
+
+To begin the filtering you associate the rule group to the VPCs you want to protect.  Route 53 resolver DNS firewall will apply your defined filtering rules to the outgoing VPC traffic.
+
+### Route 53 Application Recovery Controller
+Route 53 application recovery controller is a set of capabilities that continuously monitors an application’s ability to recover from failures and controls application recovery across multiple availability zones, regions, and possibly your own data center environments. 
+
+#### Readiness Check
+You can define a readiness check to monitor AWS resource configurations, capacity, and network routing policies. They can check the configuration of Auto Scaling Groups, Amazon EC2 instances, Amazon EBS volumes, Elastic Load Balancers, RDS instances, and DynamoDB tables among others.  
+
+These readiness checks ensure that the recovery environment is scaled and configured to take over when needed. You can check AWS service limits to verify that enough capacity can be deployed.   You can also verify that capacity and scaling setups for applications are exactly the same across regions before a failover takes place. 
+
+### Routing Controls
+Readiness Checks work with Routing Controls to give you a way to failover an entire application based on custom conditions like application metrics, partial failures, increased error rates, or latency. You can also failover manually.   With Routing Controls you can shift traffic for maintenance purposes or during a real failure scenario. 
+A control panel is a group of routing controls for an application. As mentioned earlier, A routing control is used to turn traffic flow ON or OFF to individual cells in Regions or Availability Zones.  
+
+### Safety Rules
+You can also apply safety rules to routing controls as a way to prevent a failover to an unprepared replica.  
+
 
 ## CloudFront
  * AWS CDN

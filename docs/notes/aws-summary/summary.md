@@ -94,6 +94,10 @@
 |VPC Peering | Network | 1-2-1 VPC connectivity, Non-Transitive, Non-overlapping CIDR Blocks, Route tables need updating |
 | Transit Gateway | Network | Central hub for multiple VPN and VPC Peering |
 | Route 53 | Network | A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, Alias (S3, CloudFront, ELB, Beanstalk, VPC Interface Endpoint), Routing - simple, Failover, Geo-Location, Geo Proximity, Latency, Multi-value, Weighted. Health check.|
+| Route 53 Traffic Flow| Network | Graphical tool to create Traffic Policies by combining multiple complex policies. Geo proximity routing policy needs to be defined using this tool|
+| Route 53 Resolver | Network | Resolved inbound DNS queries (from data centre via VPN/DX) and outbound (to Data Centre) DNS queries by setting up endpoints in each subnet.|
+| Route 53 Resolver DNS Firewall | Network | Inspects DNS traffic from VPC. Options: Allow, Allow with Alert, Block|
+| Route 53 Application Recovery Controller | Network, Route53 |  Amazon Route 53 Application recovery controller allows you to configure fine-grain failover and verification steps to implement applications requiring very high availability.|
 |Cloud Front | Network | AWS CDN, Web/RMTP, Caching at edge, Static Sites - EC2 / S3, WAF Integration|
 | AWS Global Accelerator | Network | UPD/TCP Traffic via private link, 2 fixed IP Address, Forward to - ELB, EC2, EIP across regions Multi-region, Health check|
 | Elastic Load Balancer (ELB) | Network | Internet Facing (DNS, Public IP, Private IP) or Internal (Private IP). Routing via Private IP. Routes to: Lambda, EC2, IP Range or even containers. Listener, Rules, Target Group.|
