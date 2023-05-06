@@ -506,6 +506,8 @@ Define a Target Group, consisting of:
  * Security Group for the Load Balancer
  * Configure Routing to Target Group
 
+
+
 ### NLB
  * connection level
  * ultra-high performance - millions of requests per second. 
@@ -534,12 +536,7 @@ Once a connection is established, the connection remains open for the duration o
 !!! note
     For target we select EC2 instances directly and not target groups.
 
-
-### Health Check
-Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.
-
-
-## Server Certificate (SSL/TLS)
+### Server Certificate (SSL/TLS)
 HTTPS on ALB requires additional configuration.
 The server certificate used by ALB is X.509. Certificate can be issued by ACM (AWS Certificate Manager). ACM doesn't work in every region and there you need your own certificates in IAM. 
 
@@ -553,7 +550,17 @@ Certificate Selection:
    4. Upload to IAM
 
 
-## HTTP Code
+### Health Check
+Health checks. The ELB associates a health check that is performed against the resources defined within the target group. These health checks allow the ELB to contact each target using a specific protocol to receive a response. If no response is received within a set of thresholds, then the ELB will mark the target as unhealthy and stop sending traffic to that target.
+
+
+### Gateway Load Balancer
+  * Before Gateway Load Balancer this had to be done manually through VPC Ingress Routing at the Internet Gateway to send traffic to an ENI on an EC2 instance. 
+  * Gateway Load Balancer provides A single point of Access for all Inbound and Output traffic from VPC to transparently route traffic through Virtual Network Appliances. 
+  * It can help scale the virtual network appliances as needed and handles failure of virtual network appliances. 
+  * It enables sticky, transparent and consistent routing of the traffic. 
+
+## HTTP Return Code
  1. 1XX - Information
  2. 2XX - Success
  3. 3XX - Redirection
