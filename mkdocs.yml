@@ -61,6 +61,7 @@ nav:
        - Storage: ./notes/aws-dva/storage.md
        - Security and Compliance : ./notes/aws-dva/security-compliance.md
        - Networking : ./notes/aws-dva/networking.md
+       - Analytics : ./notes/aws-dva/analytics.md
        - Other Services: ./notes/aws-dva/other-services.md
        - Summary: ./notes/aws-summary/summary.md
     - AWS Practitioner :
