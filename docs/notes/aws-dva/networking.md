@@ -224,6 +224,130 @@ A control panel is a group of routing controls for an application. As mentioned 
 ### Safety Rules
 You can also apply safety rules to routing controls as a way to prevent a failover to an unprepared replica.  
 
+## API Gateway
+ * Building, monitoring, documenting and managing serverless API
+ * 100s of Thousands of requests per second and can throttle if necessary
+
+
+### API Endpoint Types
+ * Edge-Optimized API Endpoint - Closest point of presence to the customer
+ * Regional API Endpoint - No CDN, Non-AWS CDN. Good for Customers that are within the region.
+ * Private API Endpoint - Can only be access from the VPC via a Interface VPC Endpoint (ENI). 
+
+### Protocols
+ * HTTP  - 
+   * REST API -
+          1. Single price point for every for an all-inclusive service needed to build, manage and service and API.
+   * HTTP API - 
+          1. Proxy APIs for AWS LAmbda or any HTTP Endpoint
+          2. Modern APIs equipped with OIDC and OAuth2
+          3. Workloads that are likely to grow very large. APIs for latency-sensitive workloads.
+ * Websockets -  
+     * Persistent duplex connection, Real-time, chat app etc. 
+     * Be wary of spotty connections. 
+
+
+### Integrations with Backend
+  * Proxy Integration - Pass through, passes the request to the backend, easy to setup. 
+     * Lambda
+     * HTTP public endpoints
+     
+  * Direct Integration - decouples API gateway from backend, more work, but can change request, headers, response and status codes.
+     * Lambda 
+     * HTTP public endpoints
+     * Mock Integration
+     * AWS Service - Any AWS service such as SQS, Step Function
+     * VPC Link Integration - Resources within VPC.
+
+
+
+### API Gateway Authorizers
+  * IAM Authorizer - Distribute IAM authorized roles to clients. Client requests must generate a Signature V4 request and have ```Execute API``` permissions. This works for REST API, HTTP API and Websocket Endpoint. 
+  * Lambda Authorizer - Customer Authorization model using Third Party Authorization or legacy systems. This works for REST API, HTTP API and Websocket Endpoint. 
+  * Cognito Authorizer - Only works with REST API. Complete user management using Cognito User pools, login page, MFA etc. Only works for REST API. 
+  * JWT Authorizer - to handle OAuth2.0 and OpenID connect compliant identity provider with Cognito. This only works for HTTP API. 
+
+### Gateway Security
+  * Deep integration with WAF to handle common attack patterns and specific ranges of IP addresses/regions. 
+
+### Usage Plans via API Keys
+  * API keys can be created and distributed to customer. 
+  * Can be used to throttle to requests and billing. 
+
+### Caching
+  * Built-in caching ability within the API Gateway.
+  * Default TTL is 300s and can be put to between 0 - 3600 seconds 
+  * Need to choose the size of cache which has cost associate with it. 
+  * Caching only works with REST API. 
+
+### API Metric
+  * 4XX Errors - Number of client side errors / total Count
+  * 5XX Errors - Number of server side error / total count. 
+  * CacheHitCount
+  * CacheMissCount
+  * Total Count
+  * IntegrationLatency - time between API gateway relays a request to backend and receives a response
+  * Latency - time between request from client and response. 
+  * Metric is sent to CloudWatch Metric every minute. 
+
+
+### Pricing
+  * HTTP API Pricing is nearly 60% cheaper than that of REST API.
+
+### Summary Tables
+|Authorizer | HTTP API | REST API |
+|-----------|---------|----------|
+| AWS Lambda | :white_check_mark: | :white_check_mark:|
+|IAM |:white_check_mark:|:white_check_mark:|
+|Amazon Cognito | :white_check_mark:*|:white_check_mark:|
+|Native OpenID Connect/OAuth2.0 | :white_check_mark:| |
+
+
+| Integration | REST API | HTTP API | Websocket Endpoint |
+|------------|----------|-----------|-------------------|
+|Lambda Functions |  :white_check_mark: | | :white_check_mark:| 
+| Public HTTP Endpoint  | :white_check_mark: |:white_check_mark:|:white_check_mark:|
+| Mock | :white_check_mark:| ||
+| Any AWS Service |:white_check_mark:|:white_check_mark:|:white_check_mark:|
+| VPC Link | :white_check_mark:|||
+| Private Integration with ALB | NLB-->ALB* |:white_check_mark:| |
+| Private Integration with NLB |:white_check_mark: |:white_check_mark:||
+
+| Integration | REST API | HTTP API | 
+|------------|----------|-----------|
+| Usage Plans |  :white_check_mark: | | 
+| API Keys  | :white_check_mark: ||
+| Custom Domain Names | :white_check_mark:| :white_check_mark:*|
+
+| Development | REST API | HTTP API | 
+|------------|----------|-----------|
+| API Caching |  :white_check_mark: | | 
+| Request Parameter Transformation |  :white_check_mark: | :white_check_mark: | 
+| Request Body Transformation |  :white_check_mark: |  | 
+| Request Response Validation |  :white_check_mark: |  | 
+| Tesco Invocation |  :white_check_mark: |  | 
+| CORS Configuration  |  :white_check_mark:* | :white_check_mark: | 
+| Automatic Deployments |  :white_check_mark: |  | 
+|Default Stage |  :white_check_mark: |  |
+|Default Route |  :white_check_mark: |  | 
+|Custom gateway responses |  |  :white_check_mark: | 
+|Custom release deployment |  |  :white_check_mark: | 
+
+| Security | REST API | HTTP API | 
+|------------|----------|-----------|
+| Mutual TSL Authentication |  :white_check_mark: | :white_check_mark:  | 
+| Certificate based backend Authentication  | :white_check_mark: ||
+| AWS WAF | :white_check_mark:| |
+| Resource Policies | :white_check_mark:| |
+
+| Monitoring | REST API | HTTP API | 
+|------------|----------|-----------|
+| Access logs to Amazon CloudWatch Logs |  :white_check_mark: | :white_check_mark:  | 
+| Access logs to Amazon Kinesis Data Firehose  | :white_check_mark: ||
+| Execution Logs | :white_check_mark:| |
+| Amazon CloudWatch Metrics | :white_check_mark:|:white_check_mark: |
+| AWS X-Ray | :white_check_mark:||
+
 
 ## CloudFront
  * AWS CDN
@@ -427,3 +551,12 @@ Certificate Selection:
    2. Upload to ACM
    3. Choose from IAM
    4. Upload to IAM
+
+
+## HTTP Code
+ 1. 1XX - Information
+ 2. 2XX - Success
+ 3. 3XX - Redirection
+ 4. 4XX - Client Error
+ 5. 5XX - Server Error
+
