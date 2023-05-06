@@ -60,6 +60,7 @@ nav:
        - Compute : ./notes/aws-dva/compute.md
        - Storage: ./notes/aws-dva/storage.md
        - Security and Compliance : ./notes/aws-dva/security-compliance.md
+       - Networking : ./notes/aws-dva/networking.md
        - Other Services: ./notes/aws-dva/other-services.md
        - Summary: ./notes/aws-summary/summary.md
     - AWS Practitioner :

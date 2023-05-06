@@ -143,10 +143,11 @@ The ```ExposeHeader``` element in the policy is used to define a header in the r
 |Lifecycle rules |:white_check_mark:  | :white_check_mark: | :white_check_mark:|
 
 #### S3 INT 
- * Has Frequent Access and Infrequent Access
+ * Has Frequent and  Access and Archival. 
  * Moves automatically between the tiers. Move to infrequent if object not accessed for 30 days and frequent once object is accessed. 
  * Frequent is more expensive that infrequent
  * Per object monitoring fess in Intelligent Tier plus storage costs.
+
 
 
 #### S3 Glacier
@@ -177,6 +178,23 @@ The ```ExposeHeader``` element in the policy is used to define a header in the r
  
  ### Lifecycle Rules
   * Moving data automatically between different tiers. 
+  * Can also used to remove incomplete uploads and to remove non-current versions of data. 
+  * This works well when there are some known patterns of usage or requirements
+  * Lifecycle configuration can only move data in one direction.
+
+#### Components of Lifecycle Configuration
+ * Internally presented as an XML file with configuration rules. 
+
+```
+    <LifecycleConfiguration>
+      <Rule>
+        <ID> [ID/Name of the Rule] </ID>
+        <Filter> [Which objects to take actions on] </Filter>
+        <Status> </Status>
+        Actions
+      </Rule>
+    </LifecycleConfiguration>
+```
 
 ## EBS
  * Persistent Block-level storage
