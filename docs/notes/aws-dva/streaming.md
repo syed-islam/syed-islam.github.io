@@ -1,4 +1,4 @@
-# Analytics
+# Streaming
 
 ## Streaming Data - Amazon Kinesis
 No Free Tier, each service has its own pricing based on attributes.
